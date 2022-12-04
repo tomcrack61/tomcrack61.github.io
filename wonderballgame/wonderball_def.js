@@ -23,6 +23,7 @@ const arcpath=3;
 const penetratingproj = 4;
 const nutrientproj=5;
 const teledirected=6;
+const timestopproj=7;
 
 const selectionImg = new Image();
 selectionImg.src = 'wonderballs/seleccion.png';
@@ -703,3 +704,102 @@ const card31 = {
   shootFrame:12
 }
 allTypes.push(card31);
+
+const wonderball32 = new Image();
+wonderball32.src = 'wonderballs/orquideadeagua.png';
+wonderballTypes.push(wonderball32);
+
+const wonderball32proy = new Image();
+wonderball32proy.src = 'wonderballs/orquideadeaguaproy.png';
+
+const card32 = {
+  img: wonderball32,
+  cost: 200,
+  defense: 0.30,
+  power: 20,
+  health: 250,
+  type:distanceshoot,
+  projectile_img: wonderball32proy,
+  projectile_type: timestopproj,
+  shootingFrames : 3,
+  restingFrames : 1,
+  rechargeFrames: 0,
+  shootFrame:3
+}
+allTypes.push(card32);
+
+
+const wonderball33 = new Image();
+wonderball33.src = 'wonderballs/radiobird.png';
+wonderballTypes.push(wonderball33);
+
+const wonderball33proy = new Image();
+wonderball33proy.src = 'wonderballs/radioproy.png';
+
+const card33 = {
+  img: wonderball33,
+  cost: 100,
+  defense: 0.10,
+  power: 25,
+  health: 150,
+  type:distanceshoot,
+  projectile_img: wonderball33proy,
+  projectile_type: straightpath,
+  shootingFrames : 3,
+  restingFrames : 0,
+  rechargeFrames: 0,
+  shootFrame:2
+}
+allTypes.push(card33);
+
+
+const wonderball34 = new Image();
+wonderball34.src = 'wonderballs/PAPAPUM.png';
+wonderballTypes.push(wonderball34);
+const card34 = {
+  img: wonderball34,
+  cost: 25,
+  defense: 3,
+  power: 25,
+  health: 150,
+  type:instant,
+  shootingFrames : 3,
+  restingFrames : 3,
+  rechargeFrames: 3,
+  shootFrame:6,
+}
+allTypes.push(card34);
+
+const wonderball35 = new Image();
+wonderball35.src = 'wonderballs/raptor.png';
+wonderballTypes.push(wonderball35);
+const card35 = {
+  img: wonderball35,
+  cost: 234,
+  defense: 3,
+  power: 231,
+  health: 450,
+  type:contactshoot,
+  shootingFrames : 2,
+  restingFrames : 1,
+  rechargeFrames: 3,
+  shootFrame:3,
+}
+allTypes.push(card35);
+
+const wonderball36 = new Image();
+wonderball36.src = 'wonderballs/orquidea de fuego.png';
+wonderballTypes.push(wonderball36);
+const card36 = {
+  img: wonderball36,
+  cost: 123,
+  defense: 12,
+  power: 231,
+  health: 450,
+  type:contactshoot,
+  shootingFrames : 4,
+  restingFrames : 4,
+  rechargeFrames: 3,
+  shootFrame:8,
+}
+allTypes.push(card36);
