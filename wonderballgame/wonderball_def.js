@@ -803,3 +803,19 @@ const card36 = {
   shootFrame:8,
 }
 allTypes.push(card36);
+const wonderball37 = new Image();
+wonderball37.src = 'wonderballs/aqua ball.png';
+wonderballTypes.push(wonderball37);
+const card37 = {
+  img: wonderball37,
+  cost: 150,
+  defense: 1206,
+  power: 5452,
+  health: 450,
+  type:instant,
+  shootingFrames : 4,
+  restingFrames : 4,
+  rechargeFrames: 1,
+  shootFrame:5,
+}
+allTypes.push(card37);
