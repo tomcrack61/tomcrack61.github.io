@@ -290,6 +290,7 @@ function createWonderball(type, gridPositionX, gridPositionY){
   else if ( type == manualshoot) return new ManualAttackWonderball(gridPositionX, gridPositionY);
   else if (type == teamwork) return new TeamworkWonderball(gridPositionX, gridPositionY, true);
   else if (type == trap) return new TrapWonderball(gridPositionX, gridPositionY);
+  else if (type == instant) return new InstantWonderball(gridPositionX, gridPositionY);
   else return new Wonderball(gridPositionX, gridPositionY);
 }
 
@@ -642,6 +643,61 @@ class TimedShootWonderball extends AttackerWonderball{
       this.maxFrame = this.restingFrames;
     }
   }
+}
+
+class InstantWonderball extends ContactWonderball{
+  constructor(x,y){
+    super(x,y);
+    this.timer = 500;
+    this.animation = 0;
+    this.defeatedEnemies = 0;
+    this.origx = this.x;
+    this.origy = this.y;
+    this.origwidth = this.width;
+    this.origheight = this.height;
+  }
+  draw(){
+    ctx.fillStyle = 'white';
+    ctx.fillStyle='gold';
+    ctx.font = '20px Orbitron';
+    ctx.fillText(Math.floor(this.health), this.origx+15, this.origy+30);
+    ctx.drawImage(this.wonderballType, this.frameX*this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.origx, this.origy, this.origwidth, this.origheight);
+  }
+
+  enemyAttacking(attack, health){
+    super.enemyAttacking(attack,health);
+  }
+
+  update(){
+    if(this.animation < this.restingFrames){
+      if(frame % 120 == 0){
+        this.animation+=1;
+      }
+      this.minFrame = this.animation;
+      this.maxFrame = this.animation+1;
+    }else{
+      this.minFrame = this.restingFrames;
+      this.maxFrame = this.restingFrames + this.shootingFrames;
+      this.shootNow = true;
+    }
+
+    if(this.shootNow){
+      this.frameX = this.shootFrame;
+      this.x = this.x-2*cellSize;
+      this.y = this.y-2*cellSize;
+      this.height = 4*cellSize;
+      this.width = 4*cellSize;
+      this.animation += 1;
+    }
+
+    if(this.animation == 10){
+      this.health = 0;
+    }
+
+    super.update();
+
+  }
+
 }
 
 class TeamworkWonderball extends DistanceWonderball{

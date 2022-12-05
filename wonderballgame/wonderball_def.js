@@ -766,7 +766,7 @@ const card34 = {
   shootingFrames : 3,
   restingFrames : 3,
   rechargeFrames: 3,
-  shootFrame:6,
+  shootFrame:5,
 }
 allTypes.push(card34);
 
@@ -803,6 +803,7 @@ const card36 = {
   shootFrame:8,
 }
 allTypes.push(card36);
+
 const wonderball37 = new Image();
 wonderball37.src = 'wonderballs/aqua ball.png';
 wonderballTypes.push(wonderball37);
@@ -816,6 +817,6 @@ const card37 = {
   shootingFrames : 4,
   restingFrames : 4,
   rechargeFrames: 1,
-  shootFrame:5,
+  shootFrame:4,
 }
 allTypes.push(card37);
