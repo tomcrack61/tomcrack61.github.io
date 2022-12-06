@@ -645,7 +645,7 @@ class TimedShootWonderball extends AttackerWonderball{
   }
 }
 
-class InstantWonderball extends ContactWonderball{
+class InstantWonderball extends Wonderball{
   constructor(x,y){
     super(x,y);
     this.timer = 500;
@@ -656,12 +656,9 @@ class InstantWonderball extends ContactWonderball{
     this.origwidth = this.width;
     this.origheight = this.height;
   }
+
   draw(){
-    ctx.fillStyle = 'white';
-    ctx.fillStyle='gold';
-    ctx.font = '20px Orbitron';
-    ctx.fillText(Math.floor(this.health), this.origx+15, this.origy+30);
-    ctx.drawImage(this.wonderballType, this.frameX*this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.origx, this.origy, this.origwidth, this.origheight);
+    super.draw();
   }
 
   enemyAttacking(attack, health){
@@ -669,7 +666,22 @@ class InstantWonderball extends ContactWonderball{
   }
 
   update(){
-    if(this.animation < this.restingFrames){
+    super.update();
+
+    if(this.timer == 0){
+      this.health = 0;
+    }
+
+    if(this.shootNow){
+      this.frameX = this.shootFrame;
+      this.minFrame = this.shootFrame;
+      this.maxFrame = this.shootFrame;
+      this.x = this.origx-3*cellSize;
+      this.y = this.origy-3*cellSize;
+      this.height = 6*cellSize;
+      this.width = 6*cellSize;
+      this.timer = 0;
+    }else if(this.animation < this.restingFrames && !this.shootNow){
       if(frame % 120 == 0){
         this.animation+=1;
       }
@@ -680,22 +692,6 @@ class InstantWonderball extends ContactWonderball{
       this.maxFrame = this.restingFrames + this.shootingFrames;
       this.shootNow = true;
     }
-
-    if(this.shootNow){
-      this.frameX = this.shootFrame;
-      this.x = this.x-2*cellSize;
-      this.y = this.y-2*cellSize;
-      this.height = 4*cellSize;
-      this.width = 4*cellSize;
-      this.animation += 1;
-    }
-
-    if(this.animation == 10){
-      this.health = 0;
-    }
-
-    super.update();
-
   }
 
 }
