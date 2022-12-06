@@ -647,10 +647,10 @@ wonderballTypes.push(wonderball29);
 
 const card29 = {
   img: wonderball29,
-  cost: 250,
-  defense: 0.35,
+  cost: 150,
+  defense: 0.45,
   power: 0,
-  health: 150,
+  health: 435,
   type:contactshoot,
   projectile_img: null,
   projectile_type: noType,
@@ -672,7 +672,7 @@ const card30 = {
   img: wonderball30,
   cost: 250,
   defense: 0.50,
-  power: 35,
+  power: 6,
   health: 200,
   type:distanceshoot,
   projectile_img: wonderball30proy,
@@ -820,3 +820,83 @@ const card37 = {
   shootFrame:4,
 }
 allTypes.push(card37);
+const wonderball38 = new Image();
+wonderball38.src = 'wonderballs/ying yang bird.png';
+wonderballTypes.push(wonderball38);
+const card38 = {
+  img: wonderball38,
+  cost: 150,
+  defense: 0.45,
+  power: 5,
+  health: 450,
+  type:contactshoot,
+  shootingFrames : 2,
+  restingFrames : 2,
+  rechargeFrames: 1,
+  shootFrame:3,
+}
+allTypes.push(card38)
+const wonderball39 = new Image();
+wonderball39.src = 'wonderballs/tall nut.png';
+wonderballTypes.push(wonderball39);
+const card39 = {
+  img: wonderball39,
+  cost: 125,
+  defense: 0.1,
+  power: 0,
+  health: 1234,
+  type:defenser,
+  shootingFrames : 2,
+  restingFrames : 2,
+  rechargeFrames: 1,
+  shootFrame:3,
+}
+allTypes.push(card39)
+const wonderball40 = new Image();
+wonderball40.src = 'wonderballs/doudis aventurero.png';
+wonderballTypes.push(wonderball40);
+const card40 = {
+  img: wonderball40,
+  cost: 125,
+  defense: 1,
+  power: 1,
+  health: 1234,
+  type:contactshoot,
+  shootingFrames : 2,
+  restingFrames : 1,
+  rechargeFrames: 1,
+  shootFrame:3,
+}
+allTypes.push(card40)
+const wonderball41 = new Image();
+wonderball41.src = 'wonderballs/electro ball.png';
+wonderballTypes.push(wonderball41);
+const card41 = {
+  img: wonderball41,
+  cost: 125,
+  defense: 0.34,
+  power: 1,
+  health: 341,
+  type:contactshoot,
+  shootingFrames :3 ,
+  restingFrames : ,
+  rechargeFrames: 1,
+  shootFrame:5,
+}
+allTypes.push(card41)
+const wonderball42 = new Image();
+wonderball42.src = 'wonderballs/arow bird.png';
+wonderballTypes.push(wonderball42);
+const card42 = {
+  cost: 123,
+  defense: 0.05,
+  power: 20,
+  health: 213,
+  type: distanceshoot,
+  projectile_img : arow birdproy ,
+  projectile_type: straightpath,
+  shootingFrames : 3,
+  restingFrames : 1,
+  shootFrame : 4,
+}
+allTypes.push(card42);
