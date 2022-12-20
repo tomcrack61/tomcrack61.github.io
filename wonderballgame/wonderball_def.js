@@ -879,24 +879,132 @@ const card41 = {
   health: 341,
   type:contactshoot,
   shootingFrames :3 ,
-  restingFrames : ,
+  restingFrames :2,
   rechargeFrames: 1,
   shootFrame:5,
 }
-allTypes.push(card41)
+allTypes.push(card41);
+
+const arowbirdproy = new Image();
+arowbirdproy.src = 'wonderballs/arow birdproy.png';
+
 const wonderball42 = new Image();
 wonderball42.src = 'wonderballs/arow bird.png';
 wonderballTypes.push(wonderball42);
+
 const card42 = {
-  cost: 123,
-  defense: 0.05,
-  power: 20,
-  health: 213,
+  img: wonderball42,
+  cost: 174,
+  defense: 0.15,
+  power: 50,
+  health: 300,
   type: distanceshoot,
-  projectile_img : arow birdproy ,
-  projectile_type: straightpath,
-  shootingFrames : 3,
-  restingFrames : 1,
-  shootFrame : 4,
+  projectile_img: arowbirdproy,
+  projectile_type: penetratingproj,
+  shootingFrames : 1,
+  restingFrames : 3,
+  shootFrame: 4
 }
 allTypes.push(card42);
+
+const doudismorteroproy = new Image();
+doudismorteroproy.src = 'wonderballs/doudis morteroproy.png';
+
+const wonderball43 = new Image();
+wonderball43.src = 'wonderballs/doudis mortero.png';
+wonderballTypes.push(wonderball43);
+
+const card43 = {
+  img: wonderball43,
+  cost: 100,
+  defense: 0.15,
+  power: 34,
+  health: 300,
+  type: distanceshoot,
+  projectile_img: doudismorteroproy,
+  projectile_type: arcpath,
+  shootingFrames : 1,
+  restingFrames : 3,
+  shootFrame: 4
+}
+allTypes.push(card43)
+
+const darwinovterusproy = new Image();
+darwinovterusproy.src = 'wonderballs/darwinovterusproy.png';
+
+const wonderball44 = new Image();
+wonderball44.src = 'wonderballs/drawinovterus.png';
+wonderballTypes.push(wonderball44);
+
+const card44 = {
+  img: wonderball44,
+  cost: 100,
+  defense: 0.15,
+  power: 34,
+  health: 300,
+  type: distanceshoot,
+  projectile_img: darwinovterusproy,
+  projectile_type: arcpath,
+  shootingFrames : 1,
+  restingFrames : 3,
+  shootFrame: 4
+}
+allTypes.push(card44)
+const setadesesporadaproy = new Image();
+setadesesporadaproy.src = 'wonderballs/seta desesporadaproy.png';
+
+const wonderball45 = new Image();
+wonderball45.src = 'wonderballs/seta desesporada.png';
+wonderballTypes.push(wonderball45);
+
+const card45 = {
+  img: wonderball45,
+  cost: 0,
+  defense: 0.15,
+  power: 1,
+  health: 123,
+  type: support,
+  projectile_img: setadesesporadaproy,
+  projectile_type: straightpath,
+  shootingFrames : 1,
+  restingFrames : 2,
+  shootFrame: 3
+}
+allTypes.push(card45)
+const hielagisantesproy = new Image();
+hielagisantesproy.src ='wonderballs/hielagisantesproy.png';
+
+const wonderball46 = new Image();
+wonderball46.src = 'wonderballs/hielagisantes.png';
+wonderballTypes.push(wonderball46);
+
+const card46 = {
+  img: wonderball46,
+  cost: 150,
+  defense: 0.15,
+  power: 32,
+  health: 123,
+  type: distanceshoot,
+  projectile_img: hielagisantesproy,
+  projectile_type: timestopproj,
+  shootingFrames : 1,
+  restingFrames : 2,
+  shootFrame: 3
+}
+allTypes.push(card46)
+const wonderball47 = new Image();
+wonderball47.src = 'wonderballs/brus bamboo.png';
+wonderballTypes.push(wonderball47);
+const card47 = {
+  img: wonderball47,
+  cost: 125,
+  defense: 1,
+  power: 12,
+  health: 341,
+  type:contactshoot,
+  shootingFrames :1 ,
+  restingFrames :2,
+  rechargeFrames: 1,
+  shootFrame:2,
+}
+allTypes.push(card47);
