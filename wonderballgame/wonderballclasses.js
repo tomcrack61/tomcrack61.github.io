@@ -140,7 +140,7 @@ class StraightPathProjectile extends Projectile{
     super.update();
   }
   destroy(){
-    super.destroy();
+    return true;
   }
   getType(){
     return straightpath;

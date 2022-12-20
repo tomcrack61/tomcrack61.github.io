@@ -963,7 +963,7 @@ const card45 = {
   defense: 0.15,
   power: 1,
   health: 123,
-  type: support,
+  type: distanceshoot,
   projectile_img: setadesesporadaproy,
   projectile_type: straightpath,
   shootingFrames : 1,
@@ -1008,3 +1008,24 @@ const card47 = {
   shootFrame:2,
 }
 allTypes.push(card47);
+const gisantralladoraproy = new Image();
+gisantralladoraproy.src = 'wonderballs/gisantralladoraproy.png';
+
+const wonderball48 = new Image();
+wonderball48.src = 'wonderballs/gisantralladora.png';
+wonderballTypes.push(wonderball48);
+
+const card48 = {
+  img: wonderball48,
+  cost: 375,
+  defense: 0.15,
+  power: 23,
+  health: 300,
+  type: distanceshoot,
+  projectile_img: gisantralladoraproy,
+  projectile_type: straightpath,
+  shootingFrames : 2,
+  restingFrames : 2,
+  shootFrame: 4
+}
+allTypes.push(card48)
