@@ -1,7 +1,8 @@
-//const canvas = document.getElementById('canvas1');
-//const ctx = canvas.getContext('2d')
-//canvas.width= 900;
-//canvas.height = 600;
+if (typeof(Storage) !== "undefined") {
+  if (!localStorage.coinCounter) {
+    localStorage.setItem("coinCounter", 0)
+  }
+}
 
 //catalogo
 const worldBgnImg = new Image();
@@ -66,7 +67,7 @@ pauseImg.src = 'resources/pause.png';
 
 const pauseBtn ={
   x: 7*90,
-  y: 10,
+  y: canvas.height-100,
   width: 85,
   height: 70,
   active: false,
@@ -106,6 +107,19 @@ const watergem ={
 
 powerUps.push(watergem);
 powerUpsTime.push(1000);
+
+//monedas
+const coinImg = new Image();
+coinImg.src = 'resources/coins.png';
+
+const coins ={
+  x: 130,
+  y: canvas.height-50,
+  width: 40,
+  height: 40,
+  active: false,
+  img: coinImg
+};
 
 class Cell {
   constructor(x,y){
@@ -496,14 +510,7 @@ function handleGameStatus(){
   if(enemies.length == 0 && givenZombies >= level_zombies){
     ctx.clearRect(0,0, canvas.width, canvas.height);
     ctx.drawImage(winDialogImg, 0, 0, 2607, 1898, 10,10,canvas.width, canvas.height);
-    // ctx.fillStyle = 'black';
-    // ctx.font = '60px Orbitron';
-    // ctx.fillText("LEVEL COMPLETE", 130, 300);
-    // ctx.font = '40px Orbitron';
-    // ctx.fillText("Well done, Pau & Feli!", 130, 340);
-    // ctx.font = '30px Orbitron';
-    // ctx.fillText("Score " + score, 134, 380);
-    // ctx.fillText("Click for next level ", 134, 420);
+    localStorage.coinCounter = Number(localStorage.coinCounter) + 1000;
     go_next_levl = true;
   }
 }
@@ -735,6 +742,12 @@ function animate(){
     frame=0;
     return;
   }
+  // Coins counter
+  ctx.drawImage(coins.img, 0, 0, 100, 100, coins.x, coins.y, coins.height, coins.width);4
+  ctx.fillStyle='gold';
+  ctx.font = '20px Orbitron';
+  ctx.fillText(localStorage.coinCounter, coins.x+40, coins.y+20);
+
   frame++;
   requestAnimationFrame(animate);
 
