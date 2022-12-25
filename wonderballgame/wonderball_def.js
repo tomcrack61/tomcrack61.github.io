@@ -670,9 +670,9 @@ wonderball30proy.src = 'wonderballs/rabodegatoproy.png';
 
 const card30 = {
   img: wonderball30,
-  cost: 250,
+  cost: 150,
   defense: 0.50,
-  power: 6,
+  power: 12,
   health: 200,
   type:distanceshoot,
   projectile_img: wonderball30proy,
@@ -744,7 +744,7 @@ const card33 = {
   health: 150,
   type:distanceshoot,
   projectile_img: wonderball33proy,
-  projectile_type: straightpath,
+  projectile_type: penetratingproj,
   shootingFrames : 3,
   restingFrames : 0,
   rechargeFrames: 0,
@@ -760,7 +760,7 @@ const card34 = {
   img: wonderball34,
   cost: 25,
   defense: 3,
-  power: 25,
+  power: 2500,
   health: 150,
   type:instant,
   shootingFrames : 3,
@@ -961,7 +961,7 @@ const card45 = {
   img: wonderball45,
   cost: 0,
   defense: 0.15,
-  power: 1,
+  power: 12,
   health: 123,
   type: distanceshoot,
   projectile_img: setadesesporadaproy,
@@ -1029,3 +1029,40 @@ const card48 = {
   shootFrame: 4
 }
 allTypes.push(card48)
+const wonderball49 = new Image();
+wonderball49.src = 'wonderballs/croc.png';
+wonderballTypes.push(wonderball49);
+const card49 = {
+  img: wonderball49,
+  cost: 321,
+  defense: 0.43,
+  power: 12,
+  health: 3411,
+  type:contactshoot,
+  shootingFrames :1 ,
+  restingFrames :2,
+  rechargeFrames: 1,
+  shootFrame:3,
+}
+allTypes.push(card49);
+const pacionariaproy = new Image();
+pacionariaproy.src = 'wonderballs/pacionariaproy.png';
+
+const wonderball50 = new Image();
+wonderball50.src = 'wonderballs/pacionaria.png';
+wonderballTypes.push(wonderball50);
+
+const card50 = {
+  img: wonderball50,
+  cost: 125,
+  defense: 0.15,
+  power: 23,
+  health: 300,
+  type: distanceshoot,
+  projectile_img: pacionariaproy,
+  projectile_type: straightpath,
+  shootingFrames : 2,
+  restingFrames : 2,
+  shootFrame: 4
+}
+allTypes.push(card50)
