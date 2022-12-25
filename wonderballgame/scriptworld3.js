@@ -1,7 +1,8 @@
-//const canvas = document.getElementById('canvas1');
-//const ctx = canvas.getContext('2d')
-//canvas.width= 900;
-//canvas.height = 600;
+if (typeof(Storage) !== "undefined") {
+  if (!localStorage.coinCounter) {
+    localStorage.setItem("coinCounter", 0)
+  }
+}
 
 //catalogo
 const worldBgnImg = new Image();
@@ -36,7 +37,6 @@ let frame = 0;
 let playGame = false;
 let gameOver = false;
 let score = 0;
-let coinsCounter = 0;
 let choosenDefender = 0;
 let boss = false;
 
@@ -510,7 +510,7 @@ function handleGameStatus(){
   if(enemies.length == 0 && givenZombies >= level_zombies){
     ctx.clearRect(0,0, canvas.width, canvas.height);
     ctx.drawImage(winDialogImg, 0, 0, 2607, 1898, 10,10,canvas.width, canvas.height);
-    coinsCounter += 1000;
+    localStorage.coinCounter = Number(localStorage.coinCounter) + 1000;
     go_next_levl = true;
   }
 }
@@ -746,7 +746,7 @@ function animate(){
   ctx.drawImage(coins.img, 0, 0, 100, 100, coins.x, coins.y, coins.height, coins.width);4
   ctx.fillStyle='gold';
   ctx.font = '20px Orbitron';
-  ctx.fillText(coinsCounter, coins.x+40, coins.y+20);
+  ctx.fillText(localStorage.coinCounter, coins.x+40, coins.y+20);
 
   frame++;
   requestAnimationFrame(animate);
