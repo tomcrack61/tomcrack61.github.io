@@ -48,7 +48,7 @@ pauseImg.src = 'resources/pause.png';
 
 const pauseBtn ={
   x: 7*90,
-  y: 10,
+  y: canvas.height - 100,
   width: 85,
   height: 70,
   active: false,
