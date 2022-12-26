@@ -539,7 +539,7 @@ function initLevel(){
     cards = [];
     cardsAvailable = [];
 
-    if(game.curr_level == 2{
+    if(game.curr_level == 2){
       worldBgnImg.src = 'assets/poolWorldbackground.jpg';
     }
     if(game.curr_level == 3){
