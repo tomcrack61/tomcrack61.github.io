@@ -1066,3 +1066,45 @@ const card50 = {
   shootFrame: 4
 }
 allTypes.push(card50)
+const setamiedicaproy = new Image();
+setamiedicaproy.src = 'wonderballs/seta miedicaproy.png';
+
+const wonderball51 = new Image();
+wonderball51.src = 'wonderballs/seta miedica.png';
+wonderballTypes.push(wonderball51);
+
+const card51 = {
+  img: wonderball51,
+  cost: 25,
+  defense: 0.15,
+  power: 20,
+  health: 200,
+  type: distanceshoot,
+  projectile_img: setamiedicaproy,
+  projectile_type: straightpath,
+  shootingFrames : 2,
+  restingFrames : 2,
+  shootFrame: 4
+}
+allTypes.push(card51)
+const minilanzaguisantesproy = new Image();
+minilanzaguisantesproy.src = 'wonderballs/mini lanzaguisantesproy.png';
+
+const wonderball52 = new Image();
+wonderball52.src = 'wonderballs/mini lanzagiuzantes.png';
+wonderballTypes.push(wonderball52);
+
+const card52 = {
+  img: wonderball52,
+  cost: 15,
+  defense: 0.15,
+  power: 12,
+  health: 100,
+  type: support,
+  projectile_img: minilanzaguisantesproy,
+  projectile_type: straightpath,
+  shootingFrames : 1,
+  restingFrames : 2,
+  shootFrame: 3
+}
+allTypes.push(card52)
