@@ -1,23 +1,5 @@
-if (typeof(Storage) !== "undefined") {
-  if (!localStorage.coinCounter) {
-    localStorage.setItem("coinCounter", 0)
-  }
-}
-
 //catalogo
-const worldBgnImg = new Image();
-worldBgnImg.src = 'assets/forestWorldbackground.jpg';
-
-//dialogs
-const winDialogImg = new Image();
-winDialogImg.src = 'dialogmarie/Slide4.PNG';
-
-const gameOverDialogImg = new Image();
-gameOverDialogImg.src = 'dialogmarie/Slide1.PNG';
-
-const gameOver3DialogImg = new Image();
-gameOver3DialogImg.src = 'dialogmarie/Slide2.PNG';
-
+let worldBgnImg = new Image();
 
 // global variables
 const cellSize = 100;
@@ -50,76 +32,12 @@ let winningScore = level_zombies*10+boss_points;
 let givenZombies = 0;
 
 
-
-//let canvasPosition = canvas.getBoundingClientRect();
-
-console.log(canvasPosition);
-
 // game board
 const controlsBar = {
   width : cellSize,
   height : canvas.width,
 };
 
-//pausa
-const pauseImg = new Image();
-pauseImg.src = 'resources/pause.png';
-
-const pauseBtn ={
-  x: 7*90,
-  y: canvas.height-100,
-  width: 85,
-  height: 70,
-  active: false,
-  paused: false,
-  img: pauseImg
-};
-
-powerUps = [];
-powerUpsTime = [];
-//pala
-const shovelImg = new Image();
-shovelImg.src = 'resources/palacolor.png';
-
-const shovel ={
-  x: 30,
-  y: canvas.height-50,
-  width: 40,
-  height: 40,
-  active: false,
-  img: shovelImg
-};
-powerUps.push(shovel);
-powerUpsTime.push(0);
-
-//Gema de agua
-const watergemImg = new Image();
-watergemImg.src = 'resources/gemaAgua.png';
-
-const watergem ={
-  x: 80,
-  y: canvas.height-50,
-  width: 40,
-  height: 40,
-  active: false,
-  img: watergemImg
-};
-
-powerUps.push(watergem);
-powerUpsTime.push(1000);
-
-//monedas
-const coinImg = new Image();
-coinImg.src = 'resources/coins.png';
-
-const coins ={
-  x: 130,
-  y: canvas.height-50,
-  width: 40,
-  height: 40,
-  active: false,
-  img: coinImg
-};
 
 class Cell {
   constructor(x,y){
@@ -234,9 +152,6 @@ function handleWonderballs(){
     }
   }
 }
-
-
-
 
 cards = [];
 let allcards = [];
@@ -403,6 +318,7 @@ function handleEnemies(){
     enemies[i].update();
     enemies[i].draw();
     if(enemies[i].x <0){
+      game.state = "gameOver"
       gameOver = true;
       playGame = false;
     }
@@ -460,7 +376,6 @@ class Resource{
     }
     ctx.fillStyle = 'black';
     ctx.font = '20px Orbitron';
-    //ctx.fillText(this.amount, this.x + 15, this.y + 25);
   }
   update(){
     this.y +=0.1;
@@ -508,10 +423,9 @@ function handleGameStatus(){
 
   }
   if(enemies.length == 0 && givenZombies >= level_zombies){
-    ctx.clearRect(0,0, canvas.width, canvas.height);
-    ctx.drawImage(winDialogImg, 0, 0, 2607, 1898, 10,10,canvas.width, canvas.height);
     localStorage.coinCounter = Number(localStorage.coinCounter) + 1000;
-    go_next_levl = true;
+    localStorage.currentLevel = Number(localStorage.currentLevel) + 1;
+    game.state = "win"
   }
 }
 
@@ -538,7 +452,6 @@ canvas.addEventListener('click', function(){
             numberOfResources -= defenderCost;
             cardAvailable[choosenDefender]=300;
           }
-          return;
           //check other powerUps
         }
       }
@@ -572,151 +485,7 @@ function handleCards(){
   }
 }
 
-const goButton={
-  x: 250,
-  y: 550,
-  width: 250,
-  height: 150,
-  text: 'Go!'
-};
-
-const backButton={
-  x: 80,
-  y: 550,
-  width: 150,
-  height: 150,
-  text: '<--'
-};
-
-const nextButton={
-  x: 550,
-  y: 550,
-  width: 150,
-  height: 150,
-  text: '-->'
-};
-
-let choosenOnes = [];
-let curr_page = 0;
-
-function handleSelection(){
-  min = Math.min(12, allTypes.length-curr_page);
-  for(let i = 0; i < min; i++){
-    if (collision(mouse, allcards[i]) && mouse.clicked && !choosenOnes.includes(i+curr_page)){
-      choosenCard = i+curr_page;
-      choosenOnes.push(choosenCard);
-      mouse.clicked=false;
-      if(choosenOnes.length > 6){
-        choosenOnes.shift();
-      }
-    }
-  }
-
-  if (collision(mouse, nextButton) && mouse.clicked){
-    if(curr_page < Math.max(curr_level,allTypes.length-12)){
-      curr_page +=12;
-      mouse.clicked=false;
-      initAllCards();
-    }
-  }
-  else if (collision(mouse, backButton) && mouse.clicked){
-    if(curr_page > 0){
-      curr_page -=12;
-      mouse.clicked=false;
-      initAllCards();
-    }
-  }
-  else if (collision(mouse, goButton) && mouse.clicked){
-    if(choosenOnes.length == 6){
-      cardAvailable = new Array(choosenOnes.length).fill(75);
-      for(let j = 0; j < choosenOnes.length; j++){
-        cards.push(new WonderballType(10, j*90, 70, 85, allTypes[choosenOnes[j]]));
-        if(allTypes[choosenOnes[j]].type == 'producer') cardAvailable[j]==0;
-      }
-      mouse.clicked = false;
-      playGame = true;
-    }else{
-      floatingMessages.push(new FloatingMessage("Choose 6 defenders", mouse.x, mouse.y, 20, 'blue'));
-    }
-  }
-}
-
-const cols = 4;
-
-function initAllCards(){
-  const width = 200;
-  const height = 150;
-  allcards=[];
-  for(let j = curr_page; j < curr_page+12; j++){
-    if(j< allTypes.length){
-      i = j - curr_page;
-      x = (i%cols)*width + (i%cols)*5+50;
-      y = Math.floor(i / cols)*height + (Math.floor(i / cols)*5) + 100;
-      allcards.push(new WonderballType(x, y, width, height, allTypes[j]));
-    }
-  }
-}
-
-
-function handleTypeSelection(){
-  ctx.clearRect(0,0, canvas.width, canvas.height);
-  ctx.fillStyle='black';
-  ctx.font = '30px Orbitron';
-  ctx.fillText('Pau & Feli! Welcome to the world!', 15, 30);
-  ctx.fillText('Choose your wonderballs for this battle', 15, 60);
-  //initAllCards();
-
-  for(let i = 0; i< allcards.length; i++){
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = 'black';
-    ctx.fillStyle='black';
-    bgnImg = selectionImg;
-    if(choosenOnes.includes(i+curr_page)){
-       bgnImg = selectionChosenImg;
-       ctx.fillStyle = 'gold';
-     }
-    //ctx.strokeRect(allcards[i].x, allcards[i].y, allcards[i].width, allcards[i].height);
-    ctx.drawImage(bgnImg, 0, 0, 250, 180, allcards[i].x, allcards[i].y-25, allcards[i].width+20, allcards[i].height+50);
-    ctx.drawImage(allcards[i].card.img, 0, 0, 340, 367, allcards[i].x, allcards[i].y, allcards[i].width, allcards[i].height);
-    ctx.font = '20px Orbitron';
-    ctx.fillText(Math.floor(allcards[i].card.cost), allcards[i].x+allcards[i].width-50, allcards[i].y+allcards[i].height-10);
-  }
-
-  //Go Button
-  ctx.fillStyle='gold';
-  ctx.fillRect(goButton.x, goButton.y, goButton.width, goButton.height);
-  ctx.fillStyle='black';
-  ctx.font = '30px Orbitron';
-  ctx.fillText(goButton.text, goButton.x+20, 590);
-
-  //NExt Button
-  ctx.fillStyle='gold';
-  ctx.fillRect(nextButton.x, nextButton.y, nextButton.width, nextButton.height);
-  ctx.fillStyle='black';
-  ctx.font = '30px Orbitron';
-  ctx.fillText(nextButton.text, nextButton.x+20, 590);
-
-  //NExt Button
-  ctx.fillStyle='gold';
-  ctx.fillRect(backButton.x, backButton.y, backButton.width, backButton.height);
-  ctx.fillStyle='black';
-  ctx.font = '30px Orbitron';
-  ctx.fillText(backButton.text, backButton.x+20, 590);
-
-  //events
-  handleFloatingMessages();
-  handleSelection();
-  if(playGame){
-    audioEl = document.getElementById("audio");
-    audioEl.src = "assets/camp.mp3";
-
-    animate();
-    return;
-  }
-  requestAnimationFrame(handleTypeSelection);
-}
-
-function animate(){
+function animateGame(){
   ctx.clearRect(0,0, canvas.width, canvas.height);
   ctx.drawImage(worldBgnImg, 0, 0, 3143, 2415, 10,10,canvas.width, canvas.height);
 
@@ -738,10 +507,7 @@ function animate(){
   }
   handleGameStatus();
   handleCards();
-  if(gameOver || enemies.length == 0){
-    frame=0;
-    return;
-  }
+
   // Coins counter
   ctx.drawImage(coins.img, 0, 0, 100, 100, coins.x, coins.y, coins.height, coins.width);4
   ctx.fillStyle='gold';
@@ -749,13 +515,10 @@ function animate(){
   ctx.fillText(localStorage.coinCounter, coins.x+40, coins.y+20);
 
   frame++;
-  requestAnimationFrame(animate);
-
 }
 
 
-canvas.addEventListener('dblclick', function(){
-  if(go_next_levl || gameOver){
+function initLevel(){
     score = 0;
 
     numberOfResources = Math.max((5-curr_level)*100, 100);
@@ -765,26 +528,25 @@ canvas.addEventListener('dblclick', function(){
     projectiles.length = 0;
     wonderballs.length = 0;
 
-    if(go_next_levl){
-      curr_level +=1;
-      level_zombies =curr_level*10+Math.pow(curr_level,2);
-      winningScore = level_zombies*10+boss_points;
-      enemiesPowerBoost = curr_level/2;
-    }
+    curr_level = localStorage.currentLevel;
+    level_zombies =curr_level*10+Math.pow(curr_level,2);
+    winningScore = level_zombies*10+boss_points;
+    enemiesPowerBoost = curr_level/2;
+
     go_next_levl = false;
     playGame = false;
     gameOver = false;
     cards = [];
     cardsAvailable = [];
-    audioEl = document.getElementById("audio");
-    audioEl.src = "assets/menusong.mp3";
-    handleTypeSelection();
-  }
 
-})
+    if(game.curr_level == 2{
+      worldBgnImg.src = 'assets/poolWorldbackground.jpg';
+    }
+    if(game.curr_level == 3){
+      worldBgnImg.src = 'assets/forestWorldbackground.jpg';
+    }
 
-initAllCards();
-audioEl = document.getElementById("audio");
-audioEl.src = "assets/menusong.mp3";
-handleTypeSelection();
+}
+
+
 //animate();

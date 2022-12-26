@@ -45,40 +45,44 @@ const storeBtn ={
 const startScreenImg = new Image();
 startScreenImg.src = 'assets/map.jpg';
 
-const welcomeDialogImg = new Image();
-welcomeDialogImg.src = 'dialogmarie/Slide3.PNG';
-
-function dialog(){
-  dialogTime +=1;
-  if(dialogTime > 200){
-    animate();
-  }
-  requestAnimationFrame(dialog);
-}
-
 function handleBtn(){
-  if(collision(l1Btn, mouse) && mouse.clicked){
-    window.location.assign("./world.html");
+  if(collision(l1Btn, mouse) && mouse.clicked && l1Btn.active){
+    game.curr_level = 1;
+    goToSelection();
   }
-  else if(collision(l2Btn, mouse) && mouse.clicked){
-    window.location.assign("./poolWorld.html");
+  else if(collision(l2Btn, mouse) && mouse.clicked  && l2Btn.active){
+    game.curr_level = 2;
+    goToSelection();
   }
-  else if(collision(l3Btn, mouse) && mouse.clicked){
-    window.location.assign("./forestWorld.html");
+  else if(collision(l3Btn, mouse) && mouse.clicked  && l3Btn.active ){
+    game.curr_level = 3;
+    goToSelection();
   }
   else if(collision(storeBtn, mouse) && mouse.clicked){
-    window.location.assign("./store.html");
+    game.state = "store";
   }
 }
 
-function animate(){
+function startMap(){
+  if(Number(localStorage.currentLevel) > 2){
+    l3Btn.active = true;
+  }
+  if(Number(localStorage.currentLevel) > 1){
+    l2Btn.active = true;
+  }
+  if(Number(localStorage.currentLevel) > 0){
+    l1Btn.active = true;
+  }
+}
+
+function animateMap(){
   ctx.clearRect(0,0, canvas.width, canvas.height);
   ctx.drawImage(startScreenImg, 0, 0, 1300, 900, 10,10,canvas.width, canvas.height);
 
   ctx.strokeStyle='blue';
   ctx.strokeRect(l1Btn.x, l1Btn.y, l1Btn.width, l1Btn.height);
-  ctx.strokeRect(l2Btn.x, l2Btn.y, l2Btn.width, l2Btn.height);
-  ctx.strokeRect(l3Btn.x, l3Btn.y, l3Btn.width, l3Btn.height);
+  if(l2Btn.active) ctx.strokeRect(l2Btn.x, l2Btn.y, l2Btn.width, l2Btn.height);
+  if(l3Btn.active) ctx.strokeRect(l3Btn.x, l3Btn.y, l3Btn.width, l3Btn.height);
   ctx.strokeRect(storeBtn.x, storeBtn.y, storeBtn.width, storeBtn.height);
   //ctx.drawImage(catalogBtn.img, 0, 0, 200, 200, catalogBtn.x, catalogBtn.y, catalogBtn.width, catalogBtn.height);
 
@@ -87,14 +91,4 @@ function animate(){
   ctx.fillText('Feli! This is your game, click a world to start', 120, 80);
 
   handleBtn();
-  requestAnimationFrame(animate);
 }
-
-audioEl = document.getElementById("menuAudio");
-audioEl.src = "assets/menusong.mp3";
-var audioPlayer = document.getElementById("menuAudio");
-audioPlayer.src = "assets/mapsong.mp3";
-canvasPosition = canvas.getBoundingClientRect();
-ctx.clearRect(0,0, canvas.width, canvas.height);
-ctx.drawImage(welcomeDialogImg, 0, 0, 2959, 1881, 10,10,canvas.width, canvas.height);
-dialog();

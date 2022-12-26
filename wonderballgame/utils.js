@@ -1,3 +1,15 @@
+if (typeof(Storage) !== "undefined") {
+  if (!localStorage.coinCounter) {
+    localStorage.setItem("coinCounter", 0)
+  }
+  if (!localStorage.currentLevel) {
+    localStorage.setItem("currentLevel", 0)
+  }
+}else{
+  console.log("Storage Not Supported")
+}
+
+
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d')
 canvas.width= 900;
@@ -5,6 +17,10 @@ canvas.height = 600;
 
 let canvasPosition = canvas.getBoundingClientRect();
 
+const game = {
+  state: "initDialog",
+  curr_level: 1
+}
 
 //mouse
 const mouse ={
@@ -62,3 +78,38 @@ function collision(first, second){
 window.addEventListener('resize', function(){
   canvasPosition = canvas.getBoundingClientRect();
 })
+
+window.addEventListener('orientationchange', (event) => {
+  canvasPosition = canvas.getBoundingClientRect();
+});
+
+function mapSettings(){
+  var audioPlayer = document.getElementById("audio");
+  audioPlayer.src = "assets/mapsong.mp3";
+}
+
+function selectionSettings(){
+  var audioEl = document.getElementById("audio");
+  audioEl.src = "assets/menusong.mp3";
+}
+
+function goToMap(){
+  mapSettings();
+  startMap();
+  game.state = "map";
+}
+
+function goToSelection(){
+  selectionSettings();
+  initLevel();
+  initAllCards();
+  game.state = "selection";
+}
+
+function goToGame(){
+  audioEl = document.getElementById("audio");
+  if(game.curr_level == 3) audioEl.src = "assets/camp.mp3";
+  else if(game.curr_level == 2) audioEl.src = "assets/poolworld.mp3";
+  else audioEl.src = "assets/worldsong.mp3";
+  game.state = "play";
+}

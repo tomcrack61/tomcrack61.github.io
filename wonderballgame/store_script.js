@@ -1,19 +1,8 @@
-if (typeof(Storage) !== "undefined") {
-  if (!localStorage.coinCounter) {
-    localStorage.setItem("coinCounter", 0)
-  }
-}else{
-  console.log("Storage Not Supported")
-}
-
 canvasPosition = canvas.getBoundingClientRect();
 ctx.clearRect(0,0, canvas.width, canvas.height);
 
 //monedas
-const coinImg = new Image();
-coinImg.src = 'resources/coins.png';
-
-const coins ={
+const coinIcon ={
   x: 15,
   y: 15,
   width: 60,
@@ -35,12 +24,12 @@ const selectWorldBtn ={
   text: "<--"
 };
 
-function animate(){
+function animateStore(){
   ctx.clearRect(0,0, canvas.width, canvas.height);
-  ctx.drawImage(coins.img, 0, 0, 100, 100, coins.x, coins.y, coins.height, coins.width);
+  ctx.drawImage(coinIcon.img, 0, 0, 100, 100, coinIcon.x, coinIcon.y, coinIcon.height, coinIcon.width);
   ctx.fillStyle='gold';
   ctx.font = '20px Orbitron';
-  ctx.fillText(localStorage.coinCounter, coins.x+65, coins.y+20);
+  ctx.fillText(localStorage.coinCounter, coinIcon.x+65, coinIcon.y+20);
 
 
   ctx.fillStyle='black';
@@ -57,10 +46,7 @@ function animate(){
   ctx.font = '20px Orbitron';
   ctx.fillText("Go to index" , selectWorldBtn.x+65, selectWorldBtn.y+35);
   if(collision(selectWorldBtn, mouse) & mouse.clicked){
-    window.location.assign("./index.html");
+    mapSettings();
+    game.state = "map";
   }
-
-  requestAnimationFrame(animate);
 }
-
-animate();
