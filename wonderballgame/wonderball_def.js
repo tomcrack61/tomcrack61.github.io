@@ -741,7 +741,7 @@ const card33 = {
   img: wonderball33,
   cost: 100,
   defense: 0.10,
-  power: 25,
+  power: 45,
   health: 150,
   type:distanceshoot,
   projectile_img: wonderball33proy,
@@ -1149,7 +1149,7 @@ const card53 = {
   }
 allTypes.push(card53)
 const lanzaguisantesdefuegoproy = new Image();
-lanzaguisantesdefuegoproy.src = 'wonderballs/ lanzaguisantes de fuegoproy.png';
+lanzaguisantesdefuegoproy.src = 'wonderballs/lanzagisantes de fuegoproy.png';
 
 const wonderball54 = new Image();
 wonderball54.src = 'wonderballs/lanzaguisantes de fuego.png';
@@ -1159,13 +1159,29 @@ const card54 = {
   img: wonderball54,
   cost: 175,
   defense: 0.15,
-  power: 25,
-  health: 234,
+  power: 23,
+  health: 300,
   type: distanceshoot,
   projectile_img: lanzaguisantesdefuegoproy,
   projectile_type: straightpath,
-  shootingFrames : 1,
-  restingFrames : 3,
+  shootingFrames : 2,
+  restingFrames : 2,
   shootFrame: 4
 }
 allTypes.push(card54)
+const wonderball55 = new Image();
+wonderball.src = 'wonderballs/florecimiento dorado.png';
+wonderballTypes.push(wonderball55);
+const card55 = {
+  img: wonderball55,
+  cost: 0,
+  defense: 1206,
+  power: 234,
+  health: 450,
+  type:producer,
+  shootingFrames : 1,
+  restingFrames : 2,
+  rechargeFrames: 1,
+  shootFrame:3,
+}
+allTypes.push(card55);
