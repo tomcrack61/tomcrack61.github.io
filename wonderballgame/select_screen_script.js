@@ -31,8 +31,8 @@ let l2Btn ={
 lvlButtons.push(l2Btn);
 
 let l3Btn ={
-  x: 615,
-  y: 465,
+  x: 645,
+  y: 487,
   width: 45,
   height: 45,
   active: false
@@ -47,7 +47,14 @@ let l4Btn ={
   active: false
 };
 lvlButtons.push(l4Btn);
-
+let l5Btn ={
+  x: 605,
+  y: 435,
+  width: 45,
+  height: 45,
+  active: false
+};
+lvlButtons.push(l5Btn);
 const storeBtn ={
   x: 35,
   y: 10,

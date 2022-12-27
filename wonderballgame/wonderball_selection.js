@@ -101,6 +101,10 @@ function animateSelection(){
        bgnImg = selectionChosenImg;
        ctx.fillStyle = 'gold';
      }
+     if(allcards[i].card.isepic){
+        bgnImg = selectionepicImg;
+        ctx.fillStyle = 'gold';
+      }
     //ctx.strokeRect(allcards[i].x, allcards[i].y, allcards[i].width, allcards[i].height);
     ctx.drawImage(bgnImg, 0, 0, 250, 180, allcards[i].x, allcards[i].y-25, allcards[i].width+20, allcards[i].height+50);
     ctx.drawImage(allcards[i].card.img, 0, 0, 340, 367, allcards[i].x, allcards[i].y, allcards[i].width, allcards[i].height);

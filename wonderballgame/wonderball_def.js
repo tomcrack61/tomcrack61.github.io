@@ -32,6 +32,9 @@ selectionImg.src = 'wonderballs/seleccion.png';
 const selectionChosenImg = new Image();
 selectionChosenImg.src = 'wonderballs/seleccion_choosen.png';
 
+const selectionepicImg = new Image();
+selectionepicImg.src = 'wonderballs/selection epic.png';
+
 const wonderball1 = new Image();
 wonderball1.src = 'wonderballs/wonderball1.png';
 wonderballTypes.push(wonderball1);
@@ -1109,21 +1112,3 @@ const card52 = {
   shootFrame: 3
 }
 allTypes.push(card52)
-
-const wonderball55 = new Image();
-wonderball55.src = 'wonderballs/florecimiento dorado.png';
-wonderballTypes.push(wonderball55);
-
-const card55 = {
-  img: wonderball55,
-  cost: 0,
-  defense: 1206,
-  power: 234,
-  health: 450,
-  type:producer,
-  shootingFrames : 1,
-  restingFrames : 2,
-  rechargeFrames: 1,
-  shootFrame:3,
-}
-allTypes.push(card55);
