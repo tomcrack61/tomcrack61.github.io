@@ -1120,7 +1120,7 @@ wonderball53v.src = 'wonderballs/jetix transformaition2.png';
 const wonderball53c = new Image();
 wonderball53c.src = 'wonderballs/jetix transformaition3.png';
 const wonderball53d = new Image();
-wonderball53d.src = 'wonderballs/jetix transformaition4.png';
+wonderball53d.src = 'wonderballs/jetixtransformaition4.png';
 const card53 = {
   img: wonderball53,
   imgv: wonderball53v,
