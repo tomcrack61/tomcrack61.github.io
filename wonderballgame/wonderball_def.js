@@ -1138,6 +1138,7 @@ const card53 = {
   restingFrames : 2,
   shootFrame: 3,
     shootingFramesv : 2,
+  restingFramesv : 3,
   shootFramev: 5,
     shootingFramesc : 4,
   restingFramesc : 3,
