@@ -113,3 +113,8 @@ function goToGame(){
   else audioEl.src = "assets/worldsong.mp3";
   game.state = "play";
 }
+
+function goToStore(){
+  initStoreCards();
+  game.state = "store";
+}
