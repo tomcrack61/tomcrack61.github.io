@@ -724,3 +724,25 @@ class TeamworkWonderball extends DistanceWonderball{
       }
   }
 }
+class JetixWonderball extends Wonderball {
+  constructor(x,y) {
+    super(x,y);
+    this.state=1;
+  }
+
+  update() {
+    if (this.state==1) {
+      if(powerUps[1].active){
+      this.defense = this.maxDefense +this.maxDefense*2;
+      this.power = this.maxPower + this.maxPower * 0.2;
+    }else{
+      this.defense = this.maxDefense;
+      this.power = this.maxPower;
+    }
+
+    if(frame%10 == 0 && this.frameX == this.shootFrame){
+      createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, projectiles);
+
+
+    }
+}

@@ -1108,3 +1108,33 @@ const card52 = {
   shootFrame: 3
 }
 allTypes.push(card52)
+const jetixproy = new Image();
+jetixproy.src = 'wonderballs/jetixproy.png';
+
+const wonderball53 = new Image();
+wonderball53.src = 'wonderballs/jetix transformaition1.png';
+wonderballTypes.push(wonderball53);
+const wonderball53v = new Image();
+wonderball53v.src = 'wonderballs/jetix transformaition2.png';
+const wonderball53c = new Image();
+wonderball53c.src = 'wonderballs/jetix transformaition3.png';
+const wonderball53d = new Image();
+wonderball53d.src = 'wonderballs/jetix transformaition4.png';
+const card53 = {
+  img: wonderball53,
+  imgv: wonderball53v,
+  imgc: wonderball53c,
+  imgd: wonderball53d,
+  coinsPrice:1000,
+  cost: 300,
+  defense: 5,
+  power: 120,
+  health: 345,
+  type: jetix,
+  projectile_img: jetixproy,
+  projectile_type: straightpath,
+  shootingFrames : 1,
+  restingFrames : 2,
+  shootFrame: 3
+}
+allTypes.push(card53)
