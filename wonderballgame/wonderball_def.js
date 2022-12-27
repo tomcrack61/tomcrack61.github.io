@@ -1116,9 +1116,9 @@ const wonderball53 = new Image();
 wonderball53.src = 'wonderballs/jetix transformaition1.png';
 wonderballTypes.push(wonderball53);
 const wonderball53v = new Image();
-wonderball53v.src = 'wonderballs/jetix transformaition2.png';
+wonderball53v.src = 'wonderballs/jetixtransformaition2.png';
 const wonderball53c = new Image();
-wonderball53c.src = 'wonderballs/jetix transformaition3.png';
+wonderball53c.src = 'wonderballs/jetixtransfromaition3.png';
 const wonderball53d = new Image();
 wonderball53d.src = 'wonderballs/jetixtransformaition4.png';
 const card53 = {
