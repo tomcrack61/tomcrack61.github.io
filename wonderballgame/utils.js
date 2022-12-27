@@ -5,6 +5,15 @@ if (typeof(Storage) !== "undefined") {
   if (!localStorage.currentLevel) {
     localStorage.setItem("currentLevel", 0)
   }
+  if (!localStorage.jetixBought) {
+    localStorage.setItem("jetixBought", 0)
+  }
+  if (!localStorage.fireGuisanteBought) {
+    localStorage.setItem("fireGuisanteBought", 0)
+  }
+  if (!localStorage.doradaBought) {
+    localStorage.setItem("doradaBought", 0)
+  }
 }else{
   console.log("Storage Not Supported")
 }

@@ -40,9 +40,14 @@ const card53 = {
   shootingFramesd : 5,
   restingFramesd : 4,
   shootFramed: 9,
-  isepic:true
+  isepic:true,
+  storagekey:"jetixBought"
 }
-allEpicWonderballs.push(card53);
+if(Number(localStorage.jetixBought)>0){
+  allEpicWonderballs.push(card53);
+}else{
+  allTypes.push(card53);
+}
 
 
 const lanzaguisantesdefuegoproy = new Image();
@@ -65,9 +70,15 @@ const card54 = {
   shootingFrames : 2,
   restingFrames : 2,
   shootFrame: 4,
-  isepic:true
+  isepic:true,
+  storagekey: "fireGuisanteBought"
 }
-allEpicWonderballs.push(card54);
+if(Number(localStorage.fireGuisanteBought)>0){
+  allEpicWonderballs.push(card54);
+}else{
+  allTypes.push(card54);
+}
+
 const wonderball55 = new Image();
 wonderball55.src = 'wonderballs/florecimiento dorado.png';
 wonderballTypes.push(wonderball55);
@@ -84,6 +95,11 @@ const card55 = {
   restingFrames : 2,
   rechargeFrames: 1,
   shootFrame:3,
-  isepic:true
+  isepic:true,
+  storagekey: "doradaBought"
 }
-allEpicWonderballs.push(card55);
+if(Number(localStorage.doradaBought)>0){
+  allEpicWonderballs.push(card55);
+}else{
+  allTypes.push(card55);
+}
