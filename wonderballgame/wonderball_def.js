@@ -1148,3 +1148,24 @@ const card53 = {
   shootFramed: 9,
   }
 allTypes.push(card53)
+const lanzaguisantesdefuegoproy = new Image();
+lanzaguisantesdefuegoproy.src = 'wonderballs/ lanzaguisantes de fuegoproy.png';
+
+const wonderball54 = new Image();
+wonderball54.src = 'wonderballs/lanzaguisantes de fuego.png';
+wonderballTypes.push(wonderball54);
+
+const card54 = {
+  img: wonderball54,
+  cost: 175,
+  defense: 0.15,
+  power: 25,
+  health: 234,
+  type: distanceshoot,
+  projectile_img: lanzaguisantesdefuegoproy,
+  projectile_type: straightpath,
+  shootingFrames : 1,
+  restingFrames : 3,
+  shootFrame: 4
+}
+allTypes.push(card54)
