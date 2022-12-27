@@ -59,7 +59,7 @@ function handleBtn(){
     goToSelection();
   }
   else if(collision(storeBtn, mouse) && mouse.clicked){
-    game.state = "store";
+    goToStore();
   }
 }
 

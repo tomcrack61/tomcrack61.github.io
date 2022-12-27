@@ -24,6 +24,37 @@ const selectWorldBtn ={
   text: "<--"
 };
 
+let storeCards = [];
+
+function initStoreCards(){
+  const width = 200;
+  const height = 300;
+  storeCards=[];
+  for(let i = 0; i < allEpicWonderballsTypes.length; i++){
+      x = (i%cols)*width + (i%cols)*5+50;
+      y = Math.floor(i / cols)*height + (Math.floor(i / cols)*5) + 100;
+      storeCards.push(new WonderballType(x, y, width, height, allEpicWonderballsTypes[i]));
+  }
+}
+
+function showStore(){
+  for(let i = 0; i< storeCards.length; i++){
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'black';
+    ctx.fillStyle='black';
+    bgnImg = selectionImg;
+    if(choosenOnes.includes(i+curr_page)){
+       bgnImg = selectionChosenImg;
+       ctx.fillStyle = 'gold';
+     }
+    //ctx.strokeRect(allcards[i].x, allcards[i].y, allcards[i].width, allcards[i].height);
+    ctx.drawImage(bgnImg, 0, 0, 250, 180, allcards[i].x, allcards[i].y-25, allcards[i].width+20, allcards[i].height+50);
+    ctx.drawImage(allcards[i].card.img, 0, 0, 340, 367, allcards[i].x, allcards[i].y, allcards[i].width, allcards[i].height);
+    ctx.font = '20px Orbitron';
+    ctx.fillText(Math.floor(allcards[i].card.cost), allcards[i].x+allcards[i].width-50, allcards[i].y+allcards[i].height-10);
+  }
+}
+
 function animateStore(){
   ctx.clearRect(0,0, canvas.width, canvas.height);
   ctx.drawImage(coinIcon.img, 0, 0, 100, 100, coinIcon.x, coinIcon.y, coinIcon.height, coinIcon.width);
@@ -49,4 +80,6 @@ function animateStore(){
     mapSettings();
     game.state = "map";
   }
+
+  showStore();
 }

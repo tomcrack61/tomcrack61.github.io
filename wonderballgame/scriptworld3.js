@@ -528,7 +528,7 @@ function initLevel(){
     projectiles.length = 0;
     wonderballs.length = 0;
 
-    curr_level = localStorage.currentLevel;
+    curr_level = game.curr_level;
     level_zombies =curr_level*10+Math.pow(curr_level,2);
     winningScore = level_zombies*10+boss_points;
     enemiesPowerBoost = curr_level/2;
