@@ -544,8 +544,9 @@ function initLevel(){
     }
     if(game.curr_level == 3){
       worldBgnImg.src = 'assets/forestWorldbackground.jpg';
-    }
-
+    }  if(game.curr_level == 5){
+        worldBgnImg.src = 'assets/level 5 background.png';
+        }
 }
 
 
