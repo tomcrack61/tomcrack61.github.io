@@ -114,7 +114,9 @@ function goToGame(){
   game.state = "play";
 }
 
-function goToStore(){
+function goToStore(){  var audioPlayer = document.getElementById("audio");
+  audioPlayer.src = "assets/Pick of the store.mp3";
+
   initStoreCards();
   game.state = "store";
-}
+}  
