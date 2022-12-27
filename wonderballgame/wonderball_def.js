@@ -14,6 +14,7 @@ const teamwork = 8;
 const instant=9;
 const powerUp=10;
 const trap=11;
+const jetix=12;
 
 //projectile allTypes
 const noType = 0;
