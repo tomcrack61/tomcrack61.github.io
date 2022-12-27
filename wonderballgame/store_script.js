@@ -30,10 +30,11 @@ function initStoreCards(){
   const width = 200;
   const height = 300;
   storeCards=[];
-  for(let i = 0; i < allEpicWonderballsTypes.length; i++){
-      x = (i%cols)*width + (i%cols)*5+50;
-      y = Math.floor(i / cols)*height + (Math.floor(i / cols)*5) + 100;
-      storeCards.push(new WonderballType(x, y, width, height, allEpicWonderballsTypes[i]));
+  for(let i = 0; i < allEpicWonderballs.length; i++){
+      x = (i%cols)*width + (i%cols)*50+25;
+      console.log(x);
+      y = Math.floor(i / cols)*height + (Math.floor(i / cols)*5) + 200;
+      storeCards.push(new WonderballType(x, y, width, height, allEpicWonderballs[i]));
   }
 }
 
@@ -42,16 +43,29 @@ function showStore(){
     ctx.lineWidth = 1;
     ctx.strokeStyle = 'black';
     ctx.fillStyle='black';
-    bgnImg = selectionImg;
-    if(choosenOnes.includes(i+curr_page)){
-       bgnImg = selectionChosenImg;
-       ctx.fillStyle = 'gold';
-     }
-    //ctx.strokeRect(allcards[i].x, allcards[i].y, allcards[i].width, allcards[i].height);
-    ctx.drawImage(bgnImg, 0, 0, 250, 180, allcards[i].x, allcards[i].y-25, allcards[i].width+20, allcards[i].height+50);
-    ctx.drawImage(allcards[i].card.img, 0, 0, 340, 367, allcards[i].x, allcards[i].y, allcards[i].width, allcards[i].height);
+    ctx.strokeRect(storeCards[i].x, storeCards[i].y-25, storeCards[i].width+20, storeCards[i].height+50);
+    ctx.drawImage(storeCards[i].card.img, 0, 0, 340, 367, storeCards[i].x, storeCards[i].y, storeCards[i].width, storeCards[i].height);
+    ctx.fillRect(storeCards[i].x, storeCards[i].y+storeCards[i].height, storeCards[i].width+20, 50);
+    ctx.fillStyle = 'gold';
     ctx.font = '20px Orbitron';
-    ctx.fillText(Math.floor(allcards[i].card.cost), allcards[i].x+allcards[i].width-50, allcards[i].y+allcards[i].height-10);
+    ctx.fillText(Math.floor(storeCards[i].card.coinsPrice), storeCards[i].x+storeCards[i].width/3, storeCards[i].y+storeCards[i].height+25);
+  }
+}
+
+function handleStore(){
+  for(let i = 0; i< storeCards.length; i++){
+    if(collision(storeCards[i], mouse) && mouse.clicked){
+      if(Number(localStorage.coinCounter) >= storeCards[i].card.coinsPrice){
+        allTypes.push(allEpicWonderballs[i]); //Add the original card, not the WonderballType object
+        floatingMessages.push(new FloatingMessage("New wonderball added!", mouse.x, mouse.y, 20, 'green'));
+        localStorage.coinCounter = Number(localStorage.coinCounter)-storeCards[i].card.coinsPrice;
+        floatingMessages.push(new FloatingMessage("-5000 coins", mouse.x, mouse.y+25, 20, 'gold'));
+        storeCards.splice(i,1);
+        i--;
+      }else{
+        floatingMessages.push(new FloatingMessage("You need more coins", mouse.x, mouse.y, 20, 'blue'));
+      }
+    }
   }
 }
 
@@ -82,4 +96,6 @@ function animateStore(){
   }
 
   showStore();
+  handleStore();
+  handleFloatingMessages();
 }

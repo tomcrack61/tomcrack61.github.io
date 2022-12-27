@@ -7,6 +7,7 @@ jetixproy.src = 'wonderballs/jetixproy.png';
 const wonderball53 = new Image();
 wonderball53.src = 'wonderballs/jetix transformaition1.png';
 allEpicWonderballsTypes.push(wonderball53);
+
 const wonderball53v = new Image();
 wonderball53v.src = 'wonderballs/jetixtransformaition2.png';
 const wonderball53c = new Image();

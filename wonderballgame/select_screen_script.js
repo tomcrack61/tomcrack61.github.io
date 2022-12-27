@@ -10,6 +10,8 @@ catalogImg.src = 'assets/world_choose.png';
 
 let dialogTime = 0;
 
+lvlButtons = [];
+
 let l1Btn ={
   x: 750,
   y: 485,
@@ -17,6 +19,7 @@ let l1Btn ={
   height: 47,
   active: true,
 };
+lvlButtons.push(l1Btn);
 
 let l2Btn ={
   x: 700,
@@ -25,6 +28,7 @@ let l2Btn ={
   height: 45,
   active: false
 };
+lvlButtons.push(l2Btn);
 
 let l3Btn ={
   x: 615,
@@ -33,6 +37,16 @@ let l3Btn ={
   height: 45,
   active: false
 };
+lvlButtons.push(l3Btn);
+
+let l4Btn ={
+  x: 615,
+  y: 465,
+  width: 45,
+  height: 45,
+  active: false
+};
+lvlButtons.push(l4Btn);
 
 const storeBtn ={
   x: 35,
@@ -46,32 +60,24 @@ const startScreenImg = new Image();
 startScreenImg.src = 'assets/map.jpg';
 
 function handleBtn(){
-  if(collision(l1Btn, mouse) && mouse.clicked && l1Btn.active){
-    game.curr_level = 1;
-    goToSelection();
-  }
-  else if(collision(l2Btn, mouse) && mouse.clicked  && l2Btn.active){
-    game.curr_level = 2;
-    goToSelection();
-  }
-  else if(collision(l3Btn, mouse) && mouse.clicked  && l3Btn.active ){
-    game.curr_level = 3;
-    goToSelection();
-  }
-  else if(collision(storeBtn, mouse) && mouse.clicked){
+  if(collision(storeBtn, mouse) && mouse.clicked){
     goToStore();
+  }
+  else{
+    for(let i = 0; i<lvlButtons.length; i++){
+      if(collision(lvlButtons[i], mouse) && mouse.clicked && lvlButtons[i].active){
+        game.curr_level = i+1;
+        goToSelection();
+      }
+    }
   }
 }
 
 function startMap(){
-  if(Number(localStorage.currentLevel) > 2){
-    l3Btn.active = true;
-  }
-  if(Number(localStorage.currentLevel) > 1){
-    l2Btn.active = true;
-  }
-  if(Number(localStorage.currentLevel) > 0){
-    l1Btn.active = true;
+  for(let i = 0; i<lvlButtons.length; i++){
+    if(Number(localStorage.currentLevel) > i){
+      lvlButtons[i].active = true;
+    }
   }
 }
 

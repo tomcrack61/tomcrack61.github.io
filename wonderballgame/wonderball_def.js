@@ -1111,7 +1111,7 @@ const card52 = {
 allTypes.push(card52)
 
 const wonderball55 = new Image();
-wonderball.src = 'wonderballs/florecimiento dorado.png';
+wonderball55.src = 'wonderballs/florecimiento dorado.png';
 wonderballTypes.push(wonderball55);
 
 const card55 = {
