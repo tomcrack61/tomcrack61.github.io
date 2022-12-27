@@ -291,6 +291,7 @@ function createWonderball(type, gridPositionX, gridPositionY){
   else if (type == teamwork) return new TeamworkWonderball(gridPositionX, gridPositionY, true);
   else if (type == trap) return new TrapWonderball(gridPositionX, gridPositionY);
   else if (type == instant) return new InstantWonderball(gridPositionX, gridPositionY);
+  else if (type == jetix) return new JetixWonderball(gridPositionX, gridPositionY);
   else return new Wonderball(gridPositionX, gridPositionY);
 }
 
@@ -728,23 +729,62 @@ class JetixWonderball extends Wonderball {
   constructor(x,y) {
     super(x,y);
     this.state=1;
+
+    //projectile
+    this.shooting = false;
+    this.shootNow = false;
+    this.shootFrame = cards[choosenDefender].card.shootFrame;
+    this.projectiles = [];
+    if(cards[choosenDefender].card.projectile_img != null){
+      this.projectiles.push(cards[choosenDefender].card.projectile_img);
+    }
+    this.type = cards[choosenDefender].card.type;
+
+    //Transformations
+    this.t0img = cards[choosenDefender].card.img;
+    this.t0shootingFrames = cards[choosenDefender].card.shootingFrames;
+    this.t0restingFrames = cards[choosenDefender].card.restingFrames;
+    this.t0shootFrame = cards[choosenDefender].card.shootFrame;
+
+    this.t1img = cards[choosenDefender].card.imgv;
+    this.t1shootingFrames = cards[choosenDefender].card.shootingFramesv;
+    this.t1restingFrames = cards[choosenDefender].card.restingFramesv;
+    this.t1shootFrame = cards[choosenDefender].card.shootFramev;
+
+  }
+
+  enemyOnRow(onRow){
+    this.shooting = true;
+  }
+
+  enemyAttacking(attack, health){
+    super.enemyAttacking(attack);
+    this.state = 2;
+    this.shooting = true;
+    this.wonderballType = this.t1img;
+    this.shootingFrames = this.t1shootingFrames;
+    this.restingFrames = this.t1restingFrames;
+    this.shootFrame = this.shootFramev;
   }
 
   update() {
+    super.update();
     if (this.state==1) {
       if(powerUps[1].active){
-      this.defense = this.maxDefense +this.maxDefense*2;
-      this.power = this.maxPower + this.maxPower * 0.2;
-    }else{
-      this.defense = this.maxDefense;
-      this.power = this.maxPower;
+        this.defense = this.maxDefense +this.maxDefense*2;
+        this.power = this.maxPower + this.maxPower * 0.2;
+      }else{
+        this.defense = this.maxDefense;
+        this.power = this.maxPower;
+      }
+
+      if(frame%10 == 0 && this.frameX == this.shootFrame){
+        createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, projectiles);
+        this.shootNow = false;
+      }
     }
-
-    if(frame%10 == 0 && this.frameX == this.shootFrame){
-      createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, projectiles);
-
-
+    else if(this.state == 2){
+      this.shooting = false;
     }
-}
-}
+  }
 }
