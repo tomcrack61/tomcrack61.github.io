@@ -152,9 +152,9 @@ const card58 = {
   restingFrames : 2,
   shootFrame: 3,
   isepic:true,
-  storagekey: "tiraguisantesBought"
+  storagekey: "tiragiusantesBought"
 }
-if(Number(localStorage.tiraGuisanteBought)==0){
+if(Number(localStorage.tiragiusantesBought)==0){
   allEpicWonderballs.push(card58);
 }else{
   allTypes.push(card58);
