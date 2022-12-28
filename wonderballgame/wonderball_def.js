@@ -1112,3 +1112,24 @@ const card52 = {
   shootFrame: 3
 }
 allTypes.push(card52)
+const wonderball57 = new Image();
+wonderball57.src = 'wonderballs/seta solar.png';
+wonderballTypes.push(wonderball57);
+
+const wonderball57pry = new Image();
+wonderball57pry.src = 'wonderballs/sol.png';
+
+
+const card57 = {
+  img: wonderball57,
+  cost: 25,
+  defense: 0.2,
+  power: 75,
+  health: 100,
+  type: producer,
+  product_img: wonderball57pry,
+  projectile_type: noType,
+  shootingFrames : 1,
+  restingFrames : 3
+}
+allTypes.push(card157);
