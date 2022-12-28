@@ -339,7 +339,7 @@ function handleEnemies(){
   if (frame % enemiesInterval == 0 && !boss){
     let verticalPosition = Math.floor(Math.random()*5) * cellSize + cellGap;
     let type = 0;
-    type = Math.floor(Math.random()*(enemyTypes.length-2));
+    type = Math.floor(Math.random()*(enemyTypes.length-1));
     if (givenZombies >= level_zombies) {
       type = 2;
       boss = true;
@@ -547,7 +547,7 @@ function initLevel(){
     }  if(game.curr_level == 5){
 
       worldBgnImg.src = 'assets/forestWorld nochebackground.jpg';
-      
+
 
         }
 }
