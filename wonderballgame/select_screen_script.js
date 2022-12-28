@@ -93,10 +93,9 @@ function animateMap(){
   ctx.drawImage(startScreenImg, 0, 0, 1300, 900, 10,10,canvas.width, canvas.height);
 
   ctx.strokeStyle='blue';
-  for(let i = 0; i < lvlButtons.length; i++){
-    if(lvlButtons[i].active) ctx.strokeRect(lvlButtons[i].x, lvlButtons[i].y, lvlButtons[i].width, lvlButtons[i].height);
-  }
-
+  ctx.strokeRect(l1Btn.x, l1Btn.y, l1Btn.width, l1Btn.height);
+  if(l2Btn.active) ctx.strokeRect(l2Btn.x, l2Btn.y, l2Btn.width, l2Btn.height);
+  if(l3Btn.active) ctx.strokeRect(l3Btn.x, l3Btn.y, l3Btn.width, l3Btn.height);
   ctx.strokeRect(storeBtn.x, storeBtn.y, storeBtn.width, storeBtn.height);
   //ctx.drawImage(catalogBtn.img, 0, 0, 200, 200, catalogBtn.x, catalogBtn.y, catalogBtn.width, catalogBtn.height);
 

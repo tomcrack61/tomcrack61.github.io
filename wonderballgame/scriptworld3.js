@@ -543,10 +543,10 @@ function initLevel(){
       worldBgnImg.src = 'assets/poolWorldbackground.jpg';
     }
     if(game.curr_level == 3){
-      worldBgnImg.src = 'assets/forestWorldbackground.jpg';
+      worldBgnImg.src = 'assets/forestWorld nochebackground.jpg';
     }  if(game.curr_level == 5){
 
-      worldBgnImg.src = 'assets/forestWorld nochebackground.jpg';
+      
 
 
         }
