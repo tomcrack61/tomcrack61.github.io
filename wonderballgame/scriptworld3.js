@@ -341,7 +341,7 @@ function handleEnemies(){
     let type = 0;
     type = Math.floor(Math.random()*(enemyTypes.length-1));
     if (givenZombies >= level_zombies) {
-      type = 2;
+      type = enemyTypes.length-1;
       boss = true;
     }
     enemies.push(new Enemy(verticalPosition, enemyTypes[type]));
