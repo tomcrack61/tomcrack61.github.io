@@ -43,7 +43,7 @@ const card53 = {
   isepic:true,
   storagekey:"jetixBought"
 }
-if(Number(localStorage.jetixBought)>0){
+if(Number(localStorage.jetixBought)==0){
   allEpicWonderballs.push(card53);
 }else{
   allTypes.push(card53);
@@ -73,7 +73,7 @@ const card54 = {
   isepic:true,
   storagekey: "fireGuisanteBought"
 }
-if(Number(localStorage.fireGuisanteBought)>0){
+if(Number(localStorage.fireGuisanteBought)==0){
   allEpicWonderballs.push(card54);
 }else{
   allTypes.push(card54);
@@ -98,7 +98,7 @@ const card55 = {
   isepic:true,
   storagekey: "doradaBought"
 }
-if(Number(localStorage.doradaBought)>0){
+if(Number(localStorage.doradaBought)==0){
   allEpicWonderballs.push(card55);
 }else{
   allTypes.push(card55);

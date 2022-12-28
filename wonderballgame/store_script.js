@@ -63,11 +63,11 @@ function handleStore(){
           allTypes.push(allEpicWonderballs[i]); //Add the original card, not the WonderballType object
           floatingMessages.push(new FloatingMessage("New wonderball added!", mouse.x, mouse.y, 35, 'green'));
           localStorage.coinCounter = Number(localStorage.coinCounter)-storeCards[i].card.coinsPrice;
+          localStorage.setItem(storeCards[i].card.storagekey,1);
           floatingMessages.push(new FloatingMessage("-coins", mouse.x, mouse.y+25, 35, 'gold'));
           storeCards.splice(i,1);
           allEpicWonderballs.splice(i,1);
           i--;
-          localStorage.setItem(storeCards[i].card.storagekey,1);
         }
       }else{
         floatingMessages.push(new FloatingMessage("You need more coins", mouse.x, mouse.y, 20, 'blue'));
