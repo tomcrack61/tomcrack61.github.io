@@ -103,3 +103,31 @@ if(Number(localStorage.doradaBought)==0){
 }else{
   allTypes.push(card55);
 }
+const lotoproy = new Image();
+lotoproy.src = 'wonderballs/loto proy.png';
+
+const wonderball56 = new Image();
+wonderball56.src = 'wonderballs/loto.png';
+allEpicWonderballsTypes.push(wonderball56);
+
+const card56 = {
+  img: wonderball56,
+  coinsPrice: 10000,
+  cost: 100,
+  defense: 0.15,
+  power: 13,
+  health: 390,
+  type: distanceshoot,
+  projectile_img: lotoproy,
+  projectile_type: teledirected,
+  shootingFrames : 2,
+  restingFrames : 1,
+  shootFrame: 3,
+  isepic:true,
+  storagekey: "lotoBought"
+}
+if(Number(localStorage.lotoBought)==0){
+  allEpicWonderballs.push(card56);
+}else{
+  allTypes.push(card56);
+}
