@@ -131,3 +131,87 @@ if(Number(localStorage.lotoBought)==0){
 }else{
   allTypes.push(card56);
 }
+const tiraguisantesproy = new Image();
+tiraguisantesproy.src = 'wonderballs/tiragiusantes proy.png';
+
+const wonderball58 = new Image();
+wonderball58.src = 'wonderballs/tiraguisantes.png';
+allEpicWonderballsTypes.push(wonderball58);
+
+const card58 = {
+  img: wonderball58,
+  coinsPrice: 15000,
+  cost: 150,
+  defense: 0.15,
+  power: 25,
+  health: 300,
+  type: distanceshoot,
+  projectile_img: tiraguisantesproy,
+  projectile_type: arcpath,
+  shootingFrames : 1,
+  restingFrames : 2,
+  shootFrame: 3,
+  isepic:true,
+  storagekey: "tiraguisantesBought"
+}
+if(Number(localStorage.tiraGuisanteBought)==0){
+  allEpicWonderballs.push(card58);
+}else{
+  allTypes.push(card58);
+}
+const canonbirdproy = new Image();
+canonbirdproy.src = 'wonderballs/canon birdproy.png';
+
+const wonderball59 = new Image();
+wonderball59.src = 'wonderballs/canon bird.png';
+allEpicWonderballsTypes.push(wonderball59);
+
+const card59 = {
+  img: wonderball59,
+  coinsPrice: 15000,
+  cost: 150,
+  defense: 0.15,
+  power: 125,
+  health: 300,
+  type: support,
+  projectile_img: canonbirdproy,
+  projectile_type: teledirected,
+  shootingFrames : 1,
+  restingFrames : 1,
+  shootFrame: 2,
+  isepic:true,
+  storagekey: "canonbirdBought"
+}
+if(Number(localStorage.canonbirdBought)==0){
+  allEpicWonderballs.push(card59);
+}else{
+  allTypes.push(card59);
+}
+const arqueopterixproy = new Image();
+arqueopterixproy.src = 'wonderballs/arqueopterix proy.png';
+
+const wonderball60 = new Image();
+wonderball60.src = 'wonderballs/arqueopterix.png';
+allEpicWonderballsTypes.push(wonderball60);
+
+const card60 = {
+  img: wonderball60,
+  coinsPrice: 15000,
+  cost: 150,
+  defense: 0.15,
+  power: 125,
+  health: 300,
+  type: distanceshoot,
+  projectile_img: arqueopterixproy,
+  projectile_type: straightpath,
+  shootingFrames : 1,
+  restingFrames : 2,
+  shootFrame: 3,
+  isepic:true,
+  storagekey: "arqueopterixBought"
+}
+if(Number(localStorage.arqueopterixBought)==0){
+  allEpicWonderballs.push(card60);
+}else{
+  allTypes.push(card60);
+}

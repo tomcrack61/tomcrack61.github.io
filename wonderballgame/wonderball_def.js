@@ -1132,4 +1132,4 @@ const card57 = {
   shootingFrames : 1,
   restingFrames : 3
 }
-allTypes.push(card157);
+allTypes.push(card57);
