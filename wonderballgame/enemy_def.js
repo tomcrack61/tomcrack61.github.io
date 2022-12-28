@@ -5,6 +5,10 @@ const enemy1 = new Image();
 enemy1.src = 'enemies/enemy1.png';
 enemyImages.push(enemy1);
 
+const caracono = new Image();
+caracono.src = 'enemies/cara cono.png';
+enemyImages.push(caracono);
+
 const enemy2 = new Image();
 enemy2.src = 'enemies/boss.png';
 enemyImages.push(enemy2);
@@ -22,19 +26,19 @@ const enemyType0 = {
 enemyTypes.push(enemyType0);
 
 const enemyType1 = {
-  img: enemyImages[0],
+  img: caracono,
   maxHealth: 200,
-  speedFactor: 0.25,
+  speedFactor: 0.34,
   frameAttack: 3,
-  frameBadHealth: 4,
-  framesStart: 3,
-  framesBadHealth: 2,
-  framesAttack: 1
+  frameBadHealth: 1,
+  framesStart: 1,
+  framesBadHealth: 1,
+  framesAttack: 3
 }
 enemyTypes.push(enemyType1);
 
 const enemyType2 = {
-  img: enemyImages[1],
+  img: enemyImages[2],
   maxHealth: 1000,
   speedFactor: 0.2,
   frameAttack: 1,
