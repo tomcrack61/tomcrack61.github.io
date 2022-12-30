@@ -146,9 +146,9 @@ const card6 = {
   type: distanceshoot,
   projectile_img: melon,
   projectile_type: arcpath,
-  shootingFrames : 1,
-  restingFrames : 1,
-  shootFrame : 2
+  shootingFrames : 2,
+  restingFrames : 3,
+  shootFrame : 5
 }
 allTypes.push(card6);
 
