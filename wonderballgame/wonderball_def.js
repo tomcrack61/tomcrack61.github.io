@@ -70,7 +70,7 @@ const card2 = {
   type: producer,
   product_img :  sol,
   shootingFrames : 1,
-  restingFrames : 1
+  restingFrames : 5
 }
 allTypes.push(card2);
 
