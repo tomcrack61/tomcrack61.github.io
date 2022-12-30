@@ -215,3 +215,31 @@ if(Number(localStorage.arqueopterixBought)==0){
 }else{
   allTypes.push(card60);
 }
+const melonpultacongeladaproy = new Image();
+melonpultacongeladaproy.src = 'wonderballs/melonpulta congeladaproy.png';
+
+const wonderball61 = new Image();
+wonderball61.src = 'wonderballs/melonpulta congelada.png';
+allEpicWonderballsTypes.push(wonderball61);
+
+const card61 = {
+  img: wonderball61,
+  coinsPrice: 1000,
+  cost: 500,
+  defense: 0.34,
+  power: 100,
+  health: 300,
+  type: distanceshoot,
+  projectile_img: melonpultacongeladaproy,
+  projectile_type: arcpath timestopproj,
+  shootingFrames : 1,
+  restingFrames : 3,
+  shootFrame: 4,
+  isepic:true,
+  storagekey: "melonpultacongeladaBought"
+}
+if(Number(localStorage.melonpultacongeladaBought)==0){
+  allEpicWonderballs.push(card61);
+}else{
+  allTypes.push(card61);
+}
