@@ -88,8 +88,8 @@ const card3 = {
   projectile_img :  null,
   projectile_type: straightpath,
   shootingFrames : 1,
-  restingFrames : 1,
-  shootFrame : 2
+  restingFrames : 5,
+  shootFrame : 6
 }
 allTypes.push(card3);
 
