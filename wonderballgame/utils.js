@@ -26,10 +26,9 @@ if (typeof(Storage) !== "undefined") {
   if (!localStorage.canonbirdBought) {
     localStorage.setItem("canonbirdBought", 0)
   }
-}
-if (!localStorage.melonpultacongeladaBought) {
-  localStorage.setItem("melonpultacongeladaBought", 0)
-}
+
+
+
 
 
 }else{

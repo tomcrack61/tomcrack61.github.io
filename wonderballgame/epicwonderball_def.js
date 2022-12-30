@@ -219,7 +219,7 @@ const melonpultacongeladaproy = new Image();
 melonpultacongeladaproy.src = 'wonderballs/melonpulta congeladaproy.png';
 
 const wonderball61 = new Image();
-wonderball61.src = 'wonderballs/melonpulta congelada.png';
+wonderball61.src = 'wonderballs/melonpultacongelada.png';
 allEpicWonderballsTypes.push(wonderball61);
 
 const card61 = {
@@ -231,7 +231,7 @@ const card61 = {
   health: 300,
   type: distanceshoot,
   projectile_img: melonpultacongeladaproy,
-  projectile_type: arcpath timestopproj,
+  projectile_type: arcpath,
   shootingFrames : 1,
   restingFrames : 3,
   shootFrame: 4,
