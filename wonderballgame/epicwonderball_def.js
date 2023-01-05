@@ -264,7 +264,7 @@ const card62 = {
   restingFrames : 4,
   shootFrame: 2,
   isepic:true,
-  storagekey: "melonpultacongeladaBought"
+  storagekey: "setaovniBought"
 }
 if(Number(localStorage.setaovniBought)==0){
   allEpicWonderballs.push(card62);
