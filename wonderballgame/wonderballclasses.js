@@ -614,7 +614,7 @@ class MultiAttackWonderball extends AttackerWonderball{
 
     if (this.shooting && this.shootNow){
         let prob = Math.random();
-        let th = 10/this.power;
+        let th = this.power/100;
         let powerprob = randn_bm(0,1, th);
         if(this.projectileType == timestopproj){
           th = 0.1;
