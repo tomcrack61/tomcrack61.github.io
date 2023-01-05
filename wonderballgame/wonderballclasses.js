@@ -292,6 +292,7 @@ function createWonderball(type, gridPositionX, gridPositionY){
   else if (type == trap) return new TrapWonderball(gridPositionX, gridPositionY);
   else if (type == instant) return new InstantWonderball(gridPositionX, gridPositionY);
   else if (type == jetix) return new JetixWonderball(gridPositionX, gridPositionY);
+  else if (type == multiattack) return new MultiAttackWonderball(gridPositionX, gridPositionY);
   else return new Wonderball(gridPositionX, gridPositionY);
 }
 
@@ -540,10 +541,11 @@ class DistanceWonderball extends AttackerWonderball{
     if (this.shooting && this.shootNow){
         let prob = Math.random();
         let th = 10/this.power;
+        let powerprob = randn_bm(0,1, th);
         if(this.projectileType == timestopproj){
           th = 0.1;
         }
-        if(prob < th) {
+        if(powerprob < prob) {
           if(this.projectileType==nutrientproj){
             createProjectile(this.x + cellSize+10, this.y + 30, this.power, this.projectiles,this.projectileType, nutrients);
           }else{
@@ -584,6 +586,50 @@ class ContactWonderball extends AttackerWonderball{
       this.shooting = false;
     }
   }
+}
+
+class MultiAttackWonderball extends AttackerWonderball{
+  constructor(x,y){
+    super(x,y);
+    this.number_projectiles = cards[choosenDefender].number_projectiles;
+    this.projectiles=[];
+    for(let i = 0; i < this.number_projectiles; i++){
+      let name = "projectile_type" + str(i);
+      this.projectiles.push(cards[choosenDefender][name]);
+    }
+    this.projectileType = this.projectiles[0];
+  }
+
+  enemyOnRow(onRow){
+    this.shooting = true;
+  }
+
+  enemyAttacking(attack, health){
+    super.enemyAttacking(attack);
+    this.shooting = true;
+  }
+
+  update(){
+    super.update();
+
+    if (this.shooting && this.shootNow){
+        let prob = Math.random();
+        let th = 10/this.power;
+        let powerprob = randn_bm(0,1, th);
+        if(this.projectileType == timestopproj){
+          th = 0.1;
+        }
+        if(powerprob < prob) {
+          if(this.projectileType==nutrientproj){
+            createProjectile(this.x + cellSize+10, this.y + 30, this.power, this.projectiles,this.projectileType, nutrients);
+          }else{
+            createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, projectiles);
+          }
+        }
+        this.shootNow = false;
+    }
+  }
+
 }
 
 class DoudisGeneral extends ContactWonderball{

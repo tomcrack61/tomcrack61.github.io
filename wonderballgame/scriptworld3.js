@@ -423,7 +423,9 @@ function handleGameStatus(){
 
   }
   if(enemies.length == 0 && givenZombies >= level_zombies){
-    localStorage.coinCounter = Number(localStorage.coinCounter) + 1000;
+    let coinsEarned = 1000;
+    if(game.currentLevel%10==0) coinsEarned *= (game.currentLevel/5);
+    localStorage.coinCounter = Number(localStorage.coinCounter) + coinsEarned;
     localStorage.currentLevel = Number(localStorage.currentLevel) + 1;
     game.state = "win"
   }
@@ -546,7 +548,7 @@ function initLevel(){
       worldBgnImg.src = 'assets/forestWorld nochebackground.jpg';
     }  if(game.curr_level == 5){
 
-      
+
 
 
         }

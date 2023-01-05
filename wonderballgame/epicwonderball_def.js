@@ -243,6 +243,8 @@ if(Number(localStorage.melonpultacongeladaBought)==0){
 }else{
   allTypes.push(card61);
 }
+
+
 const setaovniproy2 = new Image();
 setaovniproy2.src = 'wonderballs/seta ovniproy2.png';
 

@@ -15,6 +15,7 @@ const instant=9;
 const powerUp=10;
 const trap=11;
 const jetix=12;
+const multiattack=13;
 
 //projectile allTypes
 const noType = 0;
