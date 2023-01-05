@@ -243,3 +243,31 @@ if(Number(localStorage.melonpultacongeladaBought)==0){
 }else{
   allTypes.push(card61);
 }
+const setaovniproy2 = new Image();
+setaovniproy2.src = 'wonderballs/seta ovniproy2.png';
+
+const wonderball62 = new Image();
+wonderball62.src = 'wonderballs/seta ovni.png';
+allEpicWonderballsTypes.push(wonderball62);
+
+const card62 = {
+  img: wonderball62,
+  coinsPrice: 11000,
+  cost: 450,
+  defense: 1,
+  power: 200,
+  health: 700,
+  type: distanceshoot,
+  projectile_img: setaovniproy2,
+  projectile_type: straightpath,
+  shootingFrames :1,
+  restingFrames : 4,
+  shootFrame: 2,
+  isepic:true,
+  storagekey: "melonpultacongeladaBought"
+}
+if(Number(localStorage.setaovniBought)==0){
+  allEpicWonderballs.push(card62);
+}else{
+  allTypes.push(card62);
+}
