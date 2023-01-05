@@ -30,7 +30,8 @@ function initStoreCards(){
   const width = 200;
   const height = 300;
   storeCards=[];
-  for(let i = 0; i < allEpicWonderballs.length; i++){
+  epiccounter = Math.min(3, allEpicWonderballs.length);
+  for(let i = 0; i < epiccounter; i++){
       x = (i%cols)*width + (i%cols)*50+25;
       console.log(x);
       y = Math.floor(i / cols)*height + (Math.floor(i / cols)*5) + 200;

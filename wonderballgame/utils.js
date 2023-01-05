@@ -132,6 +132,10 @@ function goToSelection(){
   game.state = "selection";
 }
 
+function goToTemple(){
+  alert("In Construction");
+}
+
 function goToGame(){
   audioEl = document.getElementById("audio");
   if(game.curr_level == 3) audioEl.src = "assets/camp.mp3";
