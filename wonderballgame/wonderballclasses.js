@@ -592,12 +592,12 @@ class MultiAttackWonderball extends AttackerWonderball{
   constructor(x,y){
     super(x,y);
     this.number_projectiles = cards[choosenDefender].number_projectiles;
-    this.projectiles=[];
+    this.projectile_types=[];
     for(let i = 0; i < this.number_projectiles; i++){
       let name = "projectile_type" + str(i);
-      this.projectiles.push(cards[choosenDefender][name]);
+      this.projectile_types.push(cards[choosenDefender][name]);
     }
-    this.projectileType = this.projectiles[0];
+    this.projectileType = this.projectile_types[0];
   }
 
   enemyOnRow(onRow){
