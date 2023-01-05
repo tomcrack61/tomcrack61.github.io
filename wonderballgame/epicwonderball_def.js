@@ -245,8 +245,14 @@ if(Number(localStorage.melonpultacongeladaBought)==0){
 }
 
 
+const setaovniproy1 = new Image();
+setaovniproy1.src = 'wonderballs/seta ovniproy1.png';
+
 const setaovniproy2 = new Image();
 setaovniproy2.src = 'wonderballs/seta ovniproy2.png';
+
+const setaovniproy3 = new Image();
+setaovniproy3.src = 'wonderballs/seta ovniproy3.png';
 
 const wonderball62 = new Image();
 wonderball62.src = 'wonderballs/seta ovni.png';
@@ -260,8 +266,13 @@ const card62 = {
   power: 600,
   health: 700,
   type: multiattack,
-  projectile_img: setaovniproy2,
-  projectile_type: straightpath,
+  number_projectiles: 3,
+  projectile_img: setaovniproy1,
+  projectile_type: timestopproj,
+  projectile_img_1: setaovniproy2,
+  projectile_type_1: teledirected,
+  projectile_img_2: setaovniproy3,
+  projectile_type_2: penetratingproj,
   shootingFrames :1,
   restingFrames : 4,
   shootFrame: 2,

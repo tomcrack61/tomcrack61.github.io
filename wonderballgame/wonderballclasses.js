@@ -591,13 +591,22 @@ class ContactWonderball extends AttackerWonderball{
 class MultiAttackWonderball extends AttackerWonderball{
   constructor(x,y){
     super(x,y);
-    this.number_projectiles = cards[choosenDefender].number_projectiles;
+    this.projectileType = cards[choosenDefender].card.projectile_type;
+    this.number_projectiles = cards[choosenDefender].card.number_projectiles;
     this.projectile_types=[];
-    for(let i = 0; i < this.number_projectiles; i++){
-      let name = "projectile_type" + str(i);
-      this.projectile_types.push(cards[choosenDefender][name]);
+    this.projectile_types.push(this.projectileType);
+    this.projectile_images = [];
+    this.projectile_images.push(this.projectiles);
+    for(let i = 1; i < this.number_projectiles; i++){
+      let name = "projectile_type_" + i;
+      this.projectile_types.push(cards[choosenDefender].card[name]);
+      name = "projectile_img_" + i;
+      let image = [];
+      image.push(cards[choosenDefender].card[name]);
+      this.projectile_images.push(image);
     }
-    this.projectileType = this.projectile_types[0];
+    this.currentProjectile = 0;
+    this.projectileType = this.projectile_types[this.currentProjectile];
   }
 
   enemyOnRow(onRow){
@@ -625,6 +634,10 @@ class MultiAttackWonderball extends AttackerWonderball{
           }else{
             createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, projectiles);
           }
+          this.currentProjectile = Math.floor(Math.random() * this.number_projectiles);
+          console.log(this.currentProjectile);
+          this.projectileType = this.projectile_types[this.currentProjectile];
+          this.projectiles = this.projectile_images[this.currentProjectile];
         }
         this.shootNow = false;
     }

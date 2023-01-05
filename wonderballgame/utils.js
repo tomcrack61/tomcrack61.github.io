@@ -26,7 +26,13 @@ if (typeof(Storage) !== "undefined") {
   if (!localStorage.canonbirdBought) {
     localStorage.setItem("canonbirdBought", 0)
   }
-
+  if (!localStorage.arqueopterixBought) {
+    localStorage.setItem("arqueopterixBought", 0)
+  }if (!localStorage.melonpultacongeladaBought) {
+    localStorage.setItem("melonpultacongeladaBought", 0)
+  }if (!localStorage.setaovniBought) {
+    localStorage.setItem("setaovniBought", 1)
+  }
 
 
 
