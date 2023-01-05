@@ -227,7 +227,7 @@ const card61 = {
   coinsPrice: 1000,
   cost: 500,
   defense: 0.34,
-  power: 100,
+  power: 60,
   health: 300,
   type: distanceshoot,
   projectile_img: melonpultacongeladaproy,

@@ -202,15 +202,15 @@ wonderballTypes.push(wonderball9);
 const card9 = {
   img: wonderballTypes[8],
   cost: 200,
-  defense: 0.67,
+  defense: 12,
   power: 50,
-  health: 150,
+  health: 650,
   type: timedshoot,
   projectile_img: null,
   projectile_type: noType,
   shootingFrames : 3,
-  restingFrames : 0,
-  shootFrame: 2
+  restingFrames : 3,
+  shootFrame: 6
 }
 allTypes.push(card9);
 
@@ -814,8 +814,8 @@ wonderballTypes.push(wonderball37);
 const card37 = {
   img: wonderball37,
   cost: 150,
-  defense: 1206,
-  power: 5452,
+  defense: 11206,
+  power: 15452,
   health: 450,
   type:instant,
   shootingFrames : 4,
