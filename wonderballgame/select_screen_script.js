@@ -48,13 +48,57 @@ let l4Btn ={
 };
 lvlButtons.push(l4Btn);
 let l5Btn ={
-  x: 605,
-  y: 435,
+  x: 560,
+  y: 455,
   width: 45,
   height: 45,
   active: false
 };
 lvlButtons.push(l5Btn);
+
+let l6Btn ={
+  x: 520,
+  y: 450,
+  width: 45,
+  height: 45,
+  active: false
+};
+lvlButtons.push(l6Btn);
+
+let l7Btn ={
+  x: 470,
+  y: 435,
+  width: 45,
+  height: 45,
+  active: false
+};
+lvlButtons.push(l7Btn);
+
+let l8Btn ={
+  x: 450,
+  y: 395,
+  width: 45,
+  height: 45,
+  active: false
+};
+lvlButtons.push(l8Btn);
+
+let l9Btn ={
+  x: 442,
+  y: 375,
+  width: 45,
+  height: 45,
+  active: false
+};
+lvlButtons.push(l9Btn);
+
+let temploBtn = {
+  x: 450,
+  y: 10,
+  width: 250,
+  height: 200,
+  active: true
+}
 const storeBtn ={
   x: 35,
   y: 10,
@@ -69,6 +113,8 @@ startScreenImg.src = 'assets/map.jpg';
 function handleBtn(){
   if(collision(storeBtn, mouse) && mouse.clicked){
     goToStore();
+  }else if(collision(temploBtn, mouse) && temploBtn.active && mouse.clicked){
+    goToTemple();
   }
   else{
     for(let i = 0; i<lvlButtons.length; i++){
@@ -86,6 +132,9 @@ function startMap(){
       lvlButtons[i].active = true;
     }
   }
+  if(Number(localStorage.currentLevel) > 10){
+    temploBtn.active = true;
+  }
 }
 
 function animateMap(){
@@ -93,9 +142,10 @@ function animateMap(){
   ctx.drawImage(startScreenImg, 0, 0, 1300, 900, 10,10,canvas.width, canvas.height);
 
   ctx.strokeStyle='blue';
-  ctx.strokeRect(l1Btn.x, l1Btn.y, l1Btn.width, l1Btn.height);
-  if(l2Btn.active) ctx.strokeRect(l2Btn.x, l2Btn.y, l2Btn.width, l2Btn.height);
-  if(l3Btn.active) ctx.strokeRect(l3Btn.x, l3Btn.y, l3Btn.width, l3Btn.height);
+  for(let i = 0; i<lvlButtons.length; i++){
+    if(lvlButtons[i].active) ctx.strokeRect(lvlButtons[i].x, lvlButtons[i].y, lvlButtons[i].width, lvlButtons[i].height);
+  }
+  if(temploBtn.active) ctx.strokeRect(temploBtn.x, temploBtn.y, temploBtn.width, temploBtn.height);
   ctx.strokeRect(storeBtn.x, storeBtn.y, storeBtn.width, storeBtn.height);
   //ctx.drawImage(catalogBtn.img, 0, 0, 200, 200, catalogBtn.x, catalogBtn.y, catalogBtn.width, catalogBtn.height);
 
