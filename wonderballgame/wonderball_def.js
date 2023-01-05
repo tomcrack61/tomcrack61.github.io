@@ -1023,14 +1023,14 @@ const card48 = {
   img: wonderball48,
   cost: 375,
   defense: 0.15,
-  power: 23,
+  power: 45,
   health: 300,
   type: distanceshoot,
   projectile_img: gisantralladoraproy,
   projectile_type: straightpath,
   shootingFrames : 2,
   restingFrames : 2,
-  shootFrame: 4
+  shootFrame: 2
 }
 allTypes.push(card48)
 const wonderball49 = new Image();
