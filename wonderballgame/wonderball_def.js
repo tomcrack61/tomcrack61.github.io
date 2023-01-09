@@ -1134,20 +1134,3 @@ const card57 = {
   restingFrames : 3
 }
 allTypes.push(card57);
-
-const wonderball58 = new Image();
-wonderball58.src = 'wonderballs/apisonaflor.png';
-wonderballTypes.push(wonderball58);
-const card36 = {
-  img: wonderball58,
-  cost: 50,
-  defense: 50,
-  power: 231,
-  health: 700,
-  type:contactshoot,
-  shootingFrames : 1,
-  restingFrames : 3,
-  rechargeFrames: 3,
-  shootFrame:4,
-}
-allTypes.push(card58);

@@ -284,3 +284,28 @@ if(Number(localStorage.setaovniBought)==0){
 }else{
   allTypes.push(card62);
 }
+
+const wonderball63 = new Image();
+wonderball63.src = 'wonderballs/apisonaflor.png';
+wonderballTypes.push(wonderball63);
+
+const card63 = {
+  img: wonderball63,
+  coinsPrice: 2000,
+  cost: 50,
+  defense: 120,
+  power: 234,
+  health: 450,
+  type:contactshoot,
+  shootingFrames : 1,
+  restingFrames : 3,
+  rechargeFrames: 2,
+  shootFrame:4,
+  isepic:true,
+  storagekey: "apisonaflorBought"
+}
+if(Number(localStorage.apisonaflorBought)==0){
+  allEpicWonderballs.push(card63);
+}else{
+  allTypes.push(card63);
+}
