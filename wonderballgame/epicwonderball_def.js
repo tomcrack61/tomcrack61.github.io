@@ -365,3 +365,31 @@ if(Number(localStorage.corazonelctricoBought)==0){
 }else{
   allTypes.push(card65);
 }
+const juncoelectricoproy = new Image();
+juncoelectricoproy.src = 'wonderballs/junco electricoproy.png';
+
+const wonderball66 = new Image();
+wonderball66.src = 'wonderballs/junco electrico.png';
+allEpicWonderballsTypes.push(wonderball66);
+
+const card66 = {
+  img: wonderball66,
+  coinsPrice: 5000,
+  cost: 125,
+  defense: 0.35,
+  power: 43,
+  health: 300,
+  type: distanceshoot,
+  projectile_img: juncoelectricoproy,
+  projectile_type: penetratingproj,
+  shootingFrames : 2,
+  restingFrames : 3,
+  shootFrame: 3,
+  isepic:true,
+  storagekey: "juncoelctricoBought"
+}
+if(Number(localStorage.juncoelectricoBought)==0){
+  allEpicWonderballs.push(card66);
+}else{
+  allTypes.push(card66);
+}
