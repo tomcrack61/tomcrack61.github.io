@@ -347,11 +347,11 @@ const card15 = {
 allTypes.push(card15);
 
 const wonderball16 = new Image();
-wonderball16.src = 'wonderballs/lanzadora.png';
+wonderball16.src = 'wonderballs/repetira.png';
 wonderballTypes.push(wonderball16);
 
 const wonderball16pry = new Image();
-wonderball16pry.src = 'wonderballs/lanzadoraproy.png';
+wonderball16pry.src = 'wonderballs/repetidoraproy.png';
 
 
 const card16 = {

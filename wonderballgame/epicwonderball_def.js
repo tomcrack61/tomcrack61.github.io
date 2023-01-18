@@ -321,7 +321,7 @@ const card64 = {
   coinsPrice: 5000,
   cost: 275,
   defense: 0.35,
-  power: 243,
+  power: 43,
   health: 300,
   type: distanceshoot,
   projectile_img: fuentinfuentinproy,
@@ -336,4 +336,32 @@ if(Number(localStorage.fuentinfuentinBought)==0){
   allEpicWonderballs.push(card64);
 }else{
   allTypes.push(card64);
+}
+const corazonelctricoproy = new Image();
+corazonelctricoproy.src = 'wonderballs/corazon elctricoproy.png';
+
+const wonderball65 = new Image();
+wonderball65.src = 'wonderballs/corazon electrico.png';
+allEpicWonderballsTypes.push(wonderball65);
+
+const card65 = {
+  img: wonderball65,
+  coinsPrice: 5000,
+  cost: 175,
+  defense: 0.35,
+  power: 43,
+  health: 300,
+  type: distanceshoot,
+  projectile_img: corazonelctricoproy,
+  projectile_type: penetratingproj,
+  shootingFrames : 1,
+  restingFrames : 3,
+  shootFrame: 4,
+  isepic:true,
+  storagekey: "corazonelctricoBought"
+}
+if(Number(localStorage.corazonelctricoBought)==0){
+  allEpicWonderballs.push(card65);
+}else{
+  allTypes.push(card65);
 }
