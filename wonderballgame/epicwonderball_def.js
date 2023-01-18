@@ -140,7 +140,7 @@ allEpicWonderballsTypes.push(wonderball58);
 
 const card58 = {
   img: wonderball58,
-  coinsPrice: 15000,
+  coinsPrice: 10000,
   cost: 150,
   defense: 0.15,
   power: 25,
@@ -308,4 +308,32 @@ if(Number(localStorage.apisonaflorBought)==0){
   allEpicWonderballs.push(card63);
 }else{
   allTypes.push(card63);
+}
+const fuentinfuentinproy = new Image();
+fuentinfuentinproy.src = 'wonderballs/fuentin fuentinproy.png';
+
+const wonderball64 = new Image();
+wonderball64.src = 'wonderballs/fuentin fuentin.png';
+allEpicWonderballsTypes.push(wonderball64);
+
+const card64 = {
+  img: wonderball64,
+  coinsPrice: 5000,
+  cost: 275,
+  defense: 0.35,
+  power: 243,
+  health: 300,
+  type: distanceshoot,
+  projectile_img: fuentinfuentinproy,
+  projectile_type: straightpath,
+  shootingFrames : 1,
+  restingFrames : 3,
+  shootFrame: 2,
+  isepic:true,
+  storagekey: "fuentinfuentinBought"
+}
+if(Number(localStorage.fuentinfuentinBought)==0){
+  allEpicWonderballs.push(card64);
+}else{
+  allTypes.push(card64);
 }
