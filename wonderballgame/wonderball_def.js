@@ -365,7 +365,7 @@ const card16 = {
   projectile_type: straightpath,
   shootingFrames : 2,
   restingFrames : 1,
-  shootFrame:1
+  shootFrame:3
 }
 allTypes.push(card16);
 
