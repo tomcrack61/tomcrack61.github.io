@@ -347,7 +347,7 @@ const card15 = {
 allTypes.push(card15);
 
 const wonderball16 = new Image();
-wonderball16.src = 'wonderballs/repetira.png';
+wonderball16.src = 'wonderballs/repetidora.png';
 wonderballTypes.push(wonderball16);
 
 const wonderball16pry = new Image();
@@ -358,7 +358,7 @@ const card16 = {
   img: wonderball16,
   cost: 200,
   defense: 0.25,
-  power: 125,
+  power: 45,
   health: 180,
   type: distanceshoot,
   projectile_img: wonderball16pry,
