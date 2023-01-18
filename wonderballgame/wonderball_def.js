@@ -335,14 +335,14 @@ const card15 = {
   img: wonderball15,
   cost: 225,
   defense: 0.35,
-  power: 60,
+  power: 40,
   health: 200,
   type: distanceshoot,
   projectile_img: wonderball15pry,
   projectile_type: arcpath,
-  shootingFrames : 3,
-  restingFrames : 2,
-  shootFrame:4
+  shootingFrames : 1,
+  restingFrames : 3,
+  shootFrame:3
 }
 allTypes.push(card15);
 
