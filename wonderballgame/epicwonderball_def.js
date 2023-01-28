@@ -417,3 +417,27 @@ if(Number(localStorage.carpintaldroBought)==0){
 }else{
   allTypes.push(card67);
 }
+const wonderball68 = new Image();
+wonderball68.src = 'wonderballs/wasp.png';
+wonderballTypes.push(wonderball68);
+
+const card68 = {
+  img: wonderball68,
+  coinsPrice: 32000,
+  cost: 150,
+  defense: 120,
+  power: 0.40,
+  health: 1450,
+  type:contactshoot,
+  shootingFrames : 1,
+  restingFrames : 3,
+  rechargeFrames: 3,
+  shootFrame:4,
+  isepic:true,
+  storagekey: "waspBought"
+}
+if(Number(localStorage.waspBought)==0){
+  allEpicWonderballs.push(card68);
+}else{
+  allTypes.push(card68);
+}
