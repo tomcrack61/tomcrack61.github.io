@@ -393,3 +393,27 @@ if(Number(localStorage.juncoelectricoBought)==0){
 }else{
   allTypes.push(card66);
 }
+const wonderball67 = new Image();
+wonderball67.src = 'wonderballs/carpintaladro.png';
+wonderballTypes.push(wonderball67);
+
+const card67 = {
+  img: wonderball67,
+  coinsPrice: 2000,
+  cost: 150,
+  defense: 120,
+  power: 4,
+  health: 1450,
+  type:contactshoot,
+  shootingFrames : 1,
+  restingFrames : 2,
+  rechargeFrames: 2,
+  shootFrame:3,
+  isepic:true,
+  storagekey: "carpintaldroBought"
+}
+if(Number(localStorage.carpintaldroBought)==0){
+  allEpicWonderballs.push(card67);
+}else{
+  allTypes.push(card67);
+}
