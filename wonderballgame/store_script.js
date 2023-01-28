@@ -24,6 +24,18 @@ const selectWorldBtn ={
   text: "<--"
 };
 
+const puzzleImg = new Image();
+puzzleImg.src = 'resources/puzzlepiece.png';
+
+const goToPuzzleStoreBtn ={
+  x: 150,
+  y: 15,
+  width: 60,
+  height: 60,
+  active: false,
+  img: puzzleImg
+};
+
 let storeCards = [];
 
 function initStoreCards(){
@@ -33,7 +45,6 @@ function initStoreCards(){
   epiccounter = Math.min(3, allEpicWonderballs.length);
   for(let i = 0; i < epiccounter; i++){
       x = (i%cols)*width + (i%cols)*50+25;
-      console.log(x);
       y = Math.floor(i / cols)*height + (Math.floor(i / cols)*5) + 200;
       storeCards.push(new WonderballType(x, y, width, height, allEpicWonderballs[i]));
   }
@@ -84,10 +95,20 @@ function animateStore(){
   ctx.font = '20px Orbitron';
   ctx.fillText(localStorage.coinCounter, coinIcon.x+65, coinIcon.y+20);
 
+  //Go to puzzle store img
+  ctx.drawImage(goToPuzzleStoreBtn.img, 0, 0, 342, 369, goToPuzzleStoreBtn.x, goToPuzzleStoreBtn.y, goToPuzzleStoreBtn.height, goToPuzzleStoreBtn.width);
+  ctx.fillStyle='gold';
+  ctx.font = '20px Orbitron';
+  ctx.fillText("Buy puzzle pieces", goToPuzzleStoreBtn.x+65, goToPuzzleStoreBtn.y+20);
 
+  if(collision(goToPuzzleStoreBtn, mouse) & mouse.clicked){
+    goToPuzzleStore();
+  }
+
+  //Message
   ctx.fillStyle='black';
   ctx.font = '30px Orbitron';
-  ctx.fillText("Welcome to the Store", 200, 100);
+  ctx.fillText("Welcome to the Store", 200, 120);
 
   //Go Button
   ctx.fillStyle='gold';
@@ -99,8 +120,7 @@ function animateStore(){
   ctx.font = '20px Orbitron';
   ctx.fillText("Go to index" , selectWorldBtn.x+65, selectWorldBtn.y+35);
   if(collision(selectWorldBtn, mouse) & mouse.clicked){
-    mapSettings();
-    game.state = "map";
+    goToMap();
   }
 
   showStore();

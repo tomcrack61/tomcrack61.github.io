@@ -33,12 +33,13 @@ if (typeof(Storage) !== "undefined") {
   }if (!localStorage.setaovniBought) {
     localStorage.setItem("setaovniBought", 1)
   }
-
-
-
+  if (!localStorage.puzzlePieces) {
+    var puzzlePieces = Array(100).fill(0);
+    localStorage.puzzlePieces = JSON.stringify(puzzlePieces);
+  }
 
 }else{
-  console.log("Storage Not Supported")
+  console.log("Storage Not Supported. Game progress will not be saved")
 }
 
 
@@ -150,11 +151,20 @@ function goToGame(){
   game.state = "play";
 }
 
-function goToStore(){  var audioPlayer = document.getElementById("audio");
+function goToStore(){
+  var audioPlayer = document.getElementById("audio");
   audioPlayer.src = "assets/Pick of the store.mp3";
 
   initStoreCards();
   game.state = "store";
+}
+
+function goToPuzzleStore(){
+  var audioPlayer = document.getElementById("audio");
+  audioPlayer.src = "assets/Pick of the store.mp3";
+
+  initPuzzleStoreCards();
+  game.state = "puzzleStore";
 }
 
 function randn_bm(min, max, skew) {

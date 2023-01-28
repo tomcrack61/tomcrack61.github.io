@@ -21,6 +21,9 @@ function animate(){
   else if(game.state == "store"){
     animateStore();
   }
+  else if(game.state == "puzzleStore"){
+    animatePuzzleStore();
+  }
   requestAnimationFrame(animate)
 }
 
