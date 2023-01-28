@@ -635,7 +635,6 @@ class MultiAttackWonderball extends AttackerWonderball{
             createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, projectiles);
           }
           this.currentProjectile = Math.floor(Math.random() * this.number_projectiles);
-          console.log(this.currentProjectile);
           this.projectileType = this.projectile_types[this.currentProjectile];
           this.projectiles = this.projectile_images[this.currentProjectile];
         }
