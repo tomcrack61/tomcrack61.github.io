@@ -425,7 +425,7 @@ const card19 = {
   cost: 125,
   defense: 0.12,
   power: 234,
-  health: 3300,
+  health: 1300,
   type: distanceshoot,
   projectile_img: wonderball19proy,
   projectile_type:randompath,
