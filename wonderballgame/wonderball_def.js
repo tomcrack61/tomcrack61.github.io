@@ -381,7 +381,7 @@ const card17 = {
   img: wonderball17,
   cost: 525,
   defense: 0.30,
-  power: 250,
+  power: 950,
   health: 400,
   type: manualshoot,
   projectile_img: wonderball17pry,

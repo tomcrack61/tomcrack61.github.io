@@ -259,6 +259,9 @@ class ManualShootObjective{
     this.x = mouse.x;
     this.y = mouse.y;
   }
+  attack(enemy){
+      enemy.health-=this.power;
+   }
 
   destroy(){
     this.owner.projectileDestroyed();
