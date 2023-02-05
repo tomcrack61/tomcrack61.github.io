@@ -861,14 +861,16 @@ class JetixWonderball extends Wonderball {
         this.restingFrames = this.t2restingFrames;
         this.shootFrame = this.t2shootFrame;
         this.frameX = this.shootFrame;
-        createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles, randompath, true, projectiles);
-        createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles, randompath, true, projectiles);
+        this.venom = true;
       }
     }
   }
 
   update() {
     super.update();
+    if(this.state == 3){
+      this.x = this.x+3;
+    }
     if (this.state==1 || this.state ==3) {
       if(powerUps[1].active){
         this.defense = this.maxDefense +this.maxDefense*2;
@@ -880,11 +882,6 @@ class JetixWonderball extends Wonderball {
 
       if(frame%10 == 0 && this.frameX == this.shootFrame){
         createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, false, projectiles);
-        if(this.state ==3){
-          createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles, randompath, true, projectiles);
-          createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles, randompath, true, projectiles);
-        }
-        this.shootNow = false;
       }
     }
     else if(this.state == 2){
