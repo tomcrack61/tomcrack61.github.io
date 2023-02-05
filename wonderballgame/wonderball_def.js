@@ -1024,7 +1024,7 @@ const card48 = {
   img: wonderball48,
   cost: 375,
   defense: 0.15,
-  power: 45,
+  power: 15,
   health: 300,
   type: distanceshoot,
   projectile_img: gisantralladoraproy,

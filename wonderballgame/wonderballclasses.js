@@ -542,6 +542,18 @@ class DistanceWonderball extends AttackerWonderball{
 
 
     if (this.shooting && this.shootNow){
+
+
+
+    if (this.power<20) {
+      createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, projectiles);
+      createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, projectiles);
+      createProjectile(this.x + 70, this.y + 30, this.power*5, this.projectiles,this.projectileType, projectiles);
+
+
+
+    }
+
         let prob = Math.random();
         let th = 10/this.power;
         let powerprob = randn_bm(0,1, th);
