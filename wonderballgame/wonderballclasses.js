@@ -855,12 +855,14 @@ class JetixWonderball extends Wonderball {
     if(this.health < 50){
       if(this.state != 3){
         this.state = 3;
-        this.health = 250;
+        this.health = 350;
         this.wonderballType = this.t2img;
         this.shootingFrames = this.t2shootingFrames;
         this.restingFrames = this.t2restingFrames;
         this.shootFrame = this.t2shootFrame;
         this.frameX = this.shootFrame;
+        createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles, randompath, true, projectiles);
+        createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles, randompath, true, projectiles);
       }
     }
   }
