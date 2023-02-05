@@ -183,3 +183,29 @@ function randn_bm(min, max, skew) {
   }
   return num
 }
+
+function wrapText(text, x, y, maxWidth, fontSize, fontFace){
+     var startY=y;
+     var words = text.split(' ');
+     var line = '';
+     var lineHeight=fontSize+2;
+
+     ctx.font=fontSize+" "+fontFace;
+
+     y+=fontSize;
+
+     for(var n = 0; n < words.length; n++) {
+       var testLine = line + words[n] + ' ';
+       var metrics = ctx.measureText(testLine);
+       var testWidth = metrics.width;
+       if(testWidth > maxWidth) {
+         ctx.fillText(line, x, y);
+         line = words[n] + ' ';
+         y += lineHeight;
+       }
+       else {
+         line = testLine;
+       }
+     }
+     ctx.fillText(line, x, y);
+   }
