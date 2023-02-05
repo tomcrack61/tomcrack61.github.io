@@ -120,7 +120,8 @@ function handleBtn(){
     for(let i = 0; i<lvlButtons.length; i++){
       if(collision(lvlButtons[i], mouse) && mouse.clicked && lvlButtons[i].active){
         game.curr_level = i+1;
-        goToSelection();
+        game.state = "dialogMarcy"
+        //goToSelection();
       }
     }
   }

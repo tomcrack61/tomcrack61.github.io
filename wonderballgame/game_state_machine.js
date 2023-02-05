@@ -24,7 +24,10 @@ function animate(){
   else if(game.state == "puzzleStore"){
     animatePuzzleStore();
   }
-  requestAnimationFrame(animate)
+  else if(game.state == "dialogMarcy"){
+    animateMarcyDialog();
+  }
+  requestAnimationFrame(animate);
 }
 
 console.log("starting");
