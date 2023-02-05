@@ -843,7 +843,7 @@ class JetixWonderball extends Wonderball {
 
   enemyAttacking(attack, health){
     super.enemyAttacking(attack);
-    if(this.state != 2 && this.health >= 50){
+    if(this.state ==1){
       this.state = 2;
       this.shooting = true;
       this.wonderballType = this.t1img;
@@ -855,10 +855,12 @@ class JetixWonderball extends Wonderball {
     if(this.health < 50){
       if(this.state != 3){
         this.state = 3;
+        this.health = 250;
         this.wonderballType = this.t2img;
         this.shootingFrames = this.t2shootingFrames;
         this.restingFrames = this.t2restingFrames;
         this.shootFrame = this.t2shootFrame;
+        this.frameX = this.shootFrame;
       }
     }
   }
