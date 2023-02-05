@@ -808,6 +808,7 @@ class JetixWonderball extends Wonderball {
   constructor(x,y) {
     super(x,y);
     this.state=1;
+    this.speed = 3;
 
     //projectile
     this.shooting = false;
@@ -869,7 +870,10 @@ class JetixWonderball extends Wonderball {
   update() {
     super.update();
     if(this.state == 3){
-      this.x = this.x+3;
+      this.x = this.x+this.speed;
+      if(this.x > canvas.width || this.x < 0){
+        this.speed = this.speed *-1;
+      }
     }
     if (this.state==1 || this.state ==3) {
       if(powerUps[1].active){
