@@ -24,7 +24,7 @@ const card53 = {
   cost: 300,
   defense: 5,
   power: 120,
-  health: 345,
+  health: 545,
   type: jetix,
   projectile_img: jetixproy,
   projectile_type: straightpath,
