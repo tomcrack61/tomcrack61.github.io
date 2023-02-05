@@ -871,8 +871,9 @@ class JetixWonderball extends Wonderball {
     super.update();
     if(this.state == 3){
       this.x = this.x+this.speed;
+      this.power = 5000;
       if(this.x > canvas.width || this.x < 0){
-        this.speed = this.speed *-1;
+        this.health = 0;
       }
     }
     if (this.state==1 || this.state ==3) {
