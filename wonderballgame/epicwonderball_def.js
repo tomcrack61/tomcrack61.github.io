@@ -434,6 +434,7 @@ const card68 = {
   rechargeFrames: 3,
   shootFrame:4,
   isepic:true,
+  venom: true,
   storagekey: "waspBought"
 }
 if(Number(localStorage.waspBought)==0){

@@ -13,6 +13,9 @@ const enemy2 = new Image();
 enemy2.src = 'enemies/boss.png';
 enemyImages.push(enemy2);
 
+const venomEffectImg = new Image();
+venomEffectImg.src = 'enemies/efecto de veneno.png';
+
 const enemyType0 = {
   img: enemyImages[0],
   maxHealth: 100,

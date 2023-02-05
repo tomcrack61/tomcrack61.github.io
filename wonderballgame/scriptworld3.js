@@ -143,6 +143,9 @@ function handleWonderballs(){
         }else{
           wonderballs[i].enemyAttacking(enemies[j].attack, enemies[j].health);
           enemies[j].wonderballAttacking(wonderballs[i].defense, wonderballs[i].health);
+          if(wonderballs[i].venom == true ){
+            enemies[i].empoison(wonderballs[i].power, 2000);
+          }
         }
       }
       if(wonderballs[i] && wonderballs[i].health <= 0){
@@ -273,6 +276,8 @@ class Enemy{
     this.health = enemyType.maxHealth*enemiesPowerBoost;
     this.maxHealth = enemyType.maxHealth;
     this.attack = this.health / 500;
+    this.venom = 0;
+    this.venomTimer = 0;
 
     this.frameX = 0;
     this.minFrame = 0;
@@ -288,6 +293,7 @@ class Enemy{
     if(frame % 10 == 0){
       this.frameX++;
       if(this.frameX >= this.maxFrames) this.frameX = 0;
+      this.health -= this.venom;
     }
 
     if(this.health <= 0.7*this.maxHealth){
@@ -301,6 +307,14 @@ class Enemy{
     ctx.font = '20px Orbitron';
     ctx.fillText(Math.floor(this.health), this.x+15, this.y+30);
     ctx.drawImage(this.img, this.frameX*this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
+    if(this.venom > 0){
+      ctx.drawImage(venomEffectImg, 0, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
+    }
+  }
+
+  empoison(venom, timer){
+    this.venom = venom;
+    this.venomTimer = timer;
   }
 
   wonderballAttacking(defense, health){

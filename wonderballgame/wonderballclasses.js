@@ -9,35 +9,35 @@ class WonderballType{
 }
 
 // projectiles
-function createProjectile(x,y,power,img, type, store){
+function createProjectile(x,y,power,img, type, venom, store){
   if(type==straightpath){
-    store.push(new StraightPathProjectile(x,y,power,img));
+    store.push(new StraightPathProjectile(x,y,power,img, venom));
   }
   else if(type==arcpath){
-    store.push(new ArcPathProjectile(x,y,power,img));
+    store.push(new ArcPathProjectile(x,y,power,img, venom));
   }
   else if(type == randompath){
-    store.push(new RandomPathProjectile(x,y,power,img));
+    store.push(new RandomPathProjectile(x,y,power,img, venomproj));
   }
   else if(type == penetratingproj){
-    store.push(new PenetratingProjectile(x,y,power,img));
+    store.push(new PenetratingProjectile(x,y,power,img, venom));
   }
   else if(type == nutrientproj){
     store.push(new NutrientProjectile(x,y,power,img));
   }
   else if(type == timestopproj){
-    store.push(new TimeStopProjectile(x,y,power,img));
+    store.push(new TimeStopProjectile(x,y,power,img, venom));
   }
   else if(type == teledirected){
     store.push(new TeleDirectedProjectile(x,y,power,img));
   }
   else {
-    store.push(new Projectile(x,y,power,img));
+    store.push(new Projectile(x,y,power,img, venom));
   }
 }
 
 class Projectile{
-  constructor(x,y, power, img){
+  constructor(x,y, power, img, venom){
     this.x = x;
     this.y = y;
     this.originaly = y;
@@ -47,6 +47,7 @@ class Projectile{
     this.speed = 5;
     this.speedy = 0;
     this.img = img;
+    this.venom = venom;
     //if(this.img.length > 0) this.speedy = -1;
   }
 
@@ -57,6 +58,9 @@ class Projectile{
 
   attack(enemy){
     enemy.health -= this.power;
+    if(this.venom){
+      enemy.empoison(this.power, 10000);
+    }
   }
 
   destroy(){
@@ -83,8 +87,8 @@ class Projectile{
 
 
 class TeleDirectedProjectile extends Projectile{
-  constructor(x,y, power, img){
-    super(x,y,power,img);
+  constructor(x,y, power, img, venom){
+    super(x,y,power,img, venom);
     this.target = enemies[enemies.length-1]
   }
 
@@ -107,8 +111,8 @@ class TeleDirectedProjectile extends Projectile{
 }
 
 class ArcPathProjectile extends Projectile{
-  constructor(x,y, power, img){
-    super(x,y,power,img);
+  constructor(x,y, power, img, venom){
+    super(x,y,power,img, venom);
     this.speed = 5;
     this.speedy = -0.5;
   }
@@ -132,8 +136,8 @@ class ArcPathProjectile extends Projectile{
 }
 
 class StraightPathProjectile extends Projectile{
-  constructor(x,y, power, img){
-    super(x,y,power,img);
+  constructor(x,y, power, img, venom){
+    super(x,y,power,img, venom);
   }
 
   update(){
@@ -152,8 +156,8 @@ class StraightPathProjectile extends Projectile{
 }
 
 class RandomPathProjectile extends Projectile{
-  constructor(x,y, power, img){
-    super(x,y,power,img);
+  constructor(x,y, power, img, venom){
+    super(x,y,power,img, venom);
   }
   update(){
     let xRandom = Math.random() * (1 - (-1)) - 1;
@@ -167,8 +171,8 @@ class RandomPathProjectile extends Projectile{
 }
 
 class PenetratingProjectile extends StraightPathProjectile{
-  constructor(x,y, power, img){
-    super(x,y,power,img);
+  constructor(x,y, power, img, venom){
+    super(x,y,power,img, venom);
     this.speed = 10;
     this.speedy = 0;
   }
@@ -185,8 +189,8 @@ class PenetratingProjectile extends StraightPathProjectile{
 }
 
 class TimeStopProjectile extends StraightPathProjectile{
-  constructor(x,y, power, img){
-    super(x,y,power,img);
+  constructor(x,y, power, img, venom){
+    super(x,y,power,img, venom);
     this.speedy = 0;
     this.speed = 1;
     this.count = 0;
@@ -229,7 +233,7 @@ class TimeStopProjectile extends StraightPathProjectile{
 
 class NutrientProjectile extends Projectile{
   constructor(x,y, power, img){
-    super(x,y,power,img);
+    super(x,y,power,img, false);
     this.speed = 3;
     this.speedy = -0.25;
   }
@@ -327,6 +331,8 @@ class Wonderball{
 
     this.maxPower = cards[choosenDefender].card.power;
     this.power = cards[choosenDefender].card.power;
+
+    this.venom = 'venom' in cards[choosenDefender].card;
   }
 
   draw(){
@@ -562,9 +568,9 @@ class DistanceWonderball extends AttackerWonderball{
         }
         if(powerprob < prob) {
           if(this.projectileType==nutrientproj){
-            createProjectile(this.x + cellSize+10, this.y + 30, this.power, this.projectiles,this.projectileType, nutrients);
+            createProjectile(this.x + cellSize+10, this.y + 30, this.power, this.projectiles,this.projectileType, false, nutrients);
           }else{
-            createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, projectiles);
+            createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType,this.venom, projectiles);
           }
         }
         this.shootNow = false;
@@ -645,9 +651,9 @@ class MultiAttackWonderball extends AttackerWonderball{
         }
         if(powerprob < prob) {
           if(this.projectileType==nutrientproj){
-            createProjectile(this.x + cellSize+10, this.y + 30, this.power, this.projectiles,this.projectileType, nutrients);
+            createProjectile(this.x + cellSize+10, this.y + 30, this.power, this.projectiles,this.projectileType, false, nutrients);
           }else{
-            createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, projectiles);
+            createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, this.venom, projectiles);
           }
           this.currentProjectile = Math.floor(Math.random() * this.number_projectiles);
           this.projectileType = this.projectile_types[this.currentProjectile];
@@ -852,7 +858,7 @@ class JetixWonderball extends Wonderball {
       }
 
       if(frame%10 == 0 && this.frameX == this.shootFrame){
-        createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, projectiles);
+        createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, this.venom, projectiles);
         this.shootNow = false;
       }
     }

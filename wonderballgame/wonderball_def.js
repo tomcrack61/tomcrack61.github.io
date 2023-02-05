@@ -26,6 +26,7 @@ const penetratingproj = 4;
 const nutrientproj=5;
 const teledirected=6;
 const timestopproj=7;
+const venomproj = 8;
 
 const selectionImg = new Image();
 selectionImg.src = 'wonderballs/seleccion.png';
@@ -90,7 +91,8 @@ const card3 = {
   projectile_type: straightpath,
   shootingFrames : 2,
   restingFrames : 4,
-  shootFrame : 5
+  shootFrame : 5,
+  venom: true,
 }
 allTypes.push(card3);
 
