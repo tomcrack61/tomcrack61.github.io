@@ -550,3 +550,28 @@ if(Number(localStorage.frailejonmedioBought)==0){
 }else{
   allTypes.push(card72);
 }
+const wonderball73 = new Image();
+wonderball73.src = 'wonderballs/seta espinosa.png';
+wonderballTypes.push(wonderball73);
+
+const card73 = {
+  img: wonderball73,
+  coinsPrice: 32000,
+  cost: 175,
+  defense: 23,
+  power: 0.40,
+  health: 1450,
+  type:trap,
+  shootingFrames : 1,
+  restingFrames : 3,
+  rechargeFrames: 3,
+  shootFrame:4,
+  isepic:true,
+  venom: true,
+  storagekey: "setaespinosaBought"
+}
+if(Number(localStorage.setaespinosaBought)==0){
+  allEpicWonderballs.push(card73);
+}else{
+  allTypes.push(card73);
+}
