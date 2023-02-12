@@ -863,6 +863,7 @@ class JetixWonderball extends Wonderball {
         this.shootFrame = this.t2shootFrame;
         this.frameX = this.shootFrame;
         this.venom = true;
+        this.defense = 5000;
       }
     }
   }
@@ -871,7 +872,6 @@ class JetixWonderball extends Wonderball {
     super.update();
     if(this.state == 3){
       this.x = this.x+this.speed;
-      this.power = 5000;
       if(this.x > canvas.width || this.x < 0){
         this.health = 0;
       }
