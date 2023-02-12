@@ -442,3 +442,111 @@ if(Number(localStorage.waspBought)==0){
 }else{
   allTypes.push(card68);
 }
+const rafleciaprimitivaproy = new Image();
+rafleciaprimitivaproy.src = 'wonderballs/raflecia primitivaproy.png';
+
+const wonderball69 = new Image();
+wonderball69.src = 'wonderballs/raflecia primitiva.png';
+allEpicWonderballsTypes.push(wonderball69);
+
+const card69 = {
+  img: wonderball69,
+  coinsPrice: 10000,
+  cost: 450,
+  defense: 0.55,
+  power: 25,
+  health: 300,
+  type: distanceshoot,
+  projectile_img: rafleciaprimitivaproy,
+  projectile_type: arcpath,
+  shootingFrames : 1,
+  restingFrames : 2,
+  shootFrame: 3,
+  isepic:true,
+  venom: true,
+  storagekey: "rafleciaprimitivaBought"
+}
+if(Number(localStorage.rafleciaprimitivaBought)==0){
+  allEpicWonderballs.push(card69);
+}else{
+  allTypes.push(card69);
+}
+const jalapeñoproy = new Image();
+jalapeñoproy.src = 'wonderballs/jalapeño proy.png';
+
+const wonderball70 = new Image();
+wonderball70.src = 'wonderballs/jalapeño.png';
+allEpicWonderballsTypes.push(wonderball70);
+
+const card70 = {
+  img: wonderball70,
+  coinsPrice: 10000,
+  cost: 125,
+  defense: 45,
+  power: 12555,
+  health: 1300,
+  type: instant,
+  projectile_img: jalapeñoproy,
+  shootingFrames : 1,
+  restingFrames : 2,
+  shootFrame: 3,
+  isepic:true,
+  storagekey: "jalapeñoBought"
+}
+if(Number(localStorage.jalapeñoBought)==0){
+  allEpicWonderballs.push(card70);
+}else{
+  allTypes.push(card70);
+}
+const wonderball71 = new Image();
+wonderball71.src = 'wonderballs/doudis mecanico.png';
+wonderballTypes.push(wonderball71);
+
+const card71 = {
+  img: wonderball71,
+  coinsPrice: 2000,
+  cost: 150,
+  defense:0.70,
+  power: 4,
+  health: 11450,
+  type:contactshoot,
+  shootingFrames : 1,
+  restingFrames : 2,
+  rechargeFrames: 2,
+  shootFrame:3,
+  isepic:true,
+  storagekey: "carpintaldroBought"
+}
+if(Number(localStorage.carpintaldroBought)==0){
+  allEpicWonderballs.push(card71);
+}else{
+  allTypes.push(card71);
+}
+const frailejonmedioproy = new Image();
+frailejonmedioproy.src = 'wonderballs/frailejon medio proy.png';
+
+const wonderball72 = new Image();
+wonderball72.src = 'wonderballs/frailejon medio.png';
+allEpicWonderballsTypes.push(wonderball72);
+
+const card72 = {
+  img: wonderball72,
+  coinsPrice: 5000,
+  cost: 175,
+  defense: 0.45,
+  power: 23,
+  health: 1300,
+  type: distanceshoot,
+  projectile_img: juncoelectricoproy,
+  projectile_type: penetratingproj,
+  shootingFrames : 2,
+  restingFrames : 3,
+  shootFrame: 3,
+  isepic:true,
+  storagekey: "frailejonmedioBought"
+}
+if(Number(localStorage.frailejonmedioBought)==0){
+  allEpicWonderballs.push(card72);
+}else{
+  allTypes.push(card72);
+}
