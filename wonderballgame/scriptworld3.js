@@ -67,6 +67,26 @@ function handleGameGrid(){
   }
 }
 
+function produceSpecialGem(x,y){
+  resources.push(new Resource(x, y, 0, gemImg));
+}
+
+function handleSpecialGem(){
+  if(collision(mouse, gem)&& mouse.clicked){
+    if(gemsObtained>0){
+      gem.active = true;
+      gemsObtained--;
+    }
+  }
+  ctx.strokeStyle = 'black';
+  if(gem.active) ctx.strokeStyle = 'gold';
+  ctx.strokeRect(gem.x, gem.y, gem.width, gem.height);
+  ctx.drawImage(gem.img, 0, 0, 100, 100, gem.x, gem.y, gem.width, gem.height);
+  ctx.drawImage(gem.img, 0, 0, 100, 100, gem.x, gem.y, gem.width, gem.height);
+  ctx.fillStyle = 'black';
+  ctx.font = '20px Orbitron';
+  ctx.fillText(gemsObtained, gem.x+40, gem.y+20);
+}
 
 function handleProjectiles(){
   for (let i=0; i< projectiles.length; i++){
@@ -144,7 +164,7 @@ function handleWonderballs(){
           wonderballs[i].enemyAttacking(enemies[j].attack, enemies[j].health);
           enemies[j].wonderballAttacking(wonderballs[i].defense, wonderballs[i].health);
           if(wonderballs[i].venom == true ){
-            enemies[i].empoison(wonderballs[i].power, 2000);
+            enemies[j].empoison(wonderballs[i].power, 2000);
           }
         }
       }
@@ -338,6 +358,7 @@ function handleEnemies(){
     }
 
     if(enemies[i].health <= 0){
+      produceSpecialGem(enemies[i].x, enemies[i].y);
       let gainedResources = enemies[i].maxHealth/10;
       floatingMessages.push(new FloatingMessage("+"+gainedResources, enemies[i].x, enemies[i].y, 30, 'black'));
       floatingMessages.push(new FloatingMessage("+"+gainedResources, 250, 50, 30, 'gold'));
@@ -409,9 +430,12 @@ function handleResources(){
     resources[i].draw();
     if (resources[i] && mouse.x && mouse.y && collision(resources[i], mouse)){
       numberOfResources+=resources[i].amount;
-
-      floatingMessages.push(new FloatingMessage("+"+resources[i].amount, resources[i].x, resources[i].y, 30, 'black'));
-      floatingMessages.push(new FloatingMessage("+"+resources[i].amount, 250,50,30,'gold' ));
+      if(resources[i].amount > 0){
+        floatingMessages.push(new FloatingMessage("+"+resources[i].amount, resources[i].x, resources[i].y, 30, 'black'));
+        floatingMessages.push(new FloatingMessage("+"+resources[i].amount, 250,50,30,'gold' ));
+      }else{
+        gemsObtained = Math.min(gemsObtained+1, 4);
+      }
       resources.splice(i, 1);
       i--;
     }
@@ -460,13 +484,19 @@ canvas.addEventListener('click', function(){
             powerUps[0].active=false; //make shovel not active
             return;
           }
-          let defenderCost = cards[choosenDefender].card.cost;
-          if (numberOfResources >= defenderCost){
-            if(cardAvailable[choosenDefender]<=0){
-              if (cards[choosenDefender].card.type == support) wonderballs.push(new SupportWonderball(gridPositionX, gridPositionY));
+          else if(gem.active){
+            gem.active = false;
+            wonderballs[i].doSpecial();
+          }
+          else{
+            let defenderCost = cards[choosenDefender].card.cost;
+            if (numberOfResources >= defenderCost){
+              if(cardAvailable[choosenDefender]<=0){
+                if (cards[choosenDefender].card.type == support) wonderballs.push(new SupportWonderball(gridPositionX, gridPositionY));
+              }
+              numberOfResources -= defenderCost;
+              cardAvailable[choosenDefender]=300;
             }
-            numberOfResources -= defenderCost;
-            cardAvailable[choosenDefender]=300;
           }
           //check other powerUps
         }
@@ -520,6 +550,7 @@ function animateGame(){
     handleResources();
     handleNutrients();
     handleFloatingMessages();
+    handleSpecialGem();
   }
   handleGameStatus();
   handleCards();

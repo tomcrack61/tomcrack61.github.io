@@ -57,3 +57,18 @@ const coins ={
   active: false,
   img: coinImg
 };
+
+//Gema especial
+const gemImg = new Image();
+gemImg.src = 'resources/gema especial.png';
+
+let gemsObtained = 0;
+
+const gem ={
+  x: 250,
+  y: canvas.height-50,
+  width: 40,
+  height: 40,
+  active: false,
+  img: gemImg
+};

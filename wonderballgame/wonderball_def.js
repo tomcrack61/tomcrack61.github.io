@@ -80,8 +80,12 @@ const wonderball3 = new Image();
 wonderball3.src = 'wonderballs/lanzaguisantes.png';
 wonderballTypes.push(wonderball3);
 
+const wonderball3Special = new Image();
+wonderball3Special.src = 'wonderballs/lanzaguisan especial.png';
+
 const card3 = {
   img: wonderballTypes[2],
+  specialimg: wonderball3Special,
   cost: 100,
   defense: 0.05,
   power: 20,

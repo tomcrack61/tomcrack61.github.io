@@ -89,6 +89,21 @@ const watergem ={
 powerUps.push(watergem);
 powerUpsTime.push(1000);
 
+//Gema especial
+const gemImg = new Image();
+gemImg.src = 'resources/gema especial.png';
+
+let gemsObtained = 0;
+
+const gem ={
+  x: 250,
+  y: canvas.height-50,
+  width: 40,
+  height: 40,
+  active: false,
+  img: gemImg
+};
+
 class Cell {
   constructor(x,y){
     this.x = x;
@@ -234,6 +249,24 @@ function choosePowerUps(){
 
 }
 
+function produceSpecialGem(x,y){
+  resources.push(new Resource(x, y, 0, gemImg));
+}
+
+function handleSpecialGem(){
+  if(collision(mouse, gem)&& mouse.clicked){
+    if(gemsObtained>0){
+      gem.active = true;
+      gemsObtained--;
+    }
+  }
+  ctx.strokeStyle = 'black';
+  if(gem.active) ctx.strokeStyle = 'gold';
+  ctx.strokeRect(gem.x, gem.y, gem.width, gem.height);
+  ctx.drawImage(gem.img, 0, 0, 100, 100, gem.x, gem.y, gem.width, gem.height);
+  ctx.globalAlpha = 1;
+}
+
 function handlePauseBtn(){
   //pauseImg
   if(collision(mouse, pauseBtn)&& mouse.clicked){
@@ -349,6 +382,7 @@ function handleEnemies(){
     }
 
     if(enemies[i].health <= 0){
+      produceSpecialGem(enemies[i].x, enemies[i].y);
       let gainedResources = enemies[i].maxHealth/10;
       floatingMessages.push(new FloatingMessage("+"+gainedResources, enemies[i].x, enemies[i].y, 30, 'black'));
       floatingMessages.push(new FloatingMessage("+"+gainedResources, 250, 50, 30, 'gold'));
@@ -421,9 +455,13 @@ function handleResources(){
     resources[i].draw();
     if (resources[i] && mouse.x && mouse.y && collision(resources[i], mouse)){
       numberOfResources+=resources[i].amount;
+      if(resources[i].amount > 0){
+        floatingMessages.push(new FloatingMessage("+"+resources[i].amount, resources[i].x, resources[i].y, 30, 'black'));
+        floatingMessages.push(new FloatingMessage("+"+resources[i].amount, 250,50,30,'gold' ));
+      }else{
+        gemsObtained = Math.max(gemsObtained+1, 4);
+      }
 
-      floatingMessages.push(new FloatingMessage("+"+resources[i].amount, resources[i].x, resources[i].y, 30, 'black'));
-      floatingMessages.push(new FloatingMessage("+"+resources[i].amount, 250,50,30,'gold' ));
       resources.splice(i, 1);
       i--;
     }
