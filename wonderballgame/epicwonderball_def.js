@@ -575,3 +575,27 @@ if(Number(localStorage.setaespinosaBought)==0){
 }else{
   allTypes.push(card73);
 }
+const wonderball74 = new Image();
+wonderball74.src = 'wonderballs/girasol cantante.png';
+wonderballTypes.push(wonderball74);
+
+const card74 = {
+  img: wonderball74,
+  coinsPrice: 20000,
+  cost: 125,
+  defense: 1206,
+  power: 125,
+  health: 450,
+  type:producer,
+  shootingFrames : 2,
+  restingFrames : 2,
+  rechargeFrames: 1,
+  shootFrame:3,
+  isepic:true,
+  storagekey: "girasolcantanteBought"
+}
+if(Number(localStorage.girasolcantanteBought)==0){
+  allEpicWonderballs.push(card74);
+}else{
+  allTypes.push(card74);
+}
