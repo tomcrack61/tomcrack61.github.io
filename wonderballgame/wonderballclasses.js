@@ -472,7 +472,7 @@ class AttackerWonderball extends Wonderball{
 
   update(){
     super.update();
-    if(this.special > 0){
+    if(this.special > 0 && cards[choosenDefender].card.specialimg){
       this.wonderballType = cards[choosenDefender].card.specialimg;
       if(--this.special == 0){
         this.wonderballType = cards[choosenDefender].card.img;
