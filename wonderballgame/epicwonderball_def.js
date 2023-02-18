@@ -23,7 +23,7 @@ const card53 = {
   coinsPrice:10000,
   cost: 300,
   defense: 5,
-  power: 120,
+  power: 220,
   health: 545,
   type: jetix,
   projectile_img: jetixproy,
