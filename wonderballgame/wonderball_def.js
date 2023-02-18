@@ -131,9 +131,9 @@ const card5 = {
   type: contactshoot,
   projectile_img:  null,
   projectile_type: noType,
-  shootingFrames : 1,
-  restingFrames : 1,
-  shootFrame : 2
+  shootingFrames : 3,
+  restingFrames : 7,
+  shootFrame : 5
 }
 allTypes.push(card5);
 
