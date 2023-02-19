@@ -487,16 +487,18 @@ canvas.addEventListener('click', function(){
           else if(gem.active){
             gem.active = false;
             wonderballs[i].doSpecial();
+            return; //Return to avoid two wonderballs at the same loation
           }
-          else{
+          else if (cards[choosenDefender].card.type == support){
             let defenderCost = cards[choosenDefender].card.cost;
             if (numberOfResources >= defenderCost){
               if(cardAvailable[choosenDefender]<=0){
-                if (cards[choosenDefender].card.type == support) wonderballs.push(new SupportWonderball(gridPositionX, gridPositionY));
+                wonderballs.push(new SupportWonderball(gridPositionX, gridPositionY));
               }
               numberOfResources -= defenderCost;
               cardAvailable[choosenDefender]=300;
             }
+            return; //Return to avoid two wonderballs at the same loation
           }
           //check other powerUps
         }
