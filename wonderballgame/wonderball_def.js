@@ -125,15 +125,15 @@ wonderballTypes.push(wonderball5);
 const card5 = {
   img: wonderballTypes[4],
   cost: 0,
-  defense: 0.50,
+  defense: 1,
   power: 22,
-  health: 100,
+  health: 500,
   type: contactshoot,
   projectile_img:  null,
   projectile_type: noType,
-  shootingFrames : 1,
-  restingFrames : 1,
-  shootFrame : 2
+  shootingFrames : 3,
+  restingFrames : 7,
+  shootFrame : 5
 }
 allTypes.push(card5);
 
