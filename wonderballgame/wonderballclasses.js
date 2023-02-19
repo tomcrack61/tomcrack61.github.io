@@ -320,6 +320,8 @@ class Wonderball{
     this.spriteWidth = 340;
     this.spriteHeight = 367;
 
+    this.img = cards[choosenDefender].card.img;
+
     this.wonderballType = cards[choosenDefender].card.img;
     this.frameX = 0;
 
@@ -451,6 +453,8 @@ class AttackerWonderball extends Wonderball{
       this.projectiles.push(cards[choosenDefender].card.projectile_img);
     }
     this.type = cards[choosenDefender].card.type;
+    if('specialimg' in cards[choosenDefender].card)
+      this.specialimg = cards[choosenDefender].card.specialimg;
     this.special = 0;
   }
   draw(){
@@ -472,10 +476,10 @@ class AttackerWonderball extends Wonderball{
 
   update(){
     super.update();
-    if(this.special > 0 && cards[choosenDefender].card.specialimg){
-      this.wonderballType = cards[choosenDefender].card.specialimg;
+    if(this.special > 0 && this.specialimg){
+      this.wonderballType = this.specialimg;
       if(--this.special == 0){
-        this.wonderballType = cards[choosenDefender].card.img;
+        this.wonderballType = this.img;
       }
       this.minFrame = 0;
       this.maxFrame = 1;
