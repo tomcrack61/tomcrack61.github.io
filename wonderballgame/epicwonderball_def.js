@@ -599,3 +599,27 @@ if(Number(localStorage.girasolcantanteBought)==0){
 }else{
   allTypes.push(card74);
 }
+const wonderball75 = new Image();
+wonderball75.src = 'wonderballs/ramphorincus.png';
+wonderballTypes.push(wonderball75);
+
+const card75 = {
+  img: wonderball75,
+  coinsPrice: 2000,
+  cost: 250,
+  defense: 0.99,
+  power: 4,
+  health: 31450,
+  type:contactshoot,
+  shootingFrames : 4,
+  restingFrames : 2,
+  rechargeFrames: 3,
+  shootFrame:7,
+  isepic:true,
+  storagekey: "ramphorincusBought"
+}
+if(Number(localStorage.ramphorincusBought)==0){
+  allEpicWonderballs.push(card75);
+}else{
+  allTypes.push(card75);
+}
