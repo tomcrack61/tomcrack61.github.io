@@ -623,3 +623,27 @@ if(Number(localStorage.ramphorincusBought)==0){
 }else{
   allTypes.push(card75);
 }
+const wonderball76 = new Image();
+wonderball76.src = 'wonderballs/longisquama.png';
+wonderballTypes.push(wonderball76);
+
+const card76 = {
+  img: wonderball76,
+  coinsPrice: 112000,
+  cost: 450,
+  defense: 10,
+  power: 4,
+  health: 121450,
+  type:contactshoot,
+  shootingFrames : 2,
+  restingFrames : 2,
+  rechargeFrames: 2,
+  shootFrame:5,
+  isepic:true,
+  storagekey: "carpintaldroBought"
+}
+if(Number(localStorage.carpintaldroBought)==0){
+  allEpicWonderballs.push(card76);
+}else{
+  allTypes.push(card76);
+}
