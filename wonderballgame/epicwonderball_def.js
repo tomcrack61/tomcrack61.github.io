@@ -647,3 +647,83 @@ if(Number(localStorage.carpintaldroBought)==0){
 }else{
   allTypes.push(card76);
 }
+const repetidoraproyproy = new Image();
+repetidoraproyproy.src = 'wonderballs/repetidoraproy.png';
+
+const wonderball77 = new Image();
+wonderball77.src = 'wonderballs/tripitidora.png';
+allEpicWonderballsTypes.push(wonderball77);
+
+const card77 = {
+  img: wonderball77,
+  coinsPrice: 5000,
+  cost: 325,
+  defense: 0.35,
+  power: 43,
+  health: 300,
+  type: distanceshoot,
+  projectile_img: wonderball16pry,
+  projectile_type: penetratingproj,
+  shootingFrames : 1,
+  restingFrames : 3,
+  shootFrame: 4,
+  isepic:true,
+  storagekey: "tripitidoraBought"
+}
+if(Number(localStorage.tripitidoraBought)==0){
+  allEpicWonderballs.push(card77);
+}else{
+  allTypes.push(card77);
+}
+const wonderball78 = new Image();
+wonderball78.src = 'wonderballs/estoque bird.png';
+wonderballTypes.push(wonderball78);
+
+const card78 = {
+  img: wonderball78,
+  coinsPrice: 112000,
+  cost: 450,
+  defense: 10,
+  power: 4,
+  health: 121450,
+  type:contactshoot,
+  shootingFrames : 2,
+  restingFrames : 2,
+  rechargeFrames: 2,
+  shootFrame:4,
+  isepic:true,
+  storagekey: "carpintaldroBought"
+}
+if(Number(localStorage.carpintaldroBought)==0){
+  allEpicWonderballs.push(card78);
+}else{
+  allTypes.push(card78);
+}
+const anturium proy = new Image();
+anturium proy.src = 'wonderballs/anturium proy.png';
+
+const wonderball79 = new Image();
+wonderball79.src = 'wonderballs/anturium.png';
+allEpicWonderballsTypes.push(wonderball79);
+
+const card79 = {
+  img: wonderball79,
+  coinsPrice: 5000,
+  cost: 175,
+  defense: 0.35,
+  power: 173,
+  health: 1300,
+  type: distanceshoot,
+  projectile_img: wonderball16pry,
+  projectile_type: penetratingproj,
+  shootingFrames : 1,
+  restingFrames : 4,
+  shootFrame: 5,
+  isepic:true,
+  storagekey: "anturiumBought"
+}
+if(Number(localStorage.anturiumBought)==0){
+  allEpicWonderballs.push(card79);
+}else{
+  allTypes.push(card79);
+}
