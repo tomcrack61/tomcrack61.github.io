@@ -711,7 +711,7 @@ const card79 = {
   coinsPrice: 5000,
   cost: 175,
   defense: 0.35,
-  power: 173,
+  power: 19,
   health: 1300,
   type: distanceshoot,
   projectile_img: anturiumproy,
@@ -742,7 +742,7 @@ specialimg:pairanaplaneSpecial,
   coinsPrice: 5000,
   cost: 375,
   defense: 0.35,
-  power: 873,
+  power: 13,
   health: 1300,
   type: distanceshoot,
   projectile_img:pairanaplaneproy ,
@@ -781,4 +781,32 @@ if(Number(localStorage.platillosballBought)==0){
   allEpicWonderballs.push(card81);
 }else{
   allTypes.push(card81);
+}
+const pugbertoproy = new Image();
+pugbertoproy.src = 'wonderballs/pug berto proy.png';
+
+const wonderball82 = new Image();
+wonderball82.src = 'wonderballs/pug berto 1.png';
+allEpicWonderballsTypes.push(wonderball82);
+
+const card82 = {
+  img: wonderball82,
+  coinsPrice: 5000,
+  cost: 475,
+  defense: 0.35,
+  power: 18,
+  health: 1300,
+  type: distanceshoot,
+  projectile_img: pugbertoproy,
+  projectile_type: penetratingproj,
+  shootingFrames : 1,
+  restingFrames : 2,
+  shootFrame: 3,
+  isepic:true,
+  storagekey: "anturiumBought"
+}
+if(Number(localStorage.anturiumBought)==0){
+  allEpicWonderballs.push(card82);
+}else{
+  allTypes.push(card82);
 }
