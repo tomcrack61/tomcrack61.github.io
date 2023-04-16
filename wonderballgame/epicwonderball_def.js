@@ -699,8 +699,8 @@ if(Number(localStorage.carpintaldroBought)==0){
 }else{
   allTypes.push(card78);
 }
-const anturium proy = new Image();
-anturium proy.src = 'wonderballs/anturium proy.png';
+const anturiumproy = new Image();
+anturiumproy.src = 'wonderballs/anturium proy.png';
 
 const wonderball79 = new Image();
 wonderball79.src = 'wonderballs/anturium.png';
@@ -714,7 +714,7 @@ const card79 = {
   power: 173,
   health: 1300,
   type: distanceshoot,
-  projectile_img: wonderball16pry,
+  projectile_img: anturiumproy,
   projectile_type: penetratingproj,
   shootingFrames : 1,
   restingFrames : 4,
@@ -726,4 +726,59 @@ if(Number(localStorage.anturiumBought)==0){
   allEpicWonderballs.push(card79);
 }else{
   allTypes.push(card79);
+}
+const pairanaplaneproy = new Image();
+pairanaplaneproy.src = 'wonderballs/pairana planeproy.png';
+const pairanaplaneSpecial = new Image();
+pairanaplaneSpecial.src = 'wonderballs/pairana plane especial.png';
+
+const wonderball80 = new Image();
+wonderball80.src = 'wonderballs/pairana plane.png';
+allEpicWonderballsTypes.push(wonderball80);
+
+const card80 = {
+specialimg:pairanaplaneSpecial,
+  img: wonderball80,
+  coinsPrice: 5000,
+  cost: 375,
+  defense: 0.35,
+  power: 873,
+  health: 1300,
+  type: distanceshoot,
+  projectile_img:pairanaplaneproy ,
+  projectile_type:straightpath ,
+  shootingFrames : 1,
+  restingFrames : 3,
+  shootFrame: 4,
+  isepic:true,
+  storagekey: "pairanaplaneBought"
+}
+if(Number(localStorage.pairanaplaneBought)==0){
+  allEpicWonderballs.push(card80);
+}else{
+  allTypes.push(card80);
+}
+const wonderball81 = new Image();
+wonderball81.src = 'wonderballs/platillos ball.png';
+wonderballTypes.push(wonderball81);
+
+const card81 = {
+  img: wonderball81,
+  coinsPrice: 112000,
+  cost: 450,
+  defense: 10,
+  power: 4,
+  health: 121450,
+  type:contactshoot,
+  shootingFrames : 2,
+  restingFrames : 7,
+  rechargeFrames: 2,
+  shootFrame:7,
+  isepic:true,
+  storagekey: "platillosballBought"
+}
+if(Number(localStorage.platillosballBought)==0){
+  allEpicWonderballs.push(card81);
+}else{
+  allTypes.push(card81);
 }
