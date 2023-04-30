@@ -21,7 +21,7 @@ const luzcard = {
   defense: 5.0,
   power: 45,
   health: 10000,
-  type: distanceshoot,
+  type: lucina,
   projectile_img :  wonderballluzproy,
   projectile_type: straightpath,
   shootingFrames : 0,
@@ -43,7 +43,7 @@ const luzhurting = new Image();
 luzhurting.src = 'wonderballs/luz hurting.png';
 
 const luzespecial = new Image();
-luzespecial.src = 'luzespecial.png';
+luzespecial.src = 'wonderballs/luzespecial.png';
 
 class LucinaWonderball extends Wonderball {
   constructor(x,y) {
@@ -71,7 +71,7 @@ class LucinaWonderball extends Wonderball {
 
 
 
-    this.especial = luzespecial;
+    this.especialimg = luzespecial;
     this.especialshootingFrames = 7;
     this.especialrestingFrames = 1;
     this.especialshootFrame = 1;
@@ -92,19 +92,22 @@ class LucinaWonderball extends Wonderball {
     this.descendingshootFrame = 1;
 
     this.hurtingimg = luzhurting;
-    this.hurtingshootingFrames = 0;
+    this.hurtingshootingFrames = 1;
     this.hurtingrestingFrames = 2;
     this.hurtingshootFrame = 0;
 
   }
 
   changeState(state){
+    this.state = state;
+    this.shooting = false;
+    this.power = this.maxPower;
     if(state == neutral){
       this.wonderballType = this.neutralimg;
       this.shootingFrames = this.neutralshootingFrames;
       this.restingFrames = this.neutralrestingFrames;
       this.shootFrame = this.neutralshootFrame;
-      this.state = 1;
+
     }else if(state==agachada){
       this.wonderballType = this.agachadaimg;
       this.shootingFrames = this.agachadashootingFrames;
@@ -115,6 +118,7 @@ class LucinaWonderball extends Wonderball {
       this.shootingFrames = this.hurtingshootingFrames;
       this.restingFrames = this.hurtingrestingFrames;
       this.shootFrame = this.hurtingshootFrame;
+
     }else if(state==descending){
       this.wonderballType = this.descendingimg;
       this.shootingFrames = this.descendingshootingFrames;
@@ -130,6 +134,8 @@ class LucinaWonderball extends Wonderball {
       this.shootingFrames = this.especialshootingFrames;
       this.restingFrames = this.especialrestingFrames;
       this.shootFrame = this.especialshootFrame;
+      this.power = this.maxPower*3;
+      this.shooting=true;
     }
   }
 
@@ -139,15 +145,14 @@ class LucinaWonderball extends Wonderball {
 
   enemyAttacking(attack, health){
     super.enemyAttacking(attack);
-
-    changeState(hurting);
+    this.changeState(hurting);
     this.hurtingCount = 0;
   }
 
   doSpecial(){
     super.doSpecial();
     this.special = 100;
-    changeState(especial);
+    this.changeState(especial);
   }
 
   update() {
@@ -155,7 +160,7 @@ class LucinaWonderball extends Wonderball {
     if(this.special > 0){
       this.wonderballType = this.especialimg;
       if(--this.special == 0){
-        this.wonderballType = this.neutralimg;
+        this.changeState(neutral);
       }
       this.shooting = true;
       this.shootNow = true;
@@ -176,7 +181,8 @@ class LucinaWonderball extends Wonderball {
     }
     else if(this.state == hurting){
       if(this.hurtingCount++ >=2){
-        this.state = neutral;
+        this.changeState(neutral);
+        this.hurtingCount = 0;
       }
     }
   }

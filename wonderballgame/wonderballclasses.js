@@ -300,6 +300,7 @@ function createWonderball(type, gridPositionX, gridPositionY){
   else if (type == instant) return new InstantWonderball(gridPositionX, gridPositionY);
   else if (type == jetix) return new JetixWonderball(gridPositionX, gridPositionY);
   else if (type == multiattack) return new MultiAttackWonderball(gridPositionX, gridPositionY);
+  else if (type == lucina) return new LucinaWonderball(gridPositionX, gridPositionY);
   else return new Wonderball(gridPositionX, gridPositionY);
 }
 

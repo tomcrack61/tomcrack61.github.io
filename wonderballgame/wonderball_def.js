@@ -16,6 +16,7 @@ const powerUp=10;
 const trap=11;
 const jetix=12;
 const multiattack=13;
+const lucina=14;
 
 //projectile allTypes
 const noType = 0;
