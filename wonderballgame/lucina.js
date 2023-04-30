@@ -1,12 +1,12 @@
-const selectionLucinaImg = new Image();
-selectionLucinaImg.src = 'wonderballs/luz selection.png';
+const luzselectionImg = new Image();
+luzselectionImg.src = 'wonderballs/luz selection.png';
 
-const wonderballlucina = new Image();
-wonderballlucina.src = 'wonderballs/luzneutral.png';
-wonderballTypes.push(wonderballlucina);
+const wonderballluz = new Image();
+wonderballluz.src = 'wonderballs/luz neutral.png';
+wonderballTypes.push(wonderballluz);
 
-const wonderballlucinapry = new Image();
-wonderballlucinapry.src = 'wonderballs/luzproy.png';
+const wonderballluzproy = new Image();
+wonderballluzproy.src = 'wonderballs/luz proy.png';
 
 const neutral = 1;
 const agachada = 2;
@@ -16,13 +16,13 @@ const descending = 5;
 const landing = 6;
 
 const lucinacard = {
-  img: wonderballlucina,
+  img: wonderballluz,
   cost: 50,
   defense: 5.0,
   power: 45,
   health: 10000,
   type: distanceshoot,
-  projectile_img :  wonderballlucinapry,
+  projectile_img :  wonderballluzproypry,
   projectile_type: straightpath,
   shootingFrames : 0,
   restingFrames : 6,
@@ -34,13 +34,13 @@ const luzagachada = new Image();
 luzagachada.src = 'wonderballs/luzagachada.png';
 
 const luzdescending = new Image();
-luzdescending.src = 'wonderballs/luzdescending.png';
+luzdescending.src = 'wonderballs/luz descending.png';
 
 const luzlanding = new Image();
-luzlanding.src = 'wonderballs/luzlanding.png';
+luzlanding.src = 'wonderballs/luz landing.png';
 
 const luzhurting = new Image();
-luzhurting.src = 'wonderballs/luzhurting.png';
+luzhurting.src = 'wonderballs/luz hurting.png';
 
 const luzespecial = new Image();
 luzespecial.src = 'luzespecial.png';
