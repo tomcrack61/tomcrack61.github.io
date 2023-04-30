@@ -6,7 +6,7 @@ wonderballlucina.src = 'wonderballs/luzneutral.png';
 wonderballTypes.push(wonderballlucina);
 
 const wonderballlucinapry = new Image();
-wonderballlucinapry.src = 'wonderballs/luz proy.png';
+wonderballlucinapry.src = 'wonderballs/luzproy.png';
 
 const neutral = 1;
 const agachada = 2;
@@ -51,6 +51,7 @@ class LucinaWonderball extends Wonderball {
     this.state=1;
     this.speed = 3;
     this.hurtingCount = 0;
+    this.special = 0;
 
     //projectile
     this.shooting = false;
@@ -143,8 +144,23 @@ class LucinaWonderball extends Wonderball {
     this.hurtingCount = 0;
   }
 
+  doSpecial(){
+    super.doSpecial();
+    this.special = 100;
+    changeState(especial);
+  }
+
   update() {
     super.update();
+    if(this.special > 0){
+      this.wonderballType = this.especialimg;
+      if(--this.special == 0){
+        this.wonderballType = this.neutralimg;
+      }
+      this.shooting = true;
+      this.shootNow = true;
+    }
+
     if (this.state==neutral) {
       if(powerUps[1].active){
         this.defense = this.maxDefense +this.maxDefense*2;
