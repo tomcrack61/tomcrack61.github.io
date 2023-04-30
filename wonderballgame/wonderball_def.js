@@ -80,22 +80,22 @@ const wonderball3 = new Image();
 wonderball3.src = 'wonderballs/lanzaguisantes.png';
 wonderballTypes.push(wonderball3);
 
-const wonderball3Special = new Image();
-wonderball3Special.src = 'wonderballs/lanzaguisan especial.png';
+const lanzagiuzanteseSpecial = new Image();
+lanzagiuzanteseSpecial.src = 'wonderballs/lanzaguisantes especial.png';
 
 const card3 = {
   img: wonderballTypes[2],
-  specialimg: wonderball3Special,
+  specialimg: lanzagiuzanteseSpecial,
   cost: 100,
   defense: 0.05,
-  power: 20,
+  power: 15,
   health: 100,
   type: distanceshoot,
   projectile_img :  null,
   projectile_type: straightpath,
-  shootingFrames : 2,
-  restingFrames : 4,
-  shootFrame : 5,
+  shootingFrames : 5,
+  restingFrames : 8,
+  shootFrame : 13,
   venom: true,
 }
 allTypes.push(card3);
@@ -261,8 +261,8 @@ const card10 = {
   projectile_img: dilanproy,
   projectile_type: arcpath,
   shootingFrames : 3,
-  restingFrames : 1,
-  shootFrame: 3
+  restingFrames : 3,
+  shootFrame: 6
 }
 allTypes.push(card10);
 
@@ -839,7 +839,7 @@ const card38 = {
   cost: 150,
   defense: 0.45,
   power: 5,
-  health: 450,
+  health: 11450,
   type:contactshoot,
   shootingFrames : 2,
   restingFrames : 2,
