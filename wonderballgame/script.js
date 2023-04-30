@@ -258,6 +258,7 @@ function handleSpecialGem(){
     if(gemsObtained>0){
       gem.active = true;
       gemsObtained--;
+      mouse.clicked = false;
     }
   }
   ctx.strokeStyle = 'black';
