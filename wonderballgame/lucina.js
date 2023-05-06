@@ -26,7 +26,7 @@ const luzcard = {
   projectile_type: straightpath,
   shootingFrames : 0,
   restingFrames : 6,
-  shootFrame : 1
+  shootFrame : 3
 }
 allTypes.push(luzcard);
 
