@@ -536,7 +536,7 @@ const card23 = {
 allTypes.push(card23);
 
 const wonderball24 = new Image();
-wonderball24.src = 'wonderballs/megagunbird.png';
+wonderball24.src = 'wonderballs/mega gunbird.png';
 wonderballTypes.push(wonderball24);
 
 const wonderball24proy = new Image();
@@ -551,10 +551,10 @@ const card24 = {
   type: distanceshoot,
   projectile_img: wonderball24proy,
   projectile_type:penetratingproj,
-  shootingFrames : 2,
+  shootingFrames : 3,
   restingFrames : 3,
   rechargeFrames: 0,
-  shootFrame:5
+  shootFrame:6
 }
 allTypes.push(card24);
 
