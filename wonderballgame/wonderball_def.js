@@ -987,7 +987,7 @@ const hielagisantesproy = new Image();
 hielagisantesproy.src ='wonderballs/hielagisantesproy.png';
 
 const wonderball46 = new Image();
-wonderball46.src = 'wonderballs/hielagisantes.png';
+wonderball46.src = 'wonderballs/hielaguisantes.png';
 wonderballTypes.push(wonderball46);
 
 const card46 = {
