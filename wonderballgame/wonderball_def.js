@@ -444,7 +444,7 @@ const card19 = {
 allTypes.push(card19);
 
 const wonderball20 = new Image();
-wonderball20.src = 'wonderballs/newgunbird.png';
+wonderball20.src = 'wonderballs/gunbird.png';
 wonderballTypes.push(wonderball20);
 
 const wonderball20proy = new Image();
@@ -460,9 +460,9 @@ const card20 = {
   projectile_img: wonderball20proy,
   projectile_type:penetratingproj,
   shootingFrames : 2,
-  restingFrames : 2,
+  restingFrames : 6,
   rechargeFrames: 0,
-  shootFrame:2
+  shootFrame:3
 }
 allTypes.push(card20);
 
@@ -574,10 +574,10 @@ const card25 = {
   type: teamwork,
   projectile_img: wonderball25proy,
   projectile_type: straightpath,
-  shootingFrames : 4,
-  restingFrames : 2,
+  shootingFrames : 2,
+  restingFrames : 4,
   rechargeFrames: 0,
-  shootFrame:5
+  shootFrame:6
 }
 allTypes.push(card25);
 
@@ -999,9 +999,9 @@ const card46 = {
   type: distanceshoot,
   projectile_img: hielagisantesproy,
   projectile_type: timestopproj,
-  shootingFrames : 1,
-  restingFrames : 2,
-  shootFrame: 3
+  shootingFrames : 6,
+  restingFrames : 7,
+  shootFrame: 13
 }
 allTypes.push(card46)
 const wonderball47 = new Image();
