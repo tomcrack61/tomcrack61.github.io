@@ -766,7 +766,7 @@ allTypes.push(card33);
 
 
 const wonderball34 = new Image();
-wonderball34.src = 'wonderballs/PAPAPUM.png';
+wonderball34.src = 'wonderballs/papapum.png';
 wonderballTypes.push(wonderball34);
 const card34 = {
   img: wonderball34,
@@ -775,10 +775,10 @@ const card34 = {
   power: 2500,
   health: 150,
   type:instant,
-  shootingFrames : 3,
-  restingFrames : 3,
+  shootingFrames : 1,
+  restingFrames : 6,
   rechargeFrames: 3,
-  shootFrame:5,
+  shootFrame:7,
 }
 allTypes.push(card34);
 
