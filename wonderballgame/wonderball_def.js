@@ -766,7 +766,7 @@ allTypes.push(card33);
 
 
 const wonderball34 = new Image();
-wonderball34.src = 'wonderballs/papapum.png';
+wonderball34.src = '/wonderballs/papapum.png';
 wonderballTypes.push(wonderball34);
 const card34 = {
   img: wonderball34,
