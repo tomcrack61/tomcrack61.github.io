@@ -12,7 +12,7 @@ const welcomeDialogImg = new Image();
 welcomeDialogImg.src = 'dialogmarie/Slide3.PNG';
 
 const marcyImg = new Image();
-marcyImg.src = 'dialogmarie/marcy1.png';
+marcyImg.src = 'dialogmarie/marcy 1.png';
 
 let dialogs = [];
 dialogs.push("Necesitarás a los girasoles y los lanzaguisantes para defenderte de glitch");
