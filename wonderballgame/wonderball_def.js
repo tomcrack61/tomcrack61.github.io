@@ -516,7 +516,7 @@ const wonderball23 = new Image();
 wonderball23.src = 'wonderballs/pugbert.png';
 wonderballTypes.push(wonderball23);
 
-c//onst wonderball23proy = new Image();
+//const wonderball23proy = new Image();
 //wonderball23proy.src = 'wonderballs/pugproy.png';
 
 const card23 = {
