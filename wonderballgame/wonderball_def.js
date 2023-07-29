@@ -470,8 +470,8 @@ const wonderball21 = new Image();
 wonderball21.src = 'wonderballs/axebird.png';
 wonderballTypes.push(wonderball21);
 
-const wonderball21proy = new Image();
-wonderball21proy.src = 'wonderballs/axebirdproy.png';
+//const wonderball21proy = new Image();
+//wonderball21proy.src = 'wonderballs/axebirdproy.png';
 
 const card21 = {
   img: wonderball21,
@@ -493,8 +493,8 @@ const wonderball22 = new Image();
 wonderball22.src = 'wonderballs/bravebird.png';
 wonderballTypes.push(wonderball22);
 
-const wonderball22proy = new Image();
-wonderball22proy.src = 'wonderballs/bravebirdproy.png';
+//const wonderball22proy = new Image();
+//wonderball22proy.src = 'wonderballs/bravebirdproy.png';
 
 const card22 = {
   img: wonderball22,
@@ -516,8 +516,8 @@ const wonderball23 = new Image();
 wonderball23.src = 'wonderballs/pugbert.png';
 wonderballTypes.push(wonderball23);
 
-const wonderball23proy = new Image();
-wonderball23proy.src = 'wonderballs/pugproy.png';
+c//onst wonderball23proy = new Image();
+//wonderball23proy.src = 'wonderballs/pugproy.png';
 
 const card23 = {
   img: wonderball23,
