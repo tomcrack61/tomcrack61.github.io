@@ -1,10 +1,11 @@
 class WonderballType{
-  constructor(x, y, width, height, card ){
+  constructor(x, y, width, height, card, key ){
     this.x = x;
     this.y = y;
     this.width = width;
     this.height = height;
     this.card = card;
+    this.key = key;
   }
 }
 
@@ -313,6 +314,9 @@ class Wonderball{
     this.width = cellSize - cellGap *2;
     this.height = cellSize - cellGap *2;
     this.shooting = false;
+    //check level
+    this.key = cards[choosenDefender].key;
+    this.level = localStorage[key];
     this.health = cards[choosenDefender].card.health;
     this.maxDefense = cards[choosenDefender].card.defense;
     this.defense = cards[choosenDefender].card.defense;
@@ -332,8 +336,8 @@ class Wonderball{
     this.minFrame = 0;
     this.maxFrame = this.shootingFrames+this.restingFrames;
 
-    this.maxPower = cards[choosenDefender].card.power;
-    this.power = cards[choosenDefender].card.power;
+    this.maxPower = cards[choosenDefender].card.power*level;
+    this.power = cards[choosenDefender].card.power*level;
 
     this.venom = 'venom' in cards[choosenDefender].card;
   }

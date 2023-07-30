@@ -33,11 +33,13 @@ if (typeof(Storage) !== "undefined") {
   }if (!localStorage.setaovniBought) {
     localStorage.setItem("setaovniBought", 1)
   }
+
+
+
   if (!localStorage.puzzlePieces) {
     var puzzlePieces = Array(100).fill(0);
     localStorage.puzzlePieces = JSON.stringify(puzzlePieces);
   }
-
 }else{
   console.log("Storage Not Supported. Game progress will not be saved")
 }

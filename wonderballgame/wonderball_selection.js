@@ -56,7 +56,7 @@ function handleSelection(){
     if(choosenOnes.length == 6){
       cardAvailable = new Array(choosenOnes.length).fill(75);
       for(let j = 0; j < choosenOnes.length; j++){
-        cards.push(new WonderballType(10, j*90, 70, 85, allTypes[choosenOnes[j]]));
+        cards.push(new WonderballType(10, j*90, 70, 85, allTypes[choosenOnes[j]],choosenOnes[j]));
         if(allTypes[choosenOnes[j]].type == 'producer') cardAvailable[j]==0;
       }
       mouse.clicked = false;
@@ -108,6 +108,9 @@ function animateSelection(){
     //ctx.strokeRect(allcards[i].x, allcards[i].y, allcards[i].width, allcards[i].height);
     ctx.drawImage(bgnImg, 0, 0, 250, 180, allcards[i].x, allcards[i].y-25, allcards[i].width+20, allcards[i].height+50);
     ctx.drawImage(allcards[i].card.img, 0, 0, 340, 367, allcards[i].x, allcards[i].y, allcards[i].width, allcards[i].height);
+    ctx.font = '10px Orbitron';
+    key = "wonderball"+(i+curr_page)+"level";
+    ctx.fillText("L"+localStorage[key], allcards[i].x+allcards[i].width-40, allcards[i].y+15);
     ctx.font = '20px Orbitron';
     ctx.fillText(Math.floor(allcards[i].card.cost), allcards[i].x+allcards[i].width-50, allcards[i].y+allcards[i].height-10);
   }
