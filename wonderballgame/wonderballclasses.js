@@ -336,8 +336,8 @@ class Wonderball{
     this.minFrame = 0;
     this.maxFrame = this.shootingFrames+this.restingFrames;
 
-    this.maxPower = cards[choosenDefender].card.power*level;
-    this.power = cards[choosenDefender].card.power*level;
+    this.maxPower = cards[choosenDefender].card.power*this.level;
+    this.power = cards[choosenDefender].card.power*this.level;
 
     this.venom = 'venom' in cards[choosenDefender].card;
   }
