@@ -978,9 +978,9 @@ const card45 = {
   type: distanceshoot,
   projectile_img: setadesesporadaproy,
   projectile_type: straightpath,
-  shootingFrames : 1,
-  restingFrames : 2,
-  shootFrame: 3
+  shootingFrames : 3,
+  restingFrames : 5,
+  shootFrame: 7
 }
 allTypes.push(card45)
 const hielagisantesproy = new Image();
@@ -1095,8 +1095,8 @@ const card51 = {
   projectile_img: setamiedicaproy,
   projectile_type: straightpath,
   shootingFrames : 2,
-  restingFrames : 2,
-  shootFrame: 4
+  restingFrames : 5,
+  shootFrame: 7
 }
 allTypes.push(card51)
 const minilanzaguisantesproy = new Image();
