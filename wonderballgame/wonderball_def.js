@@ -980,7 +980,7 @@ const card45 = {
   projectile_type: straightpath,
   shootingFrames : 3,
   restingFrames : 5,
-  shootFrame: 7
+  shootFrame: 8
 }
 allTypes.push(card45)
 const hielagisantesproy = new Image();
@@ -1024,7 +1024,7 @@ const gisantralladoraproy = new Image();
 gisantralladoraproy.src = 'wonderballs/gisantralladoraproy.png';
 
 const wonderball48 = new Image();
-wonderball48.src = 'wonderballs/gisantralladora.png';
+wonderball48.src = 'wonderballs/guisantralladora.png';
 wonderballTypes.push(wonderball48);
 
 const card48 = {
@@ -1036,9 +1036,9 @@ const card48 = {
   type: distanceshoot,
   projectile_img: gisantralladoraproy,
   projectile_type: straightpath,
-  shootingFrames : 2,
-  restingFrames : 2,
-  shootFrame: 2
+  shootingFrames : 4,
+  restingFrames : 7,
+  shootFrame: 11
 }
 allTypes.push(card48)
 const wonderball49 = new Image();
