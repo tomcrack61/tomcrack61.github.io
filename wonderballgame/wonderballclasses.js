@@ -5,7 +5,7 @@ class WonderballType{
     this.width = width;
     this.height = height;
     this.card = card;
-    this.key = key;
+    this.key = key; //to get level
   }
 }
 
@@ -316,7 +316,10 @@ class Wonderball{
     this.shooting = false;
     //check level
     this.key = cards[choosenDefender].key;
-    this.level = localStorage[key];
+    this.level = Number(localStorage[key]);
+    console.log("level"+this.level)
+
+    //set up wonderball
     this.health = cards[choosenDefender].card.health;
     this.maxDefense = cards[choosenDefender].card.defense;
     this.defense = cards[choosenDefender].card.defense;

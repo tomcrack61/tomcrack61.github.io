@@ -276,7 +276,7 @@ const card12 = {
   cost: 300,
   defense: 0.32,
   power: 300,
-  health: 567,
+  health: 11567,
   type: general,
   shootingFrames : 4,
   restingFrames : 1,
@@ -1141,18 +1141,3 @@ const card57 = {
   restingFrames : 3
 }
 allTypes.push(card57);
-
-
-
-
-//Wonderball levels
-for(i=0; i< allTypes.length; i++){
-  key="wonderball"+i+"level";
-  if (!localStorage[key]) {
-    localStorage.setItem(key, 1);
-  }
-}
-
-//for test
-key="wonderball2level";
-localStorage.setItem(key, 2);

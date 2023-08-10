@@ -2,6 +2,8 @@ if (typeof(Storage) !== "undefined") {
   if (!localStorage.coinCounter) {
     localStorage.setItem("coinCounter", 0);
   }
+  localStorage.setItem("coinCounter", 1000);
+
   if (!localStorage.currentLevel) {
     localStorage.setItem("currentLevel", 0)
   }

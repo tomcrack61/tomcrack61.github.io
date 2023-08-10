@@ -810,3 +810,72 @@ if(Number(localStorage.anturiumBought)==0){
 }else{
   allTypes.push(card82);
 }
+const geishafloralproy = new Image();
+geishafloralproy.src = 'wonderballs/geisha floral proy.png';
+
+const wonderball83 = new Image();
+wonderball83.src = 'wonderballs/geisha floral.png';
+allEpicWonderballsTypes.push(wonderball83);
+
+const card83 = {
+  img: wonderball83,
+  coinsPrice: 5000,
+  cost: 200,
+  defense: 0.35,
+  power: 88,
+  health: 1300,
+  type: distanceshoot,
+  projectile_img: geishafloralproy,
+  projectile_type: penetratingproj,
+  shootingFrames : 5,
+  restingFrames : 5,
+  shootFrame: 10,
+  isepic:true,
+  storagekey: "anturiumBought"
+}
+if(Number(localStorage.anturiumBought)==0){
+  allEpicWonderballs.push(card83);
+}else{
+  allTypes.push(card83);
+}
+const lanzamaizproy = new Image();
+lanzamaizproy.src = 'wonderballs/lanza maiz proy.png';
+
+const wonderball84 = new Image();
+wonderball84.src = 'wonderballs/lanza maiz.png';
+allEpicWonderballsTypes.push(wonderball84);
+
+const card84 = {
+  img: wonderball84,
+  coinsPrice: 5000,
+  cost: 100,
+  defense: 0.35,
+  power: 48,
+  health: 1300,
+  type: distanceshoot,
+  projectile_img: lanzamaizproy,
+  projectile_type: arcpath,
+  shootingFrames : 4,
+  restingFrames : 4,
+  shootFrame: 8,
+  isepic:true,
+  storagekey: "anturiumBought"
+}
+if(Number(localStorage.anturiumBought)==0){
+  allEpicWonderballs.push(card84);
+}else{
+  allTypes.push(card84);
+}
+
+
+//Wonderball levels
+for(i=0; i< allTypes.length; i++){
+  key="wonderball"+i+"level";
+  if (!localStorage[key]) {
+    localStorage.setItem(key, 1);
+  }
+}
+
+//for test
+key="wonderball2level";
+localStorage.setItem(key, 2);
