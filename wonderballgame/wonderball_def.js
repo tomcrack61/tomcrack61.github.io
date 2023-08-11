@@ -28,6 +28,7 @@ const nutrientproj=5;
 const teledirected=6;
 const timestopproj=7;
 const venomproj = 8;
+const bouncing = 9;
 
 const selectionImg = new Image();
 selectionImg.src = 'wonderballs/seleccion.png';
@@ -53,7 +54,7 @@ const card1 = {
   projectile_type: straightpath,
   shootingFrames : 1,
   restingFrames : 1,
-  shootFrame : 2
+  shootFrame : 1
 }
 allTypes.push(card1);
 
@@ -96,7 +97,8 @@ const card3 = {
   projectile_type: straightpath,
   shootingFrames : 5,
   restingFrames : 8,
-  shootFrame : 13,
+  shootFrame : 12,
+  specialframes: 6,
   venom: true,
 }
 allTypes.push(card3);
@@ -134,7 +136,7 @@ const card5 = {
   projectile_type: noType,
   shootingFrames : 3,
   restingFrames : 7,
-  shootFrame : 5
+  shootFrame : 7
 }
 allTypes.push(card5);
 
@@ -156,7 +158,7 @@ const card6 = {
   projectile_type: arcpath,
   shootingFrames : 2,
   restingFrames : 3,
-  shootFrame : 5
+  shootFrame : 4
 }
 allTypes.push(card6);
 
@@ -176,7 +178,7 @@ const card7 = {
   projectile_type: arcpath,
   shootingFrames : 1,
   restingFrames : 1,
-  shootFrame: 2
+  shootFrame: 1
 }
 allTypes.push(card7);
 
@@ -199,7 +201,7 @@ const card8 = {
   projectile_type: arcpath,
   shootingFrames : 1,
   restingFrames : 1,
-  shootFrame: 2
+  shootFrame: 1
 }
 allTypes.push(card8);
 
@@ -218,7 +220,7 @@ const card9 = {
   projectile_type: noType,
   shootingFrames : 3,
   restingFrames : 3,
-  shootFrame: 6
+  shootFrame: 5
 }
 allTypes.push(card9);
 
@@ -263,7 +265,7 @@ const card10 = {
   projectile_type: arcpath,
   shootingFrames : 3,
   restingFrames : 3,
-  shootFrame: 6
+  shootFrame: 5
 }
 allTypes.push(card10);
 
@@ -304,7 +306,7 @@ const card13 = {
   projectile_type: arcpath,
   shootingFrames : 2,
   restingFrames : 1,
-  shootFrame: 2
+  shootFrame: 1
 }
 allTypes.push(card13);
 
@@ -349,7 +351,7 @@ const card15 = {
   projectile_type: arcpath,
   shootingFrames : 1,
   restingFrames : 3,
-  shootFrame:3
+  shootFrame:2
 }
 allTypes.push(card15);
 
@@ -372,7 +374,7 @@ const card16 = {
   projectile_type: straightpath,
   shootingFrames : 2,
   restingFrames : 1,
-  shootFrame:3
+  shootFrame:2
 }
 allTypes.push(card16);
 
@@ -396,7 +398,7 @@ const card17 = {
   shootingFrames : 1,
   restingFrames : 0,
   rechargeFrames: 1,
-  shootFrame:1
+  shootFrame:0
 }
 allTypes.push(card17);
 
@@ -416,7 +418,7 @@ const card18 = {
   shootingFrames : 9,
   restingFrames : 3,
   rechargeFrames: 1,
-  shootFrame:12
+  shootFrame:11
 }
 allTypes.push(card18);
 
@@ -508,7 +510,7 @@ const card22 = {
   shootingFrames : 2,
   restingFrames : 1,
   rechargeFrames: 0,
-  shootFrame:2
+  shootFrame:1
 }
 allTypes.push(card22);
 
@@ -531,7 +533,7 @@ const card23 = {
   shootingFrames : 1,
   restingFrames : 2,
   rechargeFrames: 0,
-  shootFrame:3
+  shootFrame:2
 }
 allTypes.push(card23);
 
@@ -554,7 +556,7 @@ const card24 = {
   shootingFrames : 3,
   restingFrames : 3,
   rechargeFrames: 0,
-  shootFrame:6
+  shootFrame:5
 }
 allTypes.push(card24);
 
@@ -577,7 +579,7 @@ const card25 = {
   shootingFrames : 2,
   restingFrames : 4,
   rechargeFrames: 0,
-  shootFrame:6
+  shootFrame:5
 }
 allTypes.push(card25);
 
@@ -692,7 +694,7 @@ const card30 = {
   shootingFrames : 3,
   restingFrames : 1,
   rechargeFrames: 0,
-  shootFrame:3
+  shootFrame:2
 }
 allTypes.push(card30);
 
@@ -713,7 +715,7 @@ const card31 = {
   shootingFrames : 0,
   restingFrames : 8,
   rechargeFrames: 3,
-  shootFrame:12
+  shootFrame:10
 }
 allTypes.push(card31);
 
@@ -778,7 +780,7 @@ const card34 = {
   shootingFrames : 1,
   restingFrames : 6,
   rechargeFrames: 3,
-  shootFrame:7,
+  shootFrame:6,
 }
 allTypes.push(card34);
 
@@ -795,7 +797,7 @@ const card35 = {
   shootingFrames : 2,
   restingFrames : 1,
   rechargeFrames: 3,
-  shootFrame:3,
+  shootFrame:2,
 }
 allTypes.push(card35);
 
@@ -812,7 +814,7 @@ const card36 = {
   shootingFrames : 4,
   restingFrames : 4,
   rechargeFrames: 3,
-  shootFrame:8,
+  shootFrame:7,
 }
 allTypes.push(card36);
 
@@ -845,7 +847,7 @@ const card38 = {
   shootingFrames : 2,
   restingFrames : 2,
   rechargeFrames: 1,
-  shootFrame:3,
+  shootFrame:2,
 }
 allTypes.push(card38)
 const wonderball39 = new Image();
@@ -861,7 +863,7 @@ const card39 = {
   shootingFrames : 2,
   restingFrames : 2,
   rechargeFrames: 1,
-  shootFrame:3,
+  shootFrame:2,
 }
 allTypes.push(card39)
 const wonderball40 = new Image();
@@ -877,7 +879,7 @@ const card40 = {
   shootingFrames : 2,
   restingFrames : 1,
   rechargeFrames: 1,
-  shootFrame:3,
+  shootFrame:2,
 }
 allTypes.push(card40)
 const wonderball41 = new Image();
@@ -893,7 +895,7 @@ const card41 = {
   shootingFrames :3 ,
   restingFrames :2,
   rechargeFrames: 1,
-  shootFrame:5,
+  shootFrame:4,
 }
 allTypes.push(card41);
 
@@ -915,7 +917,7 @@ const card42 = {
   projectile_type: penetratingproj,
   shootingFrames : 1,
   restingFrames : 3,
-  shootFrame: 4
+  shootFrame: 3
 }
 allTypes.push(card42);
 
@@ -937,7 +939,7 @@ const card43 = {
   projectile_type: arcpath,
   shootingFrames : 1,
   restingFrames : 3,
-  shootFrame: 4
+  shootFrame: 3
 }
 allTypes.push(card43)
 
@@ -959,7 +961,7 @@ const card44 = {
   projectile_type: arcpath,
   shootingFrames : 1,
   restingFrames : 3,
-  shootFrame: 4
+  shootFrame: 3
 }
 allTypes.push(card44)
 const setadesesporadaproy = new Image();
@@ -980,7 +982,7 @@ const card45 = {
   projectile_type: straightpath,
   shootingFrames : 3,
   restingFrames : 5,
-  shootFrame: 8
+  shootFrame: 7
 }
 allTypes.push(card45)
 const hielagisantesproy = new Image();
@@ -1001,7 +1003,7 @@ const card46 = {
   projectile_type: timestopproj,
   shootingFrames : 6,
   restingFrames : 7,
-  shootFrame: 13
+  shootFrame: 12
 }
 allTypes.push(card46)
 const wonderball47 = new Image();
@@ -1017,7 +1019,7 @@ const card47 = {
   shootingFrames :1 ,
   restingFrames :2,
   rechargeFrames: 1,
-  shootFrame:2,
+  shootFrame:1,
 }
 allTypes.push(card47);
 const gisantralladoraproy = new Image();
@@ -1038,7 +1040,7 @@ const card48 = {
   projectile_type: straightpath,
   shootingFrames : 4,
   restingFrames : 7,
-  shootFrame: 11
+  shootFrame: 10
 }
 allTypes.push(card48)
 const wonderball49 = new Image();
@@ -1054,7 +1056,7 @@ const card49 = {
   shootingFrames :1 ,
   restingFrames :2,
   rechargeFrames: 1,
-  shootFrame:3,
+  shootFrame:2,
 }
 allTypes.push(card49);
 const pacionariaproy = new Image();
@@ -1075,7 +1077,7 @@ const card50 = {
   projectile_type: straightpath,
   shootingFrames : 2,
   restingFrames : 2,
-  shootFrame: 4
+  shootFrame: 3
 }
 allTypes.push(card50)
 const setamiedicaproy = new Image();
@@ -1096,7 +1098,7 @@ const card51 = {
   projectile_type: straightpath,
   shootingFrames : 2,
   restingFrames : 5,
-  shootFrame: 7
+  shootFrame: 6
 }
 allTypes.push(card51)
 const minilanzaguisantesproy = new Image();
@@ -1117,7 +1119,7 @@ const card52 = {
   projectile_type: straightpath,
   shootingFrames : 1,
   restingFrames : 2,
-  shootFrame: 3
+  shootFrame: 2
 }
 allTypes.push(card52)
 const wonderball57 = new Image();
@@ -1141,3 +1143,26 @@ const card57 = {
   restingFrames : 3
 }
 allTypes.push(card57);
+
+const wonderball85 = new Image();
+wonderball85.src = 'wonderballs/bulbosdebolera.png';
+wonderballTypes.push(wonderball85);
+
+const wonderball85pry = new Image();
+wonderball85pry.src = 'wonderballs/bulbos de bolera proy.png';
+
+
+const card85 = {
+  img: wonderball85,
+  cost: 250,
+  defense: 0.5,
+  power: 100,
+  health: 200,
+  type: distanceshoot,
+  projectile_img: wonderball85pry,
+  projectile_type: bouncing,
+  shootingFrames : 29,
+  restingFrames : 1,
+  shootFrame:15
+}
+allTypes.push(card85);

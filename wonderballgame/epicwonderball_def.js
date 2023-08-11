@@ -861,6 +861,8 @@ const card84 = {
   isepic:true,
   storagekey: "anturiumBought"
 }
+
+
 if(Number(localStorage.anturiumBought)==0){
   allEpicWonderballs.push(card84);
 }else{
@@ -875,7 +877,3 @@ for(i=0; i< allTypes.length; i++){
     localStorage.setItem(key, 1);
   }
 }
-
-//for test
-key="wonderball2level";
-localStorage.setItem(key, 2);

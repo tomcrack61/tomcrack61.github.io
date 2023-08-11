@@ -32,6 +32,9 @@ function createProjectile(x,y,power,img, type, venom, store){
   else if(type == teledirected){
     store.push(new TeleDirectedProjectile(x,y,power,img));
   }
+  else if(type == bouncing){
+    store.push(new BouncingProjectile(x,y,power,img));
+  }
   else {
     store.push(new Projectile(x,y,power,img, venom));
   }
@@ -85,7 +88,29 @@ class Projectile{
 
 }
 
+class BouncingProjectile extends Projectile{
+  constructor(x,y, power, img, venom){
+    super(x,y,power,img, venom);
+  }
 
+  update(){
+    super.update();
+  }
+  destroy(){
+    if(this.speedy == 0) this.speedy = -5;
+    this.speedy *= -1;
+    this.speed *= 1;
+    return false;
+  }
+
+  getType(){
+    return bouncing;
+  }
+
+  draw(){
+    super.draw();
+  }
+}
 
 class TeleDirectedProjectile extends Projectile{
   constructor(x,y, power, img, venom){
@@ -367,7 +392,7 @@ class Wonderball{
 
   update(){
     if(frame % 10 == 0 ){
-      if(this.frameX < this.maxFrame ) this.frameX++;
+      if(this.frameX < this.maxFrame-1 ) this.frameX++;
       else this.frameX = this.minFrame;
     }
 
@@ -463,6 +488,8 @@ class AttackerWonderball extends Wonderball{
     this.type = cards[choosenDefender].card.type;
     if('specialimg' in cards[choosenDefender].card)
       this.specialimg = cards[choosenDefender].card.specialimg;
+    if('specialframes' in cards[choosenDefender].card)
+        this.specialframes = cards[choosenDefender].card.specialframes;
     this.special = 0;
   }
   draw(){
@@ -484,18 +511,21 @@ class AttackerWonderball extends Wonderball{
 
   update(){
     super.update();
-    if(this.special > 0 && this.specialimg){
-      this.wonderballType = this.specialimg;
+    if(this.special > 0){
+      if(this.specialimg){
+        this.wonderballType = this.specialimg;
+        this.minFrame = 0;
+        this.maxFrame = this.specialframes;
+      }
+      this.shooting = true;
+      this.shootNow = true;
       if(--this.special == 0){
         this.wonderballType = this.img;
       }
-      this.minFrame = 0;
-      this.maxFrame = 1;
-      this.shooting = true;
-      this.shootNow = true;
+
     }else{
       if(this.shooting){
-        this.minFrame = 1;
+        this.minFrame = this.restingFrames;
         this.maxFrame = this.restingFrames + this.shootingFrames;
       }else{
         this.minFrame = 0;
@@ -573,12 +603,21 @@ class DistanceWonderball extends AttackerWonderball{
   }
 
   enemyOnRow(onRow){
-    this.shooting = true;
+    if(this.shooting == false && onRow){
+      this.frameX = this.restingFrames;
+      this.shooting = true;
+    }
+    if(!onRow){
+      this.shooting = false;
+    }
   }
 
   enemyAttacking(attack, health){
     super.enemyAttacking(attack);
-    this.shooting = true;
+    if(this.shooting = false){
+      this.frameX = this.restingFrames;
+      this.shooting = true;
+    }
   }
 
   update(){
@@ -588,15 +627,9 @@ class DistanceWonderball extends AttackerWonderball{
 
     if (this.shooting && this.shootNow){
 
-
-
       if (this.power<20) {
         createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, this.venom, projectiles);
         createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, this.venom, projectiles);
-        createProjectile(this.x + 70, this.y + 30, this.power*5, this.projectiles,this.projectileType, this.venom, projectiles);
-
-
-
     }
 
         let prob = Math.random();
@@ -611,6 +644,8 @@ class DistanceWonderball extends AttackerWonderball{
           }else{
             createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType,this.venom, projectiles);
           }
+          this.shooting = false;
+          this.frameX = 1;
         }
         this.shootNow = false;
     }
