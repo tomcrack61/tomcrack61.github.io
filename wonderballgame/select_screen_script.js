@@ -5,14 +5,14 @@ if (typeof(Storage) !== "undefined") {
 }
 
 //catalogo
-const catalogImg = new Image();
-catalogImg.src = 'assets/world_choose.png';
+//const catalogImg = new Image();
+//catalogImg.src = 'assets/world_choose.png';
 
 lvlButtons = [];
 
 let l1Btn ={
-  x: 750,
-  y: 485,
+  x: 30,
+  y: 275,
   width: 49,
   height: 47,
   active: true,
@@ -20,8 +20,8 @@ let l1Btn ={
 lvlButtons.push(l1Btn);
 
 let l2Btn ={
-  x: 700,
-  y: 492,
+  x: 90,
+  y: 295,
   width: 45,
   height: 45,
   active: false
@@ -29,8 +29,8 @@ let l2Btn ={
 lvlButtons.push(l2Btn);
 
 let l3Btn ={
-  x: 645,
-  y: 487,
+  x: 140,
+  y: 406,
   width: 45,
   height: 45,
   active: false
@@ -106,7 +106,7 @@ const storeBtn ={
 
 //catalogo
 const mapImg = new Image();
-mapImg.src = 'assets/map.jpg';
+mapImg.src = 'assets/map.jpeg';
 
 function handleBtn(){
   if(collision(storeBtn, mouse) && mouse.clicked){

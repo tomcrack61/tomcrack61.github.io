@@ -1166,11 +1166,11 @@ const card85 = {
   shootFrame:15
 }
 allTypes.push(card85);
-const wonderball86 = new Image();
-wonderball86.src = 'wonderballs/lechuga iceberg.png';
-wonderballTypes.push(wonderball86);
-const card86 = {
-  img: wonderball86,
+const wonderball87 = new Image();
+wonderball87.src = 'wonderballs/lechuga iceberg.png';
+wonderballTypes.push(wonderball87);
+const card87 = {
+  img: wonderball87,
   cost: 0,
   defense: 3,
   power: 2500,
@@ -1181,4 +1181,26 @@ const card86 = {
   rechargeFrames: 9,
   shootFrame:9,
 }
-allTypes.push(card86);
+allTypes.push(card87);
+const wonderball88 = new Image();
+wonderball88.src = 'wonderballs/coltapulta.png';
+wonderballTypes.push(wonderball88);
+
+const wonderball88pry = new Image();
+wonderball88pry.src = 'wonderballs/coltapulta proy.png';
+
+
+const card88 = {
+  img: wonderball88,
+  cost: 100,
+  defense: 0.5,
+  power: 20,
+  health: 200,
+  type: distanceshoot,
+  projectile_img: wonderball88pry,
+  projectile_type: arcpath,
+  shootingFrames : 5,
+  restingFrames : 6,
+  shootFrame:10
+}
+allTypes.push(card88);

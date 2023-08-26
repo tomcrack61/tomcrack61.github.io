@@ -23,7 +23,7 @@ const catalogBtn ={
 const startScreenImg = new Image();
 startScreenImg.src = 'assets/startscreen.png';
 
-function handleBtn(){
+function handlemenuBtn(){
   if(collision(storeMenuBtn, mouse) && mouse.clicked){
     goToStore();
   }else if(collision(catalogBtn, mouse) && mouse.clicked){
@@ -48,5 +48,5 @@ function animateGeneralMenu(){
   ctx.strokeRect(catalogBtn.x, catalogBtn.y, catalogBtn.width, catalogBtn.height);
   ctx.fillText("Catalog", catalogBtn.x, catalogBtn.y);
 
-  handleBtn();
+  handlemenuBtn();
 }

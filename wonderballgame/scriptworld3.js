@@ -587,12 +587,15 @@ function initLevel(){
     gameOver = false;
     cards = [];
     cardsAvailable = [];
+    if(game.curr_level == 1){
+      worldBgnImg.src = 'assets/antiguo egipto.png';
+    }
 
     if(game.curr_level == 2){
-      worldBgnImg.src = 'assets/poolWorldbackground.jpg';
+      worldBgnImg.src = 'assets/antiguo egipto.png';
     }
     if(game.curr_level == 3){
-      worldBgnImg.src = 'assets/forestWorld nochebackground.jpg';
+      worldBgnImg.src = 'assets/antiguo egipto.png';
     }  if(game.curr_level == 5){
 
 
