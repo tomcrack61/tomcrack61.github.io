@@ -15,9 +15,11 @@ const marcyImg = new Image();
 marcyImg.src = 'dialogmarie/marcy 1.png';
 
 let dialogs = [];
+let dialogTime = 0;
 dialogs.push("Necesitarás a los girasoles y los lanzaguisantes para defenderte de glitch");
 dialogs.push("Vaya, aprendiste a usar los girasoles!");
-dialogs.push("vaya ya estas usando a la flor meteorito");
+dialogs.push("Vaya, ya estas usando a la flor meteorito");
+
 function animateDialog(dialogImg){
   ctx.clearRect(0,0, canvas.width, canvas.height);
   ctx.drawImage(dialogImg, 0, 0, 2959, 1881, 10,10,canvas.width, canvas.height);

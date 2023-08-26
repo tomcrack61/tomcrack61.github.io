@@ -55,7 +55,7 @@ canvas.height = 600;
 let canvasPosition = canvas.getBoundingClientRect();
 
 const game = {
-  state: "initDialog",
+  state: "menu",
   curr_level: 1
 }
 

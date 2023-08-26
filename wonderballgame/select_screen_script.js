@@ -8,8 +8,6 @@ if (typeof(Storage) !== "undefined") {
 const catalogImg = new Image();
 catalogImg.src = 'assets/world_choose.png';
 
-let dialogTime = 0;
-
 lvlButtons = [];
 
 let l1Btn ={
@@ -107,8 +105,8 @@ const storeBtn ={
 };
 
 //catalogo
-const startScreenImg = new Image();
-startScreenImg.src = 'assets/map.jpg';
+const mapImg = new Image();
+mapImg.src = 'assets/map.jpg';
 
 function handleBtn(){
   if(collision(storeBtn, mouse) && mouse.clicked){
@@ -140,7 +138,7 @@ function startMap(){
 
 function animateMap(){
   ctx.clearRect(0,0, canvas.width, canvas.height);
-  ctx.drawImage(startScreenImg, 0, 0, 1300, 900, 10,10,canvas.width, canvas.height);
+  ctx.drawImage(mapImg, 0, 0, 1300, 900, 10,10,canvas.width, canvas.height);
 
   ctx.strokeStyle='blue';
   for(let i = 0; i<lvlButtons.length; i++){
@@ -152,7 +150,7 @@ function animateMap(){
 
   ctx.fillStyle='black';
   ctx.font = '20px Orbitron';
-  ctx.fillText('Feli! This is your game, click a world to start', 120, 80);
+  ctx.fillText('Choose a level', 120, 80);
 
   handleBtn();
 }
