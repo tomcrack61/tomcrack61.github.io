@@ -30,16 +30,16 @@ const card53 = {
   projectile_type: straightpath,
   shootingFrames : 1,
   restingFrames : 2,
-  shootFrame: 3,
+  shootFrame: 2,
   shootingFramesv : 2,
   restingFramesv : 3,
-  shootFramev: 5,
+  shootFramev: 4,
   shootingFramesc : 4,
   restingFramesc : 3,
-  shootFramec: 6,
+  shootFramec: 5,
   shootingFramesd : 5,
   restingFramesd : 4,
-  shootFramed: 9,
+  shootFramed: 8,
   isepic:true,
   storagekey:"jetixBought"
 }
@@ -69,7 +69,7 @@ const card54 = {
   projectile_type: straightpath,
   shootingFrames : 2,
   restingFrames : 2,
-  shootFrame: 4,
+  shootFrame: 3,
   isepic:true,
   storagekey: "fireGuisanteBought"
 }
@@ -94,7 +94,7 @@ const card55 = {
   shootingFrames : 1,
   restingFrames : 2,
   rechargeFrames: 1,
-  shootFrame:3,
+  shootFrame:2,
   isepic:true,
   storagekey: "doradaBought"
 }
@@ -122,7 +122,7 @@ const card56 = {
   projectile_type: teledirected,
   shootingFrames : 2,
   restingFrames : 1,
-  shootFrame: 3,
+  shootFrame: 2,
   isepic:true,
   storagekey: "lotoBought"
 }
@@ -150,7 +150,7 @@ const card58 = {
   projectile_type: arcpath,
   shootingFrames : 1,
   restingFrames : 2,
-  shootFrame: 3,
+  shootFrame: 2,
   isepic:true,
   storagekey: "tiragiusantesBought"
 }
@@ -178,7 +178,7 @@ const card59 = {
   projectile_type: teledirected,
   shootingFrames : 1,
   restingFrames : 1,
-  shootFrame: 2,
+  shootFrame: 1,
   isepic:true,
   storagekey: "canonbirdBought"
 }
@@ -206,7 +206,7 @@ const card60 = {
   projectile_type: straightpath,
   shootingFrames : 1,
   restingFrames : 2,
-  shootFrame: 3,
+  shootFrame: 2,
   isepic:true,
   storagekey: "arqueopterixBought"
 }
@@ -234,7 +234,7 @@ const card61 = {
   projectile_type: arcpath,
   shootingFrames : 1,
   restingFrames : 3,
-  shootFrame: 4,
+  shootFrame: 3,
   isepic:true,
   storagekey: "melonpultacongeladaBought"
 }
@@ -300,7 +300,7 @@ const card63 = {
   shootingFrames : 1,
   restingFrames : 3,
   rechargeFrames: 2,
-  shootFrame:4,
+  shootFrame:3,
   isepic:true,
   storagekey: "apisonaflorBought"
 }
@@ -328,7 +328,7 @@ const card64 = {
   projectile_type: straightpath,
   shootingFrames : 1,
   restingFrames : 3,
-  shootFrame: 2,
+  shootFrame: 1,
   isepic:true,
   storagekey: "fuentinfuentinBought"
 }
@@ -356,7 +356,7 @@ const card65 = {
   projectile_type: penetratingproj,
   shootingFrames : 1,
   restingFrames : 3,
-  shootFrame: 4,
+  shootFrame: 3,
   isepic:true,
   storagekey: "corazonelctricoBought"
 }
@@ -384,7 +384,7 @@ const card66 = {
   projectile_type: penetratingproj,
   shootingFrames : 2,
   restingFrames : 3,
-  shootFrame: 3,
+  shootFrame: 2,
   isepic:true,
   storagekey: "juncoelctricoBought"
 }
@@ -408,7 +408,7 @@ const card67 = {
   shootingFrames : 1,
   restingFrames : 2,
   rechargeFrames: 2,
-  shootFrame:3,
+  shootFrame:2,
   isepic:true,
   storagekey: "carpintaldroBought"
 }
@@ -432,7 +432,7 @@ const card68 = {
   shootingFrames : 1,
   restingFrames : 3,
   rechargeFrames: 3,
-  shootFrame:4,
+  shootFrame:3,
   isepic:true,
   venom: true,
   storagekey: "waspBought"
@@ -461,7 +461,7 @@ const card69 = {
   projectile_type: arcpath,
   shootingFrames : 1,
   restingFrames : 2,
-  shootFrame: 3,
+  shootFrame: 2,
   isepic:true,
   venom: true,
   storagekey: "rafleciaprimitivaBought"
@@ -489,7 +489,7 @@ const card70 = {
   projectile_img: jalapeñoproy,
   shootingFrames : 1,
   restingFrames : 2,
-  shootFrame: 3,
+  shootFrame: 2,
   isepic:true,
   storagekey: "jalapeñoBought"
 }
@@ -513,7 +513,7 @@ const card71 = {
   shootingFrames : 1,
   restingFrames : 2,
   rechargeFrames: 2,
-  shootFrame:3,
+  shootFrame:2,
   isepic:true,
   storagekey: "carpintaldroBought"
 }
@@ -541,7 +541,7 @@ const card72 = {
   projectile_type: penetratingproj,
   shootingFrames : 2,
   restingFrames : 3,
-  shootFrame: 3,
+  shootFrame: 2,
   isepic:true,
   storagekey: "frailejonmedioBought"
 }
@@ -565,7 +565,7 @@ const card73 = {
   shootingFrames : 1,
   restingFrames : 3,
   rechargeFrames: 3,
-  shootFrame:4,
+  shootFrame:3,
   isepic:true,
   venom: true,
   storagekey: "setaespinosaBought"
@@ -590,7 +590,7 @@ const card74 = {
   shootingFrames : 2,
   restingFrames : 2,
   rechargeFrames: 1,
-  shootFrame:3,
+  shootFrame:2,
   isepic:true,
   storagekey: "girasolcantanteBought"
 }
@@ -614,7 +614,7 @@ const card75 = {
   shootingFrames : 4,
   restingFrames : 2,
   rechargeFrames: 3,
-  shootFrame:7,
+  shootFrame:6,
   isepic:true,
   storagekey: "ramphorincusBought"
 }
@@ -638,7 +638,7 @@ const card76 = {
   shootingFrames : 2,
   restingFrames : 2,
   rechargeFrames: 2,
-  shootFrame:5,
+  shootFrame:4,
   isepic:true,
   storagekey: "carpintaldroBought"
 }
@@ -666,7 +666,7 @@ const card77 = {
   projectile_type: penetratingproj,
   shootingFrames : 1,
   restingFrames : 3,
-  shootFrame: 4,
+  shootFrame: 3,
   isepic:true,
   storagekey: "tripitidoraBought"
 }
@@ -690,7 +690,7 @@ const card78 = {
   shootingFrames : 2,
   restingFrames : 2,
   rechargeFrames: 2,
-  shootFrame:4,
+  shootFrame:3,
   isepic:true,
   storagekey: "carpintaldroBought"
 }
@@ -718,7 +718,7 @@ const card79 = {
   projectile_type: penetratingproj,
   shootingFrames : 1,
   restingFrames : 4,
-  shootFrame: 5,
+  shootFrame: 4,
   isepic:true,
   storagekey: "anturiumBought"
 }
@@ -749,7 +749,7 @@ specialimg:pairanaplaneSpecial,
   projectile_type:straightpath ,
   shootingFrames : 1,
   restingFrames : 3,
-  shootFrame: 4,
+  shootFrame: 3,
   isepic:true,
   storagekey: "pairanaplaneBought"
 }
@@ -773,7 +773,7 @@ const card81 = {
   shootingFrames : 2,
   restingFrames : 7,
   rechargeFrames: 2,
-  shootFrame:7,
+  shootFrame:6,
   isepic:true,
   storagekey: "platillosballBought"
 }
@@ -801,7 +801,7 @@ const card82 = {
   projectile_type: penetratingproj,
   shootingFrames : 1,
   restingFrames : 2,
-  shootFrame: 3,
+  shootFrame: 2,
   isepic:true,
   storagekey: "anturiumBought"
 }
@@ -829,11 +829,11 @@ const card83 = {
   projectile_type: penetratingproj,
   shootingFrames : 5,
   restingFrames : 5,
-  shootFrame: 10,
+  shootFrame: 9,
   isepic:true,
-  storagekey: "anturiumBought"
+  storagekey: "geishaBought"
 }
-if(Number(localStorage.anturiumBought)==0){
+if(Number(localStorage.geishaBought)==0){
   allEpicWonderballs.push(card83);
 }else{
   allTypes.push(card83);
@@ -857,7 +857,7 @@ const card84 = {
   projectile_type: arcpath,
   shootingFrames : 4,
   restingFrames : 4,
-  shootFrame: 8,
+  shootFrame: 7,
   isepic:true,
   storagekey: "anturiumBought"
 }
@@ -876,4 +876,32 @@ for(i=0; i< allTypes.length; i++){
   if (!localStorage[key]) {
     localStorage.setItem(key, 1);
   }
+}
+const yiqiproy = new Image();
+yiqiproy.src = 'wonderballs/yi qiproy.png';
+
+const wonderball86 = new Image();
+wonderball86.src = 'wonderballs/yi qi.png';
+allEpicWonderballsTypes.push(wonderball86);
+
+const card86 = {
+  img: wonderball86,
+  coinsPrice: 5000,
+  cost: 50,
+  defense: 0.35,
+  power: 18,
+  health: 1300,
+  type: distanceshoot,
+  projectile_img: yiqiproy,
+  projectile_type: penetratingproj,
+  shootingFrames : 4,
+  restingFrames : 4,
+  shootFrame: 7,
+  isepic:true,
+  storagekey: "yiqiBought"
+}
+if(Number(localStorage.yiqiBought)==0){
+  allEpicWonderballs.push(card86);
+}else{
+  allTypes.push(card86);
 }

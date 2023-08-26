@@ -328,7 +328,7 @@ const card14 = {
   product_img: wonderball14pry,
   projectile_type: noType,
   shootingFrames : 1,
-  restingFrames : 2
+  restingFrames : 5
 }
 allTypes.push(card14);
 
@@ -367,14 +367,14 @@ const card16 = {
   img: wonderball16,
   cost: 200,
   defense: 0.25,
-  power: 45,
+  power: 25,
   health: 180,
   type: distanceshoot,
   projectile_img: wonderball16pry,
   projectile_type: straightpath,
-  shootingFrames : 2,
-  restingFrames : 1,
-  shootFrame:2
+  shootingFrames : 6,
+  restingFrames : 8,
+  shootFrame:14
 }
 allTypes.push(card16);
 
@@ -713,9 +713,9 @@ const card31 = {
   projectile_img: null,
   projectile_type: null,
   shootingFrames : 0,
-  restingFrames : 8,
+  restingFrames : 9,
   rechargeFrames: 3,
-  shootFrame:10
+  shootFrame:12
 }
 allTypes.push(card31);
 
@@ -840,14 +840,14 @@ wonderballTypes.push(wonderball38);
 const card38 = {
   img: wonderball38,
   cost: 150,
-  defense: 0.45,
+  defense: 2,
   power: 5,
-  health: 11450,
+  health: 21450,
   type:contactshoot,
-  shootingFrames : 2,
-  restingFrames : 2,
-  rechargeFrames: 1,
-  shootFrame:2,
+  shootingFrames : 12,
+  restingFrames : 4,
+  rechargeFrames: 2,
+  shootFrame:15,
 }
 allTypes.push(card38)
 const wonderball39 = new Image();
@@ -1053,10 +1053,10 @@ const card49 = {
   power: 12,
   health: 3411,
   type:contactshoot,
-  shootingFrames :1 ,
+  shootingFrames :3 ,
   restingFrames :2,
   rechargeFrames: 1,
-  shootFrame:2,
+  shootFrame:5,
 }
 allTypes.push(card49);
 const pacionariaproy = new Image();
@@ -1166,3 +1166,19 @@ const card85 = {
   shootFrame:15
 }
 allTypes.push(card85);
+const wonderball86 = new Image();
+wonderball86.src = 'wonderballs/lechuga iceberg.png';
+wonderballTypes.push(wonderball86);
+const card86 = {
+  img: wonderball86,
+  cost: 0,
+  defense: 3,
+  power: 2500,
+  health: 150,
+  type:instant,
+  shootingFrames : 4,
+  restingFrames :7,
+  rechargeFrames: 9,
+  shootFrame:9,
+}
+allTypes.push(card86);

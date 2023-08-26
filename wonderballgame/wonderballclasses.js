@@ -423,11 +423,11 @@ class TrapWonderball extends Wonderball{
 
   update(){
     if(this.animation < this.restingFrames){
-      if(frame % 120 == 0){
+      if(frame % 50 == 0){
         this.animation+=2;
       }
       this.minFrame = this.animation;
-      this.maxFrame = this.animation+1;
+      this.maxFrame = this.animation+2;
     }else{
       this.minFrame = this.restingFrames;
       this.maxFrame = this.restingFrames + this.rechargeFrames;
@@ -627,13 +627,17 @@ class DistanceWonderball extends AttackerWonderball{
 
     if (this.shooting && this.shootNow){
 
-      if (this.power<20) {
-        createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, this.venom, projectiles);
-        createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, this.venom, projectiles);
-    }
+        if (this.power<20) {
+          createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, this.venom, projectiles);
+          createProjectile(this.x + 70, this.y + 30, this.power, this.projectiles,this.projectileType, this.venom, projectiles);
+        }
 
         let prob = Math.random();
-        let th = 10/this.power;
+        let th_num = localStorage.currentLevel*2;
+        if(localStorage.currentLevel < 5){
+          th_num = 10;
+        }
+        let th = th_num/this.power;
         let powerprob = randn_bm(0,1, th);
         if(this.projectileType == timestopproj){
           th = 0.1;
