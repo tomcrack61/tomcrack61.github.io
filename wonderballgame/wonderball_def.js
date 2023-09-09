@@ -985,8 +985,8 @@ const card45 = {
   shootFrame: 7
 }
 allTypes.push(card45)
-const hielagisantesproy = new Image();
-hielagisantesproy.src ='wonderballs/hielagisantesproy.png';
+const hielaguisantesproy = new Image();
+hielaguisantesproy.src ='wonderballs/hielaguisantes proy.png';
 
 const wonderball46 = new Image();
 wonderball46.src = 'wonderballs/hielaguisantes.png';
@@ -999,11 +999,11 @@ const card46 = {
   power: 32,
   health: 123,
   type: distanceshoot,
-  projectile_img: hielagisantesproy,
+  projectile_img: hielaguisantesproy,
   projectile_type: timestopproj,
   shootingFrames : 6,
-  restingFrames : 7,
-  shootFrame: 12
+  restingFrames : 8,
+  shootFrame: 14
 }
 allTypes.push(card46)
 const wonderball47 = new Image();
