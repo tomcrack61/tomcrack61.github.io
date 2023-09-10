@@ -64,6 +64,7 @@ function handlePuzzleStore(){
       }
     }
   }
+  mouse.clicked = false;
 }
 
 function animatePuzzleStore(){
@@ -88,6 +89,7 @@ function animatePuzzleStore(){
   ctx.font = '20px Orbitron';
   ctx.fillText("Go to index" , selectWorldBtn.x+65, selectWorldBtn.y+35);
   if(collision(selectWorldBtn, mouse) & mouse.clicked){
+    mouse.clicked = false;
     goToMap();
   }
 

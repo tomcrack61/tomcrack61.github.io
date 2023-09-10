@@ -100,8 +100,8 @@ let temploBtn = {
 const storeBtn ={
   x: 35,
   y: 10,
-  width: 215,
-  height: 185
+  width: 120*0.8,
+  height: 135*0.8
 };
 
 //catalogo
@@ -110,13 +110,16 @@ mapImg.src = 'assets/map.jpeg';
 
 function handleBtn(){
   if(collision(storeBtn, mouse) && mouse.clicked){
+    mouse.clicked = false;
     goToStore();
   }else if(collision(temploBtn, mouse) && temploBtn.active && mouse.clicked){
+    mouse.clicked = false;
     goToTemple();
   }
   else{
     for(let i = 0; i<lvlButtons.length; i++){
       if(collision(lvlButtons[i], mouse) && mouse.clicked && lvlButtons[i].active){
+        mouse.clicked = false;
         game.curr_level = i+1;
         game.state = "dialogMarcy"
         //goToSelection();
@@ -145,8 +148,8 @@ function animateMap(){
     if(lvlButtons[i].active) ctx.strokeRect(lvlButtons[i].x, lvlButtons[i].y, lvlButtons[i].width, lvlButtons[i].height);
   }
   if(temploBtn.active) ctx.strokeRect(temploBtn.x, temploBtn.y, temploBtn.width, temploBtn.height);
-  ctx.strokeRect(storeBtn.x, storeBtn.y, storeBtn.width, storeBtn.height);
-  //ctx.drawImage(catalogBtn.img, 0, 0, 200, 200, catalogBtn.x, catalogBtn.y, catalogBtn.width, catalogBtn.height);
+  ctx.drawImage(storeMenuBtn.img_src, storeMenuBtn.current_frame*storeMenuBtn.img_width, 0, storeMenuBtn.img_width, storeMenuBtn.img_height, storeMenuBtn.x, storeMenuBtn.y, storeMenuBtn.width*0.8, storeMenuBtn.height*0.8);
+//ctx.drawImage(catalogBtn.img, 0, 0, 200, 200, catalogBtn.x, catalogBtn.y, catalogBtn.width, catalogBtn.height);
 
   ctx.fillStyle='black';
   ctx.font = '20px Orbitron';

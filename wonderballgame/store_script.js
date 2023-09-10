@@ -87,6 +87,7 @@ function handleStore(){
       }
     }
   }
+  mouse.clicked = false;
 }
 
 function animateStore(){
@@ -103,6 +104,7 @@ function animateStore(){
   ctx.fillText("Buy puzzle pieces", goToPuzzleStoreBtn.x+65, goToPuzzleStoreBtn.y+20);
 
   if(collision(goToPuzzleStoreBtn, mouse) & mouse.clicked){
+    mouse.clicked = false;
     goToPuzzleStore();
   }
 
@@ -121,6 +123,7 @@ function animateStore(){
   ctx.font = '20px Orbitron';
   ctx.fillText("Go to index" , selectWorldBtn.x+65, selectWorldBtn.y+35);
   if(collision(selectWorldBtn, mouse) & mouse.clicked){
+    mouse.clicked = false;
     goToMap();
   }
 

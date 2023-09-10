@@ -38,6 +38,9 @@ const controlsBar = {
   height : canvas.width,
 };
 
+const silverCoinImg = new Image();
+silverCoinImg.src = 'resources/moneda de plata.png'
+
 
 class Cell {
   constructor(x,y){
@@ -69,6 +72,10 @@ function handleGameGrid(){
 
 function produceSpecialGem(x,y){
   resources.push(new Resource(x, y, 0, gemImg));
+}
+
+function produceSilverCoin(x,y){
+  resources.push(new Resource(x,y,-1,silverCoinImg));
 }
 
 function handleSpecialGem(){
@@ -288,68 +295,14 @@ function handleFloatingMessages(){
 }
 // Enemies
 
-
-class Enemy{
-  constructor(verticalPosition, enemyType){
-    this.x = canvas.width;
-    this.y = verticalPosition;
-    this.width = cellSize - cellGap*2;
-    this.height = cellSize - cellGap*2;
-    this.img = enemyType.img;
-    this.speed = Math.random() * enemyType.speedFactor + 0.4;
-    this.movement = this.speed;
-    this.health = enemyType.maxHealth*enemiesPowerBoost;
-    this.maxHealth = enemyType.maxHealth;
-    this.attack = this.health / 500;
-    this.venom = 0;
-    this.venomTimer = 0;
-
-    this.frameX = 0;
-    this.minFrame = 0;
-    this.maxFrames = enemyType.framesStart;
-    this.spriteWidth = 340;
-    this.spriteHeight = 367;
-
-    this.card = enemyType;
-  }
-  update(){
-    this.x -= this.movement;
-
-    if(frame % 10 == 0){
-      this.frameX++;
-      if(this.frameX >= this.maxFrames) this.frameX = 0;
-      this.health -= this.venom;
+function enemyDied(x,y){
+    let num = Math.random();
+    if(num < 0.2){
+      produceSpecialGem(x,y);
     }
-
-    if(this.health <= 0.7*this.maxHealth){
-      this.minFrame = this.card.frameBadHealth;
-      this.maxFrames = this.minFrame+this.card.framesBadHealth;
-      this.frameX = this.minFrame;
+    else if(num > 0.7){
+      produceSilverCoin(x,y);
     }
-  }
-  draw(){
-    ctx.fillStyle='gold';
-    ctx.font = '20px Orbitron';
-    ctx.fillText(Math.floor(this.health), this.x+15, this.y+30);
-    ctx.drawImage(this.img, this.frameX*this.spriteWidth, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
-    if(this.venom > 0){
-      ctx.drawImage(venomEffectImg, 0, 0, this.spriteWidth, this.spriteHeight, this.x, this.y, this.width, this.height);
-    }
-  }
-
-  empoison(venom, timer){
-    this.venom = venom;
-    this.venomTimer = timer;
-  }
-
-  wonderballAttacking(defense, health){
-    this.health -= defense;
-    if(health - this.attack > 0){
-      this.movement = 0;
-    }else{
-      this.movement = this.speed;
-    }
-  }
 }
 
 function handleEnemies(){
@@ -362,8 +315,10 @@ function handleEnemies(){
       playGame = false;
     }
 
-    if(enemies[i].health <= 0){
-      produceSpecialGem(enemies[i].x, enemies[i].y);
+    //enemy is dying
+    if( enemies[i] && isNaN(enemies[i].health) || enemies[i].health <= 0){
+      enemyDied(enemies[i].x, enemies[i].y);
+
       let gainedResources = enemies[i].maxHealth/10;
       floatingMessages.push(new FloatingMessage("+"+gainedResources, enemies[i].x, enemies[i].y, 30, 'black'));
       floatingMessages.push(new FloatingMessage("+"+gainedResources, 250, 50, 30, 'gold'));
@@ -396,13 +351,15 @@ function handleEnemies(){
 const amounts = [20, 30, 40];
 
 class Resource{
-  constructor(x,y,amount, img){
+  constructor(x,y,amount, img, frames = 1){
     this.x = x;
     this.y = y;
     this.width = cellSize * 0.6;
     this.height = cellSize * 0.6;
     this.amount = amount;
     this.image = img;
+    this.current_frame = 0;
+    this.frames = frames;
   }
   draw(){
     if(this.image == null){
@@ -419,6 +376,7 @@ class Resource{
   }
   update(){
     this.y +=0.1;
+    //this.current_frame = this.current_frame+1 % frames;
   }
 }
 
@@ -438,8 +396,11 @@ function handleResources(){
       if(resources[i].amount > 0){
         floatingMessages.push(new FloatingMessage("+"+resources[i].amount, resources[i].x, resources[i].y, 30, 'black'));
         floatingMessages.push(new FloatingMessage("+"+resources[i].amount, 250,50,30,'gold' ));
-      }else{
+      }else if(resources[i].amount == 0){
         gemsObtained = Math.min(gemsObtained+1, 4);
+      }
+      else if(resources[i].amount == -1){
+        localStorage.coinCounter = Number(localStorage.coinCounter) + 100;
       }
       resources.splice(i, 1);
       i--;
@@ -569,6 +530,7 @@ function animateGame(){
   ctx.fillText(localStorage.coinCounter, coins.x+40, coins.y+20);
 
   frame++;
+  mouse.clicked = false;
 }
 
 
