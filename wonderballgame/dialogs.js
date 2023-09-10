@@ -39,6 +39,7 @@ function animateMarcyDialog(){
   dialogTime +=1;
   if(dialogTime > 200){
     dialogTime = 0;
+    mouse.clicked = false;
     goToSelection();
   }
 }

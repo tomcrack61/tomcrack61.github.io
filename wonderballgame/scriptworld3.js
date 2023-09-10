@@ -73,6 +73,7 @@ function produceSpecialGem(x,y){
 
 function handleSpecialGem(){
   if(collision(mouse, gem)&& mouse.clicked){
+    mouse.clicked=false;
     if(gemsObtained>0){
       gem.active = true;
       gemsObtained--;
@@ -185,6 +186,7 @@ function chooseDefender(){
   ctx.lineWidth = 1;
   for(let i = 0; i< cards.length; i++){
     if (collision(mouse, cards[i]) && mouse.clicked){
+      mouse.clicked=false;
       choosenDefender = i;
     }
     ctx.strokeStyle = 'black';
@@ -201,6 +203,7 @@ function choosePowerUps(){
   for ( let i = 0; i < powerUps.length; i++){
     if(i== 0){
       if (collision(mouse, powerUps[i]) && mouse.clicked && powerUpsTime[i] == 0){
+        mouse.clicked=false;
         powerUps[i].active = !powerUps[i].active;
       }
     }
@@ -215,6 +218,7 @@ function choosePowerUps(){
         }
       }
       if (collision(mouse, powerUps[i]) && mouse.clicked && !powerUps[i].active){
+        mouse.clicked=false;
         powerUps[i].active = true;
         powerUpsTime[i] = 1000;
       }
@@ -234,6 +238,7 @@ function choosePowerUps(){
 function handlePauseBtn(){
   //pauseImg
   if(collision(mouse, pauseBtn)&& mouse.clicked){
+    mouse.clicked=false;
     pauseBtn.active = !pauseBtn.active;
   }
   ctx.strokeStyle = 'black';

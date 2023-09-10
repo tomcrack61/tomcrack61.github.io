@@ -40,6 +40,7 @@ function showPuzzleStore(){
 function handlePuzzleStore(){
   for(let i = 0; i< puzzleStoreCards.length; i++){
     if(collision(puzzleStoreCards[i], mouse) && mouse.clicked){
+      mouse.clicked=false;
       if(Number(localStorage.coinCounter) >= puzzlePieceCost){
         floatingMessages.push(new FloatingMessage("Buying -500$", mouse.x, mouse.y, 20, 'blue'));
         var storedPuzzlePieces = JSON.parse(localStorage.puzzlePieces);
@@ -54,7 +55,6 @@ function handlePuzzleStore(){
           localStorage[key] = Number(localStorage[key])+1;
           floatingMessages.push(new FloatingMessage("Level Up! Now you are L"+localStorage[key], mouse.x, mouse.y, 20, 'blue'));
           storedPuzzlePieces[j] = 0;
-          mouse.clicked =false;
         }
 
 

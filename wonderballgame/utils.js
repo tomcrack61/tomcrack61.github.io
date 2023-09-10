@@ -66,6 +66,7 @@ const mouse ={
   width: 0.1,
   height: 0.1,
   clicked: false,
+  pressed: false
 };
 
 canvas.addEventListener('mousemove', function(e){
@@ -93,12 +94,16 @@ canvas.addEventListener('touchstart', function(e){
   mouse.clicked = true;
 });
 
-canvas.addEventListener('mousedown', function(e){
+canvas.addEventListener('click', function(e){
   mouse.clicked = true;
 });
 
+canvas.addEventListener('mousedown', function(e){
+  mouse.pressed = true;
+});
+
 canvas.addEventListener('mouseup', function(e){
-  mouse.clicked = false;
+  mouse.pressed = false;
 });
 
 

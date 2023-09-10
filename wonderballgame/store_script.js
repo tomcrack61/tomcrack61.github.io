@@ -67,6 +67,7 @@ function showStore(){
 function handleStore(){
   for(let i = 0; i< storeCards.length; i++){
     if(collision(storeCards[i], mouse) && mouse.clicked){
+      mouse.clicked=false;
       if(Number(localStorage.coinCounter) >= storeCards[i].card.coinsPrice){
         if(Number(localStorage.getItem(storeCards[i].card.storagekey)) > 0){
           floatingMessages.push(new FloatingMessage("You already own this wonderball", mouse.x, mouse.y+25, 35, 'black'));
