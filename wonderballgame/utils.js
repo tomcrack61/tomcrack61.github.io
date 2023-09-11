@@ -130,6 +130,11 @@ function mapSettings(){
   audioPlayer.src = "assets/mapsong.mp3";
 }
 
+function generalMenuSettings(){
+  var audioEl = document.getElementById("audio");
+  audioEl.src = "assets/startmenusong.mp3";
+}
+
 function selectionSettings(){
   var audioEl = document.getElementById("audio");
   audioEl.src = "assets/menusong.mp3";
