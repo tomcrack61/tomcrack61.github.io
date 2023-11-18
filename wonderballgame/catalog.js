@@ -6,30 +6,32 @@ const catalogImg = new Image();
 //catalogImg.src = 'assets/world_choose.png';
 
 let catalog_page = 0;
-const totalTypes = 6;
+const totalTypes = 15;
 
 const typesButton = {
   x:50,
   y: 15,
   width: 320,
   height: 40*totalTypes,
-  options: ['producer', 'distanceshoot','contactshoot','instant','manualshoot','teamwork'],
-  selected: 'producer',
+  options: ['producer', 'distanceshoot','defenser', 'contactshoot','timedshoot','general','manualshoot','support','teamwork','instant','powerup'],
+  selected: 0,
   closed: true
 }
 
 
 function showCatalog(){
-  for(let i = 0; i< allCards.length; i++){
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = 'black';
-    ctx.fillStyle='black';
-    ctx.strokeRect(storeCards[i].x, storeCards[i].y-25, storeCards[i].width+20, storeCards[i].height+50);
-    ctx.drawImage(storeCards[i].card.img, 0, 0, 340, 367, storeCards[i].x, storeCards[i].y, storeCards[i].width, storeCards[i].height);
-    ctx.fillRect(storeCards[i].x, storeCards[i].y+storeCards[i].height, storeCards[i].width+20, 50);
-    ctx.fillStyle = 'gold';
-    ctx.font = '20px Orbitron';
-    ctx.fillText(Math.floor(storeCards[i].card.coinsPrice), storeCards[i].x+storeCards[i].width/3, storeCards[i].y+storeCards[i].height+25);
+  console.log('show cat');
+  for(let i = 0; i< allTypes.length; i++){
+    if(allTypes[i].type == typesButton.selected){
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'black';
+      ctx.fillStyle='black';
+
+      ctx.fillStyle = 'gold';
+      ctx.font = '20px Orbitron';
+      ctx.fillText(allTypes[i].img.src, 100,i*40+10, 100,40);
+    }
+
   }
 }
 
@@ -58,13 +60,13 @@ function closeTypeSelection(){
   //letters
   ctx.fillStyle = 'black';
   ctx.font = '20px Orbitron';
-  ctx.fillText(typesButton.selected, typesButton.x+5, typesButton.y+20);
+  ctx.fillText(typesButton.options[typesButton.selected], typesButton.x+5, typesButton.y+20);
 }
 
 function openTypeSelection(){
   ctx.fillStyle = 'white';
   ctx.strokeStyle = 'black';
-  ctx.strokeRect(typesButton.x, typesButton.y, typesButton.width, 40);
+  ctx.strokeRect(typesButton.x, typesButton.y, typesButton.width, typesButton.height);
   ctx.fillRect(typesButton.x, typesButton.y, typesButton.width, typesButton.height);
 
   //letters
@@ -77,17 +79,15 @@ function openTypeSelection(){
 }
 
 
-function handleTypeSelectionButtion(){
+function handleTypeSelectionButton(){
   if (collision(mouse, typesButton)){
       let choice = Math.floor((mouse.y - 5- typesButton.y)/40);
-      console.log(choice)
-      console.log((mouse.y))
       if(typesButton.closed && choice == 0 && mouse.clicked){
         typesButton.closed = false;
         mouse.clicked = false;
       }else if(!typesButton.closed && mouse.clicked){
         //collision with options
-        typesButton.selected = typesButton.options[choice];
+        typesButton.selected = choice;
         typesButton.closed = true;
         mouse.clicked=false;
       }
@@ -99,5 +99,6 @@ function animateCatalog(){
   ctx.clearRect(0,0, canvas.width, canvas.height);
 
   showTypeSelectionButton();
-  handleTypeSelectionButtion();
+  showCatalog();
+  handleTypeSelectionButton();
 }
