@@ -130,6 +130,11 @@ function mapSettings(){
   audioPlayer.src = "assets/World map.mp4";
 }
 
+function generalMenuSettings(){
+  var audioEl = document.getElementById("audio");
+  audioEl.src = "assets/startmenusong.mp3";
+}
+
 function selectionSettings(){
   var audioEl = document.getElementById("audio");
   audioEl.src = "assets/Choose Your balls - Antiguo egipto.mp4";

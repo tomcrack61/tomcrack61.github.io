@@ -4,6 +4,7 @@ function animate(){
     animateDialog(welcomeDialogImg);
   }
   else if(game.state == "menu"){
+    generalMenuSettings();
     animateGeneralMenu();
   }
   else if(game.state == "gameOver"){
