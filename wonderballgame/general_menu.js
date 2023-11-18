@@ -16,8 +16,8 @@ const playbtnImg = new Image();
 playbtnImg.src = 'resources/star botton.png';
 
 const playAdventureModeBtn ={
-  x: canvas.top+150,
-  y: canvas.left+150,
+  x:150,
+  y: 150,
   width: Math.floor(canvas.width/2),
   height: Math.floor(canvas.height/3),
   img_src: playbtnImg,
