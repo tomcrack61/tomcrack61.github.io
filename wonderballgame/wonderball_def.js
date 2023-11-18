@@ -103,6 +103,7 @@ const card3 = {
   specialframes: 6,
   venom: true,
   desc:'los lanzagiuzantes son tu primera linea defensiva disparan guisantes a todos los gliches.  "?que ser famoso?",pregunto lanzagiuzantes mientras tomaba agua de su botella,"ahora mismo no puedo hablar,estoy firmando un contrato de merchandising."sujetame la chaqueta,porfavor'
+}
 allTypes.push(card3);
 
 const wonderball4 = new Image();
