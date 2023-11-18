@@ -140,7 +140,7 @@ const card5 = {
   projectile_type: noType,
   shootingFrames : 3,
   restingFrames : 7,
-  shootFrame : 7
+  shootFrame : 7,
   desc:'ataca a los gliches de su linea a picotasos. "como un pequeño pajarito logro tanto pregunta marcy,luz responde"entreno en las montañas bosques y praderas aprendiendo cada arte marcial posible, su unico problema no tenia brazos o alas asi que uso su pico y como un karateca lo domino'
 }
 allTypes.push(card5);

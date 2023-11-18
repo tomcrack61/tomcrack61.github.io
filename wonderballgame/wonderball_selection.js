@@ -88,8 +88,8 @@ function animateSelection(){
   ctx.clearRect(0,0, canvas.width, canvas.height);
   ctx.fillStyle='black';
   ctx.font = '30px Orbitron';
-  ctx.fillText('Pau & Feli! Welcome to the world!', 15, 30);
-  ctx.fillText('Choose your wonderballs for this battle', 15, 60);
+  //ctx.fillText('Pau & Feli! Welcome to the world!', 15, 30);
+  ctx.fillText('Choose your wonderballs for this battle', 15, 30);
   //initAllCards();
 
   for(let i = 0; i< allcards.length; i++){
