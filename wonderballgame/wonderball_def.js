@@ -374,7 +374,7 @@ const card16 = {
   projectile_type: straightpath,
   shootingFrames : 6,
   restingFrames : 8,
-  shootFrame:14
+  shootFrame:13
 }
 allTypes.push(card16);
 
@@ -1003,7 +1003,7 @@ const card46 = {
   projectile_type: timestopproj,
   shootingFrames : 6,
   restingFrames : 8,
-  shootFrame: 14
+  shootFrame: 13
 }
 allTypes.push(card46)
 const wonderball47 = new Image();

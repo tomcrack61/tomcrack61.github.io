@@ -127,12 +127,12 @@ window.addEventListener('orientationchange', (event) => {
 
 function mapSettings(){
   var audioPlayer = document.getElementById("audio");
-  audioPlayer.src = "assets/mapsong.mp3";
+  audioPlayer.src = "assets/World map.mp4";
 }
 
 function selectionSettings(){
   var audioEl = document.getElementById("audio");
-  audioEl.src = "assets/menusong.mp3";
+  audioEl.src = "assets/Choose Your balls - Antiguo egipto.mp4";
 }
 
 function goToMap(){
@@ -154,8 +154,8 @@ function goToTemple(){
 
 function goToGame(){
   audioEl = document.getElementById("audio");
-  if(game.curr_level == 3) audioEl.src = "assets/camp.mp3";
-  else if(game.curr_level == 2) audioEl.src = "assets/poolworld.mp3";
+  if(game.curr_level == 3) audioEl.src = "assets/First Wave - Antiguo egipto.mp4";
+  else if(game.curr_level == 2) audioEl.src = "assets/First Wave - Antiguo egipto.mp4";
   else audioEl.src = "assets/worldsong.mp3";
   game.state = "play";
 }
