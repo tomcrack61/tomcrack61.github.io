@@ -55,7 +55,7 @@ const card1 = {
   shootingFrames : 1,
   restingFrames : 1,
   shootFrame : 1,
-  desc: 'La primera wonderball'
+  desc: ''
 }
 allTypes.push(card1);
 
@@ -76,7 +76,7 @@ const card2 = {
   product_img :  sol,
   shootingFrames : 1,
   restingFrames : 7,
-  desc: 'la segunda wonderball'
+  desc: 'tu primera productora.produce soles'
 }
 allTypes.push(card2);
 
@@ -102,7 +102,7 @@ const card3 = {
   shootFrame : 12,
   specialframes: 6,
   venom: true,
-}
+  desc:'los lanzagiuzantes son tu primera linea defensiva disparan guisantes a todos los gliches.  "?que ser famoso?",pregunto lanzagiuzantes mientras tomaba agua de su botella,"ahora mismo no puedo hablar,estoy firmando un contrato de merchandising."sujetame la chaqueta,porfavor'
 allTypes.push(card3);
 
 const wonderball4 = new Image();
