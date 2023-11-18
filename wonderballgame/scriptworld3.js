@@ -2,7 +2,7 @@
 let worldBgnImg = new Image();
 
 // global variables
-const cellSize = 100;
+const cellSize = Math.floor(Math.min(canvas.width, canvas.height)/8);
 const cellGap = 3;
 
 const gameGrid = [];

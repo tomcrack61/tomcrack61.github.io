@@ -31,6 +31,9 @@ function animate(){
   else if(game.state == "dialogMarcy"){
     animateMarcyDialog();
   }
+  else if(game.state == "catalog"){
+    animateCatalog();
+  }
   requestAnimationFrame(animate);
 }
 

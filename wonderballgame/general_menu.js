@@ -16,10 +16,10 @@ const playbtnImg = new Image();
 playbtnImg.src = 'resources/star botton.png';
 
 const playAdventureModeBtn ={
-  x: 150,
-  y: 150,
-  width: 360,
-  height: 340,
+  x: canvas.top+150,
+  y: canvas.left+150,
+  width: Math.floor(canvas.width/2),
+  height: Math.floor(canvas.height/3),
   img_src: playbtnImg,
   img_height: 369,
   img_width: 342,
@@ -32,8 +32,8 @@ optionsBtnImg.src = 'resources/options botton.png';
 const optionsBtn ={
   x: canvas.width - 200,
   y: canvas.height - 300,
-  width: 120,
-  height: 120,
+  width:  Math.floor(canvas.width/4),
+  height:  Math.floor(canvas.width/4),
   img_src: optionsBtnImg,
   img_height: 369,
   img_width: 342,
@@ -42,10 +42,10 @@ const optionsBtn ={
 
 
 const catalogBtn ={
-  x: 1000,
+  x: canvas.width - 200,
   y: 10,
-  width: 215,
-  height: 185
+  width:  Math.floor(canvas.width/3),
+  height:  Math.floor(canvas.height/3)
 };
 
 //catalogo

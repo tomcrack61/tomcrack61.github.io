@@ -54,7 +54,8 @@ const card1 = {
   projectile_type: straightpath,
   shootingFrames : 1,
   restingFrames : 1,
-  shootFrame : 1
+  shootFrame : 1,
+  desc: 'La primera wonderball'
 }
 allTypes.push(card1);
 
@@ -74,7 +75,8 @@ const card2 = {
   type: producer,
   product_img :  sol,
   shootingFrames : 1,
-  restingFrames : 7
+  restingFrames : 7,
+  desc: 'la segunda wonderball'
 }
 allTypes.push(card2);
 
