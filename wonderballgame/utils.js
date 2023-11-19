@@ -203,7 +203,7 @@ function goToGame(){
 
 function goToCatalog(){
   var audioPlayer = document.getElementById("audio");
-  audioPlayer.src = "assets/Pick of the store.mp3";
+  audioPlayer.src = "assets/Hey There marcy.mp4";
 
   initAllCards();
   game.state = "catalog";
