@@ -164,6 +164,7 @@ const card6 = {
   shootingFrames : 2,
   restingFrames : 3,
   shootFrame : 4
+  desc:'
 }
 allTypes.push(card6);
 
