@@ -1,6 +1,3 @@
-canvasPosition = canvas.getBoundingClientRect();
-ctx.clearRect(0,0, canvas.width, canvas.height);
-
 //monedas
 let puzzleStoreCards = [];
 let puzzlePieceCost = 500;
