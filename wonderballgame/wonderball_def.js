@@ -12,10 +12,10 @@ const manualshoot = 6;
 const support= 7;
 const teamwork = 8;
 const instant=9;
-const powerUp=10;
-const trap=11;
-const jetix=12;
-const multiattack=13;
+const powerUp=100;
+const trap=10;
+const jetix=11;
+const multiattack=12;
 const lucina=14;
 
 //projectile allTypes
@@ -141,7 +141,7 @@ const card5 = {
   shootingFrames : 3,
   restingFrames : 7,
   shootFrame : 7,
-  desc:'ataca a los gliches de su linea a picotasos. "como un pequeño pajarito logro tanto pregunta marcy,luz responde"entreno en las montañas bosques y praderas aprendiendo cada arte marcial posible, su unico problema no tenia brazos o alas asi que uso su pico y como un karateca lo domino'
+  desc:'ataca a los gliches de su linea a picotazos. "como un pequeño pajarito logro tanto pregunta marcy,luz responde"entreno en las montañas bosques y praderas aprendiendo cada arte marcial posible, su unico problema no tenia brazos o alas asi que uso su pico y como un karateca lo domino'
 }
 allTypes.push(card5);
 

@@ -1,6 +1,3 @@
-canvasPosition = canvas.getBoundingClientRect();
-ctx.clearRect(0,0, canvas.width, canvas.height);
-
 //monedas
 const coinIcon ={
   x: 15,

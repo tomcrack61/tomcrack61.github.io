@@ -16,15 +16,32 @@ const typesButton = {
   y: 15,
   width: 320,
   height: 40*totalTypes,
-  options: ['producer', 'distanceshoot','defenser', 'contactshoot','timedshoot','general','manualshoot','support','teamwork','instant','powerup', 'trap', 'jetix', 'multiattack'],
+  options: ['producer', 'distanceshoot','defenser', 'contactshoot','timedshoot','general','manualshoot','support','teamwork','instant', 'trap', 'jetix', 'multiattack'],
   selected: 0,
   closed: true
+}
+
+const catalog = {
+  x:25,
+  y: Math.floor(2*canvas.height/3),
+  width: canvas.width,
+  height:Math.floor(canvas.height/3)
+}
+
+const backBtn = {
+  x:canvas.width - 70,
+  y: 15,
+  width: 50,
+  height:40,
+  img: '<- Back'
 }
 
 initCards();
 
 function initCards(){
   typeCards = [];
+  console.log('init cards');
+
   for(let i = 0; i< allTypes.length; i++){
     if(allTypes[i].type == typesButton.selected){
       typeCards.push(allTypes[i]);
@@ -33,17 +50,19 @@ function initCards(){
 }
 
 function showWonderballProperties(){
-  ctx.strokeRect(15, 100, 300, 200 );
+  ctx.strokeStyle = 'black';
   let description = 'NO description available';
   if(typeCards[selectedWonderball].desc){
     description = typeCards[selectedWonderball].desc;
   }
+  description += '. Power: ' + typeCards[selectedWonderball].power;
+  description += '. Cost: ' + typeCards[selectedWonderball].cost;
 
   wrapText(description, 50, 100, 300, 20, 'Orbitron' );
 }
 
 function showCatalog(){
-  ctx.fillStyle = 'green';
+  //ctx.fillStyle = 'green';
   let x = 25;
   let y = Math.floor(2*canvas.height/3);
   //ctx.fillRect(x, y, canvas.width, Math.floor(canvas.height/3)) ;
@@ -58,6 +77,11 @@ function showCatalog(){
     //ctx.strokeRect(allcards[i].x, allcards[i].y, allcards[i].width, allcards[i].height);
     ctx.drawImage(typeCards[i].img, 0, 0, 340, 367, crdX, crdY, 70, 40);
   }
+
+  ctx.fillStyle = 'yellow';
+  ctx.fillRect(backBtn.x, backBtn.y, backBtn.width, backBtn.height);
+  ctx.fillStyle = 'black';
+  ctx.fillText(backBtn.img, backBtn.x, backBtn.y + 20, backBtn.width, backBtn.height);
 }
 
 
@@ -123,8 +147,26 @@ function handleTypeSelectionButton(){
         //collision with options
         typesButton.selected = choice;
         typesButton.closed = true;
+        selectedWonderball = 0;
         mouse.clicked=false;
       }
+  }else if(collision(backBtn, mouse) &&  mouse.clicked){
+    mouse.clicked = false;
+    game.state = 'menu';
+  }
+}
+
+function handleWonderballCatalogSelection(){
+  console.log("handling wonderball catalog");
+  if (mouse.clicked && collision(catalog, mouse)){
+    var row = Math.floor((mouse.y - catalog.y)/40);
+    var column = Math.floor((mouse.x - catalog.x)/70);
+    var selected = row*10+column;
+
+    if(selected < typeCards.length){
+      selectedWonderball = selected;
+    }
+    mouse.clicked = false;
   }
 
 }
@@ -135,8 +177,11 @@ function animateCatalog(){
   if(counter%10 == 0){
       animationFrame= (animationFrame+1)%(typeCards[selectedWonderball].restingFrames+typeCards[selectedWonderball].shootingFrames);
   }
+
+  showSelectedWonderball();
   showTypeSelectionButton();
   showCatalog();
-  showSelectedWonderball();
+
   handleTypeSelectionButton();
+  handleWonderballCatalogSelection();
 }
