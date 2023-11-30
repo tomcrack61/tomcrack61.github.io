@@ -73,7 +73,7 @@ const card2 = {
   power: 50,
   health: 100,
   type: producer,
-  product_img :  sol,
+  product_img : sol,
   shootingFrames : 1,
   restingFrames : 7,
   desc: 'tu primera productora.produce soles'
@@ -164,7 +164,7 @@ const card6 = {
   shootingFrames : 2,
   restingFrames : 3,
   shootFrame : 4
-  desc:'
+
 }
 allTypes.push(card6);
 
@@ -185,6 +185,7 @@ const card7 = {
   shootingFrames : 1,
   restingFrames : 1,
   shootFrame: 1
+  
 }
 allTypes.push(card7);
 
