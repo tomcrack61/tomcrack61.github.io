@@ -1,9 +1,3 @@
-if (typeof(Storage) !== "undefined") {
-  if (!localStorage.passedLevels) {
-    localStorage.setItem("passedLevels", 0)
-  }
-}
-
 //catalogo
 //const catalogImg = new Image();
 //catalogImg.src = 'assets/world_choose.png';
@@ -29,8 +23,8 @@ let l2Btn ={
 lvlButtons.push(l2Btn);
 
 let l3Btn ={
-  x: 140,
-  y: 406,
+  x: 190,
+  y: 320,
   width: 45,
   height: 45,
   active: false
@@ -116,6 +110,10 @@ function handleBtn(){
     mouse.clicked = false;
     goToTemple();
   }
+  else if(collision(catalogBtn, mouse) && mouse.clicked){
+    mouse.clicked=false;
+    goToCatalog();
+  }
   else{
     for(let i = 0; i<lvlButtons.length; i++){
       if(collision(lvlButtons[i], mouse) && mouse.clicked && lvlButtons[i].active){
@@ -149,11 +147,8 @@ function animateMap(){
   }
   if(temploBtn.active) ctx.strokeRect(temploBtn.x, temploBtn.y, temploBtn.width, temploBtn.height);
   ctx.drawImage(storeMenuBtn.img_src, storeMenuBtn.current_frame*storeMenuBtn.img_width, 0, storeMenuBtn.img_width, storeMenuBtn.img_height, storeMenuBtn.x, storeMenuBtn.y, storeMenuBtn.width*0.8, storeMenuBtn.height*0.8);
+  ctx.strokeRect(catalogBtn.x, catalogBtn.y, catalogBtn.width, catalogBtn.height);
 //ctx.drawImage(catalogBtn.img, 0, 0, 200, 200, catalogBtn.x, catalogBtn.y, catalogBtn.width, catalogBtn.height);
-
-  ctx.fillStyle='black';
-  ctx.font = '20px Orbitron';
-  ctx.fillText('Choose a level', 120, 80);
 
   handleBtn();
 }

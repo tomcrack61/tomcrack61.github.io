@@ -1,22 +1,30 @@
+const backToMapButton={
+  x: canvas.width-200,
+  y: 20,
+  width: 150,
+  height: 40,
+  text: 'Map'
+};
+
 const goButton={
-  x: 250,
-  y: 550,
+  x: 320,
+  y: 560,
   width: 250,
   height: 150,
   text: 'Go!'
 };
 
 const backButton={
-  x: 80,
-  y: 550,
+  x: 100,
+  y: 560,
   width: 150,
   height: 150,
   text: '<--'
 };
 
 const nextButton={
-  x: 550,
-  y: 550,
+  x: 650,
+  y: 560,
   width: 150,
   height: 150,
   text: '-->'
@@ -26,20 +34,25 @@ let choosenOnes = [];
 let curr_page = 0;
 
 function handleSelection(){
-  min = Math.min(12, allTypes.length-curr_page);
-  for(let i = 0; i < min; i++){
+  passedLevels = Number(localStorage.currentLevel);
+  max_page = passedLevels+6;
+  limit = Math.min(max_page, 12,allTypes.length-curr_page);
+  for(let i = 0; i < limit; i++){
     if (collision(mouse, allcards[i]) && mouse.clicked && !choosenOnes.includes(i+curr_page)){
       choosenCard = i+curr_page;
       choosenOnes.push(choosenCard);
       mouse.clicked=false;
       if(choosenOnes.length > 6){
+        floatingMessages.push(new FloatingMessage("Ya seleccionaste 6, vamos a eliminar el primero", mouse.x, mouse.y, 20, 'blue'));
         choosenOnes.shift();
       }
     }
   }
 
   if (collision(mouse, nextButton) && mouse.clicked){
-    if(curr_page < Math.max(curr_level,allTypes.length-12)){
+    passedLevels = Number(localStorage.currentLevel);
+    max_page = passedLevels+6;
+    if(curr_page+12 < Math.min(max_page,allTypes.length)){
       curr_page +=12;
       mouse.clicked=false;
       initAllCards();
@@ -52,6 +65,9 @@ function handleSelection(){
       initAllCards();
     }
   }
+  else if (collision(mouse, backToMapButton) && mouse.clicked){
+    game.state = 'map';
+  }
   else if (collision(mouse, goButton) && mouse.clicked){
     if(choosenOnes.length == 6){
       cardAvailable = new Array(choosenOnes.length).fill(75);
@@ -62,7 +78,7 @@ function handleSelection(){
       mouse.clicked = false;
       playGame = true;
     }else{
-      floatingMessages.push(new FloatingMessage("Choose 6 defenders", mouse.x, mouse.y, 20, 'blue'));
+      floatingMessages.push(new FloatingMessage("Selecciona al menos 6 defensores", mouse.x, mouse.y, 20, 'blue'));
     }
   }
 }
@@ -73,7 +89,10 @@ function initAllCards(){
   const width = 200;
   const height = 150;
   allcards=[];
-  for(let j = curr_page; j < curr_page+12; j++){
+  passedLevels = Number(localStorage.currentLevel);
+  max_page = passedLevels+6;
+  limit = Math.min(max_page, curr_page+12);
+  for(let j = curr_page; j < limit; j++){
     if(j< allTypes.length){
       i = j - curr_page;
       x = (i%cols)*width + (i%cols)*5+50;
@@ -120,7 +139,7 @@ function animateSelection(){
   ctx.fillRect(goButton.x, goButton.y, goButton.width, goButton.height);
   ctx.fillStyle='black';
   ctx.font = '30px Orbitron';
-  ctx.fillText(goButton.text, goButton.x+20, 590);
+  ctx.fillText(goButton.text, goButton.x+50, 590);
 
   //NExt Button
   ctx.fillStyle='gold';
@@ -135,6 +154,13 @@ function animateSelection(){
   ctx.fillStyle='black';
   ctx.font = '30px Orbitron';
   ctx.fillText(backButton.text, backButton.x+20, 590);
+
+  //BackToMap Button
+  ctx.fillStyle='gold';
+  ctx.fillRect(backToMapButton.x, backToMapButton.y, backToMapButton.width, backToMapButton.height);
+  ctx.fillStyle='black';
+  ctx.font = '30px Orbitron';
+  ctx.fillText(backToMapButton.text, backToMapButton.x+20, backToMapButton.y+30);
 
   //events
   handleFloatingMessages();

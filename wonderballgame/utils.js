@@ -14,6 +14,7 @@
     window.addEventListener('resize', resizeCanvas, false);
     // Draw canvas border for the first time.
     resizeCanvas();
+    initStorage();
   }
 
   // Display custom canvas. In this case it's a blue, 5 pixel
@@ -34,52 +35,59 @@
   }
 })();
 
-if (typeof(Storage) !== "undefined") {
-  if (!localStorage.coinCounter) {
-    localStorage.setItem("coinCounter", 0);
-  }
-  localStorage.setItem("coinCounter", 1000);
-
-  if (!localStorage.currentLevel) {
-    localStorage.setItem("currentLevel", 0)
-  }
-  if (!localStorage.jetixBought) {
-    localStorage.setItem("jetixBought", 0)
-  }
-  if (!localStorage.fireGuisanteBought) {
-    localStorage.setItem("fireGuisanteBought", 0)
-  }
-  if (!localStorage.doradaBought) {
-    localStorage.setItem("doradaBought", 0)
-  }
-  if (!localStorage.arqueopterixBought) {
-    localStorage.setItem("arqueopterixBought", 0)
-  }
-  if (!localStorage.lotoBought) {
-    localStorage.setItem("lotoBought", 0)
-  }
-  if (!localStorage.tiragiusantesBought) {
-    localStorage.setItem("tiragiusantesBought", 0)
-  }
-  if (!localStorage.canonbirdBought) {
-    localStorage.setItem("canonbirdBought", 0)
-  }
-  if (!localStorage.arqueopterixBought) {
-    localStorage.setItem("arqueopterixBought", 0)
-  }if (!localStorage.melonpultacongeladaBought) {
-    localStorage.setItem("melonpultacongeladaBought", 0)
-  }if (!localStorage.setaovniBought) {
-    localStorage.setItem("setaovniBought", 1)
-  }
 
 
+function initStorage(){
+  if (typeof(Storage) !== "undefined") {
+    if (!localStorage.coinCounter) {
+      localStorage.setItem("coinCounter", 0);
+    }
+    if (!localStorage.currentLevel) {
+      localStorage.setItem("currentLevel", 0)
+    }
+    if (!localStorage.jetixBought) {
+      localStorage.setItem("jetixBought", 0)
+    }
+    if (!localStorage.fireGuisanteBought) {
+      localStorage.setItem("fireGuisanteBought", 0)
+    }
+    if (!localStorage.doradaBought) {
+      localStorage.setItem("doradaBought", 0)
+    }
+    if (!localStorage.arqueopterixBought) {
+      localStorage.setItem("arqueopterixBought", 0)
+    }
+    if (!localStorage.lotoBought) {
+      localStorage.setItem("lotoBought", 0)
+    }
+    if (!localStorage.tiragiusantesBought) {
+      localStorage.setItem("tiragiusantesBought", 0)
+    }
+    if (!localStorage.canonbirdBought) {
+      localStorage.setItem("canonbirdBought", 0)
+    }
+    if (!localStorage.arqueopterixBought) {
+      localStorage.setItem("arqueopterixBought", 0)
+    }if (!localStorage.melonpultacongeladaBought) {
+      localStorage.setItem("melonpultacongeladaBought", 0)
+    }if (!localStorage.setaovniBought) {
+      localStorage.setItem("setaovniBought", 1)
+    }
 
-  if (!localStorage.puzzlePieces) {
-    var puzzlePieces = Array(100).fill(0);
-    localStorage.puzzlePieces = JSON.stringify(puzzlePieces);
+
+
+    if (!localStorage.puzzlePieces) {
+      var puzzlePieces = Array(100).fill(0);
+      localStorage.puzzlePieces = JSON.stringify(puzzlePieces);
+    }
+
+    if (!localStorage.passedLevels) {
+      localStorage.setItem("passedLevels", 0)
+    }
+
+  }else{
+    console.log("Storage Not Supported. Game progress will not be saved")
   }
-}else{
-  console.log("Storage Not Supported. Game progress will not be saved")
 }
 
 
@@ -191,6 +199,10 @@ function goToSelection(){
 
 function goToTemple(){
   alert("In Construction");
+}
+
+function restart(){
+  localStorage.clear();
 }
 
 function goToGame(){
