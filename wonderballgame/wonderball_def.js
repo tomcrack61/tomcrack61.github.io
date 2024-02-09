@@ -74,7 +74,7 @@ const card2 = {
   health: 100,
   type: producer,
   product_img : sol,
-  shootingFrames : 1,
+  shootingFrames : 4,
   restingFrames : 7,
   desc: 'tu primera productora.produce soles'
 }
@@ -112,15 +112,15 @@ wonderballTypes.push(wonderball4);
 
 const card4 = {
   img: wonderballTypes[3],
-  cost: 80,
+  cost: 50,
   defense: 0,
   power: 0,
-  health: 300,
+  health: 4400,
   type: defenser,
   projectile_img :  null,
   projectile_type: noType,
-  shootingFrames : 1,
-  restingFrames : 1
+  shootingFrames : 0,
+  restingFrames : 5,
 
 }
 allTypes.push(card4);
@@ -138,7 +138,7 @@ const card5 = {
   type: contactshoot,
   projectile_img:  null,
   projectile_type: noType,
-  shootingFrames : 3,
+  shootingFrames : 7,
   restingFrames : 7,
   shootFrame : 7,
   desc:'ataca a los gliches de su linea a picotazos. "como un pequeño pajarito logro tanto pregunta marcy,luz responde"entreno en las montañas bosques y praderas aprendiendo cada arte marcial posible, su unico problema no tenia brazos o alas asi que uso su pico y como un karateca lo domino'
@@ -185,7 +185,7 @@ const card7 = {
   shootingFrames : 1,
   restingFrames : 1,
   shootFrame: 1
-  
+
 }
 allTypes.push(card7);
 
@@ -1008,9 +1008,9 @@ const card46 = {
   type: distanceshoot,
   projectile_img: hielaguisantesproy,
   projectile_type: timestopproj,
-  shootingFrames : 6,
+  shootingFrames : 5,
   restingFrames : 8,
-  shootFrame: 13
+  shootFrame: 12
 }
 allTypes.push(card46)
 const wonderball47 = new Image();
